@@ -1,0 +1,237 @@
+.hero-wrap {
+  position: relative;
+  height: 100vh;
+}
+
+.hero-bg {
+  width: 100%;
+  max-height: calc(100vh - 60px);
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-desc {
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.6),
+      transparent);
+  width: 50vw;
+  padding: 20px 60px;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hero-desc * {
+  margin-bottom: 0 !important;
+}
+
+.hero-desc .desc-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px
+}
+
+.hero-desc .desc-icon div {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.hero-desc .desc-icon i {
+  background: rgba(133, 133, 228, 0.292);
+  backdrop-filter: blur(2px);
+  padding: 8px 12px;
+  font-size: 32px;
+  line-height: 1;
+  color: rgb(10, 10, 103);
+  border-radius: 8px;
+}
+
+.hero-desc .desc-icon p {
+  font-size: 20px;
+}
+
+.hero-desc button {
+  width: fit-content;
+  font-weight: 600;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgb(10, 10, 103);
+  color: white;
+  transition: transform 0.4s ease;
+}
+
+.hero-desc button:hover {
+  transform: translateX(5px);
+}
+
+.hero-desc .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-weight: 600;
+  padding: 8px 16px;
+  padding-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgb(10, 10, 103);
+  color: white;
+  text-decoration: none;
+  transition: transform 0.4s ease;
+}
+
+.hero-desc .btn-cta:hover {
+  transform: translateX(5px);
+}
+
+.hero-desc .cta-microcopy {
+  font-size: 12px;
+  color: rgba(10, 10, 103, 0.7);
+  margin-top: 4px;
+}
+
+.nav-hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.nav-hero a {
+  height: 100%;
+  padding: 14px;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  background: rgba(133, 133, 228, 0.292);
+  border: 1px solid white;
+  backdrop-filter: blur(3px);
+  transition: transform 0.4s ease;
+}
+
+.nav-hero a:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 1024px) {
+  .hero-desc {
+    width: 65vw;
+  }
+
+  .hero-desc .desc-icon {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .hero-desc .desc-icon p {
+    font-size: 17px;
+  }
+
+  .hero-desc .desc-icon i {
+    font-size: 26px;
+    padding: 6px 10px;
+  }
+
+  .nav-hero a {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
+/* ── Mobile: ≤ 767px ── */
+@media (max-width: 767px) {
+  .hero-wrap {
+    height: 500px;
+  }
+
+  .hero-bg {
+    object-position: center;
+    max-height: 500px !important;
+    height: 100%;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-desc {
+    width: 100%;
+    background: linear-gradient(to top,
+        rgba(255, 121, 37, 1),
+        transparent);
+    padding: 8px 16px 10px;
+    gap: 12px;
+    justify-content: end;
+    border-radius: 8px;
+    max-height: 500px;
+    height: 100%;
+  }
+
+  .hero-desc * {
+    line-height: 1;
+    color: white !important;
+    margin-bottom: 0 !important;
+  }
+
+  .hero-desc .desc-icon {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .hero-desc .desc-icon i {
+    font-size: 22px;
+    padding: 5px 8px;
+  }
+
+  .hero-desc .desc-icon p {
+    font-size: 14px;
+  }
+
+  .hero-desc button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-hero {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-hero a {
+    font-size: 15px;
+    padding: 10px 8px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* ── Small mobile: ≤ 450px ── */
+@media (max-width: 450px) {
+  .hero-bg img {
+    max-width: 450px;
+  }
+
+  .nav-hero {
+    grid-template-columns: 1fr 1fr;
+  }
+}
