@@ -1,0 +1,57 @@
+.readmore-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+ 
+.sec-desc {
+  margin-bottom: 23px;
+}
+
+ 
+.sec-desc::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(transparent, #ffffff);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+ 
+.readmore-btn {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  color: #0a7d33; /* sesuaikan dengan warna brand kamu */
+  margin-bottom: 16px;
+}
+.readmore-btn::after {
+  content: "Baca Selengkapnya \25BE";
+}
+ 
+/* State: expanded */
+.readmore-toggle:checked ~ .sec-desc {
+  max-height: 2000px;
+}
+.readmore-toggle:checked ~ .sec-desc::after {
+  opacity: 0;
+}
+.readmore-toggle:checked ~ .readmore-btn::after {
+  content: "Sembunyikan \25B4";
+}
+ 
+/* Desktop: tampilkan penuh dari awal, matikan seluruh mekanisme
+   read-more (tidak relevan lagi karena layout sudah cukup lega) */
+@media (min-width: 768px) {
+  .sec-desc {
+    max-height: unset;
+    overflow: visible;
+  }
+  .sec-desc::after,
+  .readmore-btn {
+    display: none;
+  }
+}
