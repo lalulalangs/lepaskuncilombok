@@ -1,0 +1,274 @@
+/* new */
+:root {
+  --faq-primary: #132d4e;       /* Dark Blue */
+  --faq-accent: #fc5f02;        /* Vibrant Orange */
+  --faq-accent-light: #f5951c;  /* Golden Orange */
+  --faq-bg: #f3f3fb;
+  --faq-text: #333333;
+  --faq-white: #ffffff;
+}
+
+.sec-faq-homp {
+  width: 100%;
+  padding: 80px 0;
+  background-color: var(--faq-bg);
+  font-family: "Archivo", sans-serif;
+  color: var(--faq-text);
+}
+
+.fj-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sec-faq-homp .fj-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Image Column */
+.sec-faq-homp .img-faq {
+  flex: 1 1 45%;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(19, 45, 78, 0.15);
+}
+
+.sec-faq-homp .img-faq img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sec-faq-homp .img-faq:hover img {
+  transform: scale(1.03);
+}
+
+/* Content Column */
+.sec-faq-homp .accordi-faq {
+  flex: 1 1 50%;
+  padding: 20px 0;
+}
+
+.sec-faq-homp .accordi-faq h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* Fluid typography */
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--faq-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+/* Decorative accent underline */
+.sec-faq-homp .accordi-faq h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--faq-accent), var(--faq-accent-light));
+  border-radius: 2px;
+}
+
+.faq-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+/* Fallback styling for common WordPress accordion shortcode outputs */
+.accordi-faq .accordion-item, 
+.accordi-faq .accordion__item {
+  border-bottom: 1px solid rgba(19, 45, 78, 0.1);
+}
+
+.accordi-faq .accordion-title, 
+.accordi-faq .accordion__title {
+  font-weight: 600;
+  color: var(--faq-primary);
+  padding: 18px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.accordi-faq .accordion-title:hover, 
+.accordi-faq .accordion__title:hover {
+  color: var(--faq-accent);
+}
+
+/* CTA Box */
+.faq-cta {
+  margin-top: 40px;
+  padding: 24px;
+  background: rgba(252, 95, 2, 0.08);
+  border-left: 4px solid var(--faq-accent);
+  border-radius: 8px;
+}
+
+.faq-cta p {
+  margin: 0 0 16px 0;
+  font-weight: 600;
+  color: var(--faq-primary);
+  font-size: 1.05rem;
+}
+
+.btn-faq {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--faq-accent);
+  color: var(--faq-white);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(252, 95, 2, 0.3);
+}
+
+.btn-faq:hover {
+  background-color: var(--faq-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(19, 45, 78, 0.3);
+}
+
+.btn-faq svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-faq:hover svg {
+  transform: scale(1.1);
+}
+
+/* Responsive Breakpoints */
+@media only screen and (max-width: 992px) {
+  .sec-faq-homp .fj-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .sec-faq-homp .img-faq,
+  .sec-faq-homp .accordi-faq {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .sec-faq-homp .img-faq {
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  .sec-faq-homp .accordi-faq {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-faq-homp {
+    padding: 48px 0;
+  }
+  
+  .fj-container {
+    padding: 0 16px;
+  }
+
+  .sec-faq-homp .accordi-faq h2 {
+    font-size: 1.6rem;
+  }
+
+  .faq-cta {
+    padding: 20px;
+  }
+  
+  .btn-faq {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* old */
+.sec-faq-homp {
+  width: 100%;
+  padding: 0;
+  background-color: #f3f3fb;
+}
+
+
+.sec-faq-homp .fj-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.sec-faq-homp .img-faq {
+  width: 50%;
+
+  background-image: url("https://lepaskuncilombok.com/wp-content/uploads/2026/03/Rental-Mobil-Lombok-FAQ.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.sec-faq-homp .accordi-faq {
+  width: 50%;
+  padding: 30px 15px 30px 45px;
+}
+
+
+
+.sec-faq-homp .accordi-faq h2 {
+  margin-top: 0;
+
+  font-size: 4em;
+  line-height: 1.3em;
+  font-weight: 400;
+
+  color: #111111;
+
+  font-family: "Archivo", sans-serif;
+  text-transform: uppercase;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+  .sec-faq-homp .fj-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .sec-faq-homp .img-faq {
+    width: 100%;
+    min-height: 250px;
+  }
+
+
+  .sec-faq-homp .accordi-faq {
+    width: 100%;
+    padding: 30px 20px 60px;
+  }
+
+
+  .sec-faq-homp .accordi-faq h2 {
+    font-size: 1.7em;
+    line-height: 1.3em;
+  }
+
+}
