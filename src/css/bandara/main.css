@@ -393,6 +393,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  min-width: 0;
   margin: 0;
   padding: 18px 20px;
   font-size: 15px;
@@ -400,6 +401,7 @@
   line-height: 1.5;
   color: var(--bdr-navy-text);
   cursor: pointer;
+  overflow-wrap: anywhere;
   transition: background 0.2s ease;
 }
 
@@ -421,6 +423,7 @@
   font-size: 14px;
   line-height: 1.7;
   color: #555;
+  overflow-wrap: anywhere;
 }
 
 .hal-bandara .accordi-faq .question.open .answer {
