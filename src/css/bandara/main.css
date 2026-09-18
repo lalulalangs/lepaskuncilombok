@@ -338,6 +338,130 @@
 }
 
 /* ============================================================
+   SECTION 6: FAQ BANDARA
+   ============================================================
+   FAQ ini layout satu kolom (tanpa kolom gambar), karena class
+   .fj-row / .img-faq dari FAQ homepage tidak dipakai di halaman
+   bandara. Style akordeon di-scope supaya tidak bergantung pada
+   CSS FAQ homepage.
+   ============================================================ */
+.hal-bandara .sec-faq-homp {
+  background: var(--bdr-light-blue-bg);
+  border: 1px solid var(--bdr-light-blue-border);
+  border-radius: 12px;
+  padding: 40px 30px;
+  margin: 50px 0;
+}
+
+.hal-bandara .accordi-faq {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hal-bandara .accordi-faq h2 {
+  margin: 0 0 28px;
+  padding: 0;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--bdr-navy-text);
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.hal-bandara .accordi-faq h2::after {
+  display: none;
+}
+
+.hal-bandara .accordi-faq .accordion {
+  background: #fff;
+  border: 1px solid var(--bdr-light-blue-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hal-bandara .accordi-faq .question {
+  border-bottom: 1px solid var(--bdr-light-blue-border);
+}
+
+.hal-bandara .accordi-faq .question:last-child {
+  border-bottom: 0;
+}
+
+.hal-bandara .accordi-faq .title {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 18px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--bdr-navy-text);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hal-bandara .accordi-faq .title:hover {
+  background: var(--bdr-light-blue-bg);
+}
+
+.hal-bandara .accordi-faq .title i {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 16px;
+  color: var(--bdr-navy-3);
+}
+
+.hal-bandara .accordi-faq .answer {
+  display: none;
+  margin: 0;
+  padding: 0 20px 20px 46px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.hal-bandara .accordi-faq .question.open .answer {
+  display: block;
+}
+
+.hal-bandara .accordi-faq .answer strong {
+  color: var(--bdr-navy-text);
+}
+
+.hal-bandara .accordi-faq .answer a {
+  color: var(--bdr-navy-2);
+  text-decoration: underline;
+}
+
+/* Ikon plus/minus mengikuti status open/close akordeon */
+.hal-bandara .accordi-faq .acc-icon-minus {
+  display: none;
+}
+
+.hal-bandara .accordi-faq .question.open .acc-icon-plus {
+  display: none;
+}
+
+.hal-bandara .accordi-faq .question.open .acc-icon-minus {
+  display: inline;
+}
+
+@media (max-width: 480px) {
+  .hal-bandara .sec-faq-homp {
+    padding: 30px 16px;
+  }
+  .hal-bandara .accordi-faq .title {
+    padding: 16px 14px;
+  }
+  .hal-bandara .accordi-faq .answer {
+    padding: 0 14px 16px 40px;
+  }
+}
+
+/* ============================================================
    SECTION 7: CTA PENUTUP
    ============================================================ */
 .bandara-final-cta {
