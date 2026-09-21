@@ -1,0 +1,590 @@
+<!-- SECTION 4: FLEET & PRICING CSS-->
+<style>
+  .fleet {
+    width: 100%;
+    background-color: var(--color-surface);
+    padding-block: var(--space-xl);
+  }
+
+  .fleet__container {
+    width: 100%;
+    padding-inline: var(--container-margin);
+  }
+
+  /* Header */
+  .fleet__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .fleet__header {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  .fleet__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-lg-mobile, 24px);
+    line-height: var(--lh-headline-lg-mobile, 32px);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  @media (min-width: 768px) {
+    .fleet__title {
+      font-size: 36px; /* headline-lg */
+      line-height: 44px;
+    }
+  }
+
+  .fleet__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-body-lg);
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+
+  .fleet__capacity-note {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-on-surface-variant);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-md);
+    line-height: var(--lh-label-md);
+    font-weight: var(--fw-label-md);
+    white-space: nowrap;
+  }
+
+  .btn__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: currentColor;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .fleet__capacity-note {
+      display: flex;
+    }
+  }
+
+  /* Grid Armada */
+  .fleet__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .fleet__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .fleet__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Vehicle Card — Container Radius (1rem), padding 20px per spec */
+  .vehicle-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem; /* 20px — literal sesuai spesifikasi Vehicle Card di DESIGN.md */
+  }
+
+  .vehicle-card__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 12rem;
+    background-color: var(--color-surface-container-low);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+  }
+
+  .vehicle-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .vehicle-card__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    color: var(--color-primary);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-sm);
+    font-weight: var(--fw-label-sm);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm, 6px);
+  }
+
+  .vehicle-card__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-md, 24px);
+    line-height: var(--lh-headline-md, 32px);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  .vehicle-card__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    color: var(--color-on-surface-variant);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  /* Price List */
+  .price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-block: var(--space-sm);
+    border-top: 1px solid var(--color-surface-container-high);
+    border-bottom: 1px solid var(--color-surface-container-high);
+    margin-bottom: var(--space-md);
+  }
+
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .price-row__label {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-sm);
+    color: var(--color-on-surface-variant);
+  }
+
+  .price-row__value {
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-md);
+    font-weight: var(--fw-label-md);
+  }
+
+  .price-row__value--primary {
+    color: var(--color-primary);
+  }
+
+  .price-row__value--accent {
+    color: var(--color-secondary-container);
+  }
+
+  /* Button full-width modifier untuk CTA di dalam kartu */
+  .btn--full {
+    width: 100%;
+    padding: 0.75rem var(--space-lg); /* py-3 = 12px vertical */
+  }
+
+  /* Extra Fleet Promo Card */
+  .promo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: var(--color-surface-container-low);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .promo-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius);
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+  }
+
+  .promo-card__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-md, 24px);
+    line-height: var(--lh-headline-md, 32px);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  .promo-card__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-md, 16px);
+    line-height: var(--lh-body-md, 24px);
+    color: var(--color-on-surface-variant);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .promo-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-lg);
+    line-height: var(--lh-label-lg);
+    font-weight: var(--fw-label-lg);
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .promo-card__link:hover {
+    color: var(--color-primary);
+  }
+
+  /* Bottom Link */
+  .fleet__bottom-link {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-xl);
+  }
+
+  .fleet__bottom-link-anchor {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-lg);
+    line-height: var(--lh-label-lg);
+    font-weight: var(--fw-label-lg);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .fleet__bottom-link-anchor:hover {
+    color: var(--color-secondary-container);
+  }
+</style>
+
+<!-- SECTION 4: FLEET & PRICING -->
+<section class="fleet" id="armada">
+  <div class="fleet__container">
+    <!-- Header -->
+    <div class="fleet__header">
+      <div class="fleet__header-text">
+        <h2 class="fleet__title">Armada Antar Jemput Bandara Lombok</h2>
+        <p class="fleet__description">
+          Pilihan mobil nyaman 5 sampai 7 kursi, cocok untuk keluarga dan
+          rombongan kecil
+        </p>
+      </div>
+      <div class="fleet__capacity-note">
+        <span class="material-symbols-outlined" aria-hidden="true"
+          >airline_seat_recline_normal</span
+        >
+        <span>Kapasitas Bagasi Luas</span>
+      </div>
+    </div>
+
+    <!-- Grid Armada -->
+    <div class="fleet__grid">
+      <!-- Vehicle 1: Toyota Avanza -->
+      <article class="vehicle-card">
+        <div>
+          <div class="vehicle-card__image-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD53ao5jrxaOrAcHoZkvcUq8GJuwb-3ueSwA91P3EQ_CVmWgs9zVrHIZolUIJ9YTs-5XPjmr1iluIwpuz_RhFt8Lb1mdGbBhsTnPdXZ-vlaXTeUOHtZt14b3_dW03t6zcCTpJSWorcB7PBn3vaJl71BaG4g6kfFuzR23l4kDrM85qnbJkb0GIXUs6qbtseHk_WWDBdwtyInctxjpFyhbqADrbIvIYFhQ6OTfeCWO6wsCqNKGYDEyuye"
+              alt="Toyota Avanza putih tampak depan"
+              class="vehicle-card__image"
+              loading="lazy"
+            />
+            <span class="vehicle-card__badge">MPV • 6 Seat</span>
+          </div>
+          <h3 class="vehicle-card__title">Toyota Avanza</h3>
+          <p class="vehicle-card__description">
+            Irit, tangguh, dan ideal untuk keliling Lombok bersama keluarga.
+          </p>
+          <div class="price-list">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci</span>
+              <span class="price-row__value price-row__value--primary"
+                >Rp 350.000 / 24 jam</span
+              >
+            </div>
+            <div class="price-row">
+              <span class="price-row__label">Driver + BBM</span>
+              <span class="price-row__value price-row__value--accent"
+                >Rp 650.000 / 12 jam</span
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Toyota%20Avanza"
+          class="btn btn--whatsapp btn--full"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            class="btn__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          <span>Pesan Sekarang</span>
+        </a>
+      </article>
+
+      <!-- Vehicle 2: Innova Reborn -->
+      <article class="vehicle-card">
+        <div>
+          <div class="vehicle-card__image-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC49FuS0_Ru_s-p74Frzn13VPPgC-LrcdpRvkGcegVwAQT0phCFUWs5maz7BBy1UzWAHPgeLih-8dyDn5Fl_ok_R8VBxbjIK7YC7kGpD6fpLHybYNDhcy1AFhk1BX3uZf__UaRBICo5kSvQb0AXzlM_aDWHuy95ZjJFH2f_ku3rFD1Ti1QIhSBNqyhylarnNcPdBnRbqElrR3HDC8bQEU4FRhszxZlBTZTraqPKgBETOH_oZyo4xZpe"
+              alt="Toyota Innova Reborn silver tampak depan"
+              class="vehicle-card__image"
+              loading="lazy"
+            />
+            <span class="vehicle-card__badge">MPV • 6 Seat</span>
+          </div>
+          <h3 class="vehicle-card__title">Innova Reborn</h3>
+          <p class="vehicle-card__description">
+            Kabin lapang, suspensi empuk, favorit wisatawan luar daerah.
+          </p>
+          <div class="price-list">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci</span>
+              <span class="price-row__value price-row__value--primary"
+                >Rp 500.000 / 24 jam</span
+              >
+            </div>
+            <div class="price-row">
+              <span class="price-row__label">Driver + BBM</span>
+              <span class="price-row__value price-row__value--accent"
+                >Rp 900.000 / 12 jam</span
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Innova%20Reborn"
+          class="btn btn--whatsapp btn--full"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            class="btn__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          <span>Pesan Sekarang</span>
+        </a>
+      </article>
+
+      <!-- Vehicle 3: Innova Zenix Q -->
+      <article class="vehicle-card">
+        <div>
+          <div class="vehicle-card__image-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWvjoqDn5RbWNSnwymAIoIODYgDO-YvA4yYqENJERe9NbPtH_mKkZkF7ghH7dN7czlKGGjwj2VLkPcmtstWf9q_dLpuPbSTuMRZXeVL8vzGMsOKQ_iTYUD-EJskE9aDYfxTaX8-Jn9BGjGEmaGyKtjjBrRllWkwSrHc_9wLIjOjQZ1cSLbEhILbMXPtyvLVmMIb0kYGQcMYMfREa2HUVVZhWod25MQ1D_dw7RwvDfYt1slTajoChVY"
+              alt="Toyota Innova Zenix Q putih tampak depan"
+              class="vehicle-card__image"
+              loading="lazy"
+            />
+            <span class="vehicle-card__badge">MPV • 6 Seat</span>
+          </div>
+          <h3 class="vehicle-card__title">Innova Zenix Q</h3>
+          <p class="vehicle-card__description">
+            Kenyamanan kelas atas dengan captain seat dan fitur mutakhir.
+          </p>
+          <div class="price-list">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci</span>
+              <span class="price-row__value price-row__value--primary"
+                >Rp 1.200.000 / 12 jam</span
+              >
+            </div>
+            <div class="price-row">
+              <span class="price-row__label">Driver + BBM</span>
+              <span class="price-row__value price-row__value--accent"
+                >Rp 1.400.000 / 12 jam</span
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Innova%20Zenix%20Q"
+          class="btn btn--whatsapp btn--full"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            class="btn__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          <span>Pesan Sekarang</span>
+        </a>
+      </article>
+
+      <!-- Vehicle 4: Pajero Sport -->
+      <article class="vehicle-card">
+        <div>
+          <div class="vehicle-card__image-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmbWLx2gOHDRT73L0DIpah5kil0rCdhAbHPZIKfuZmqyEC6cs5bJ0idsVvUklB5bze26aQwLVpwyh4imeLtnUG5Gpp-CQIslg7AZ99yKntyH8Ft0NbhXV39ilacY0CnIF7b-8Q_XSWHASe8IA8QbSyi40wLvW9H_Ay-beDX4xNeN4RCvq-bU_QTC9KzBpJ8ClBJukCUXCp7lNGjOWFrfWbthLHxXyjSeG5hf2MLgourP2okwZMFyQP"
+              alt="Mitsubishi Pajero Sport hitam tampak depan"
+              class="vehicle-card__image"
+              loading="lazy"
+            />
+            <span class="vehicle-card__badge">SUV • 6 Seat</span>
+          </div>
+          <h3 class="vehicle-card__title">Pajero Sport</h3>
+          <p class="vehicle-card__description">
+            Tangguh di segala medan Lombok dengan tampilan prestisius.
+          </p>
+          <div class="price-list">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci</span>
+              <span class="price-row__value price-row__value--primary"
+                >Rp 1.200.000 / 12 jam</span
+              >
+            </div>
+            <div class="price-row">
+              <span class="price-row__label">Driver + BBM</span>
+              <span class="price-row__value price-row__value--accent"
+                >Rp 1.400.000 / 12 jam</span
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Pajero%20Sport"
+          class="btn btn--whatsapp btn--full"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            class="btn__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          <span>Pesan Sekarang</span>
+        </a>
+      </article>
+
+      <!-- Vehicle 5: Toyota Fortuner -->
+      <article class="vehicle-card">
+        <div>
+          <div class="vehicle-card__image-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUNsWN0LGIpg67FUM4YQcKR9vGdUxHEzpzh-aBzGhghf2V3cc4axroDrUx8HbdIHSzv4OkkJijFaIBgD5UQevZojRgja3BnX29vTUowzDMZ4bycw7O9aLeZpGlWZ_43FVUCG-Ki8rSD9bOEPT9Zkw618Ell-xoCgK6KjfRj4oc2sQcXvIqwFFdgqj02YmwMLSvT4HoNSOmEKaz7aWshx8cdkuqa_v6OUPpdga3brRBk0NbBnZLbu0P"
+              alt="Toyota Fortuner putih tampak depan"
+              class="vehicle-card__image"
+              loading="lazy"
+            />
+            <span class="vehicle-card__badge">SUV • 6 Seat</span>
+          </div>
+          <h3 class="vehicle-card__title">Toyota Fortuner</h3>
+          <p class="vehicle-card__description">
+            Perjalanan VIP nyaman, bertenaga tinggi untuk rute bukit dan pantai.
+          </p>
+          <div class="price-list">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci</span>
+              <span class="price-row__value price-row__value--primary"
+                >Rp 1.200.000 / 12 jam</span
+              >
+            </div>
+            <div class="price-row">
+              <span class="price-row__label">Driver + BBM</span>
+              <span class="price-row__value price-row__value--accent"
+                >Rp 1.400.000 / 12 jam</span
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Toyota%20Fortuner"
+          class="btn btn--whatsapp btn--full"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            class="btn__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          <span>Pesan Sekarang</span>
+        </a>
+      </article>
+
+      <!-- Extra Fleet Promo Card -->
+      <article class="promo-card">
+        <div>
+          <div class="promo-card__icon">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >airport_shuttle</span
+            >
+          </div>
+          <h3 class="promo-card__title">Rombongan Besar?</h3>
+          <p class="promo-card__description">
+            Tersedia juga Toyota Hiace Commuter, Hiace Premio 14 seat, dan Isuzu
+            Elf Long untuk rombongan wisata atau instansi.
+          </p>
+        </div>
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20saya%20butuh%20Hiace%20atau%20kendaraan%20rombongan"
+          class="promo-card__link"
+        >
+          <span>Lihat Semua Armada</span>
+          <span class="material-symbols-outlined" aria-hidden="true"
+            >arrow_forward</span
+          >
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
