@@ -1,0 +1,377 @@
+<!-- SECTION 6: FAQ CSS-->
+<style>
+  .faq {
+    width: 100%;
+    background-color: var(--color-surface);
+    padding-block: var(--space-xl);
+  }
+
+  /* Container BOUNDED — sama pola dengan Hero (.hero__container) & Section 2 */
+  .faq__container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: var(--container-margin);
+  }
+
+  /* Header */
+  .faq__header {
+    max-width: 42rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-lg-mobile, 24px);
+    line-height: var(--lh-headline-lg-mobile, 32px);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  @media (min-width: 768px) {
+    .faq__title {
+      font-size: 36px; /* headline-lg */
+      line-height: 44px;
+    }
+  }
+
+  .faq__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-body-lg);
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+
+  /* Accordion Wrapper — dibatasi lebih sempit dari container, sesuai referensi asli (max-w-3xl) */
+  .faq__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 48rem;
+  }
+
+  /* FAQ Item — Base Radius (0.5rem) */
+  .faq-item {
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .faq-item__toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-sm);
+    line-height: var(--lh-headline-sm);
+    font-weight: var(--fw-headline-sm);
+    color: var(--color-primary);
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-item__toggle:hover {
+    background-color: var(--color-surface-container-low);
+  }
+
+  .faq-item__icon {
+    flex-shrink: 0;
+    font-size: 24px;
+    color: var(--color-on-surface-variant);
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item__toggle[aria-expanded="true"] .faq-item__icon {
+    transform: rotate(180deg);
+  }
+
+  /* Content — collapsed by default via max-height */
+  .faq-item__content {
+    max-height: 0;
+    overflow: hidden;
+    padding-inline: var(--space-md);
+    border-top: 0px solid var(--color-surface-container-high);
+    transition:
+      max-height 0.25s ease,
+      padding-block 0.25s ease;
+  }
+
+  .faq-item__content.is-open {
+    max-height: 20rem; /* cukup besar untuk menampung teks jawaban terpanjang */
+    padding-block: var(--space-sm) var(--space-md);
+    border-top-width: 1px;
+  }
+
+  .faq-item__content p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--fs-body-md, 16px);
+    line-height: var(--lh-body-md, 24px);
+    color: var(--color-on-surface-variant);
+  }
+</style>
+<!-- SECTION 6: FAQ -->
+<section class="faq">
+  <div class="faq__container">
+    <!-- Header -->
+    <div class="faq__header">
+      <h2 class="faq__title">Pertanyaan Seputar Antar Jemput Bandara Lombok</h2>
+      <p class="faq__description">
+        Jawaban lengkap untuk pertanyaan umum seputar penjemputan di Bandara
+        Internasional Lombok
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="faq__accordion" id="faq-accordion">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button
+          class="faq-item__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-content-1"
+          id="faq-toggle-1"
+        >
+          <span>Di mana titik penjemputan di Bandara Lombok (ZAM)?</span>
+          <span
+            class="material-symbols-outlined faq-item__icon"
+            aria-hidden="true"
+            >expand_more</span
+          >
+        </button>
+        <div
+          class="faq-item__content"
+          id="faq-content-1"
+          role="region"
+          aria-labelledby="faq-toggle-1"
+        >
+          <p>
+            Driver akan menunggu di area Kedatangan / Arrival Hall Bandara
+            Internasional Zainuddin Abdul Madjid membawa papan nama Anda agar
+            mudah dikenali begitu Anda keluar dari pintu bagasi.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button
+          class="faq-item__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-content-2"
+          id="faq-toggle-2"
+        >
+          <span>Bagaimana jika penerbangan saya delay?</span>
+          <span
+            class="material-symbols-outlined faq-item__icon"
+            aria-hidden="true"
+            >expand_more</span
+          >
+        </button>
+        <div
+          class="faq-item__content"
+          id="faq-content-2"
+          role="region"
+          aria-labelledby="faq-toggle-2"
+        >
+          <p>
+            Driver kami memantau nomor penerbangan Anda secara berkala, jadi
+            waktu jemput akan disesuaikan otomatis tanpa biaya pembatalan
+            mendadak.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button
+          class="faq-item__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-content-3"
+          id="faq-toggle-3"
+        >
+          <span>Apakah ada biaya tambahan untuk antar jemput bandara?</span>
+          <span
+            class="material-symbols-outlined faq-item__icon"
+            aria-hidden="true"
+            >expand_more</span
+          >
+        </button>
+        <div
+          class="faq-item__content"
+          id="faq-content-3"
+          role="region"
+          aria-labelledby="faq-toggle-3"
+        >
+          <p>
+            Harga yang disepakati di awal sudah all in sesuai paket tanpa biaya
+            tersembunyi, sudah termasuk bensin, driver, dan parkir bandara.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button
+          class="faq-item__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-content-4"
+          id="faq-toggle-4"
+        >
+          <span>Berapa jauh jarak bandara ke Mataram dan Senggigi?</span>
+          <span
+            class="material-symbols-outlined faq-item__icon"
+            aria-hidden="true"
+            >expand_more</span
+          >
+        </button>
+        <div
+          class="faq-item__content"
+          id="faq-content-4"
+          role="region"
+          aria-labelledby="faq-toggle-4"
+        >
+          <p>
+            Jarak ke Mataram sekitar 28 km dan Senggigi sekitar 45 km dengan
+            waktu tempuh normal 45 hingga 60 menit melalui jalan bypass yang
+            mulus.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button
+          class="faq-item__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-content-5"
+          id="faq-toggle-5"
+        >
+          <span
+            >Apakah tersedia untuk penerbangan dini hari atau tengah
+            malam?</span
+          >
+          <span
+            class="material-symbols-outlined faq-item__icon"
+            aria-hidden="true"
+            >expand_more</span
+          >
+        </button>
+        <div
+          class="faq-item__content"
+          id="faq-content-5"
+          role="region"
+          aria-labelledby="faq-toggle-5"
+        >
+          <p>
+            Ya, layanan antar jemput kami beroperasi 24 jam penuh setiap hari
+            tanpa jeda istirahat untuk memastikan perjalanan Anda lancar.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <button
+          class="faq-item__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-content-6"
+          id="faq-toggle-6"
+        >
+          <span>Informasi apa saja yang perlu saya siapkan saat booking?</span>
+          <span
+            class="material-symbols-outlined faq-item__icon"
+            aria-hidden="true"
+            >expand_more</span
+          >
+        </button>
+        <div
+          class="faq-item__content"
+          id="faq-content-6"
+          role="region"
+          aria-labelledby="faq-toggle-6"
+        >
+          <p>
+            Cukup siapkan kode penerbangan, jam kedatangan, nama lengkap, dan
+            alamat pengantaran tujuan Anda di Pulau Lombok.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="faq-item">
+        <button
+          class="faq-item__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-content-7"
+          id="faq-toggle-7"
+        >
+          <span>Apakah bisa langsung sewa mobil lepas kunci dari bandara?</span>
+          <span
+            class="material-symbols-outlined faq-item__icon"
+            aria-hidden="true"
+            >expand_more</span
+          >
+        </button>
+        <div
+          class="faq-item__content"
+          id="faq-content-7"
+          role="region"
+          aria-labelledby="faq-toggle-7"
+        >
+          <p>
+            Bisa, armada dapat diserahterimakan langsung di area parkir bandara
+            dengan kelengkapan identitas resmi seperti KTP, SIM A, serta bukti
+            tiket kepulangan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: FAQ JS-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var toggles = document.querySelectorAll(".faq-item__toggle");
+
+    toggles.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var content = document.getElementById(
+          button.getAttribute("aria-controls"),
+        );
+        var isOpen = button.getAttribute("aria-expanded") === "true";
+
+        // Tutup semua item terlebih dahulu
+        toggles.forEach(function (btn) {
+          btn.setAttribute("aria-expanded", "false");
+          var c = document.getElementById(btn.getAttribute("aria-controls"));
+          c.classList.remove("is-open");
+        });
+
+        // Buka item yang diklik jika sebelumnya tertutup
+        if (!isOpen) {
+          button.setAttribute("aria-expanded", "true");
+          content.classList.add("is-open");
+        }
+      });
+    });
+  });
+</script>
