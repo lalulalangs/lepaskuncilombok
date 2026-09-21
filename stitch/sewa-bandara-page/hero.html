@@ -1,0 +1,440 @@
+<!-- SECTION 1: HERO CSS-->
+<style>
+  /* import icon */
+  @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--color-surface-container-lowest);
+    border-bottom: 1px solid var(--color-surface-container-high);
+    padding-block: var(--space-xl);
+  }
+
+  .hero__container {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    padding-inline: var(--container-margin);
+    box-sizing: border-box;
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 1200px) {
+    .hero__grid {
+      grid-template-columns: repeat(12, 1fr);
+      /* Desktop: 12 column fluid layout */
+    }
+
+    .hero__content {
+      grid-column: span 7;
+    }
+
+    .hero__visual {
+      grid-column: span 5;
+    }
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Badge — mengikuti spesifikasi Chips & Badges (radius 6px, padding 4px 10px) */
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background-color: var(--color-surface-container-low);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-secondary-container);
+  }
+
+  .hero__badge-text {
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-sm);
+    line-height: var(--lh-label-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Judul */
+  .hero__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-display-lg-mobile);
+    line-height: var(--lh-display-lg-mobile);
+    font-weight: var(--fw-display-lg);
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero__title {
+      font-size: var(--fs-display-lg);
+      line-height: var(--lh-display-lg);
+    }
+  }
+
+  /* Sub Judul */
+  .hero__subtitle {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-sm);
+    line-height: var(--lh-headline-sm);
+    font-weight: var(--fw-headline-sm);
+    color: var(--color-secondary);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  /* Deskripsi */
+  .hero__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-body-lg);
+    font-weight: var(--fw-body-lg);
+    color: var(--color-on-surface-variant);
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 var(--space-lg) 0;
+  }
+
+  /* CTA Group */
+  .hero__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    width: 100%;
+  }
+
+  /* Buttons — DESIGN.md > Components > Buttons (padding 12px 24px, radius 8px) */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-lg);
+    line-height: var(--lh-label-lg);
+    font-weight: var(--fw-label-lg);
+    padding: 12px var(--space-lg);
+    border-radius: var(--radius);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn--whatsapp {
+    background-color: var(--color-whatsapp);
+    color: var(--color-on-primary);
+  }
+
+  .btn--whatsapp:hover {
+    background-color: var(--color-whatsapp-hover);
+  }
+
+  .btn__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: currentColor;
+    display: block;
+  }
+
+  .btn--outline {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .btn--outline:hover {
+    background-color: var(--color-surface-container-low);
+  }
+
+  /* Trust Bar */
+  .hero__trust-bar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: var(--space-sm);
+    column-gap: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-surface-container-high);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-md);
+    line-height: var(--lh-label-md);
+    color: var(--color-on-surface-variant);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--color-primary);
+  }
+  q .trust-item .material-symbols-outlined {
+    font-size: 18px;
+    color: var(--color-secondary-container);
+  }
+
+  .hero__trust-separator {
+    color: var(--color-outline-variant);
+  }
+
+  /* Visual Card — Large Structural Radius (1.5rem): hero banner containment */
+  .hero__visual {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .arrival-card {
+    background-color: var(--color-surface-container-low);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Container Radius (1rem) untuk elemen di dalam kartu */
+  .arrival-card__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 16rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--color-outline-variant);
+    background-color: var(--color-surface-container);
+  }
+
+  .arrival-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .arrival-card__image-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-sm);
+    font-weight: var(--fw-label-sm);
+    padding: 4px 10px;
+    border-radius: var(--radius);
+  }
+
+  /* Terminal Pickup Indicator */
+  .pickup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .pickup-item {
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-sm);
+  }
+
+  .pickup-item__label {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.25rem;
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-sm);
+    font-weight: var(--fw-label-sm);
+    text-transform: uppercase;
+  }
+
+  .pickup-item__label .material-symbols-outlined {
+    font-size: 18px;
+  }
+
+  .pickup-item__value {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-sm);
+    line-height: var(--lh-headline-sm);
+    font-weight: var(--fw-headline-sm);
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .pickup-item__caption {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+</style>
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__grid">
+      <!-- Kolom Konten -->
+      <div class="hero__content">
+        <!-- Badge Layanan -->
+        <div class="hero__badge">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          <span class="hero__badge-text"
+            >Layanan Resmi Kedatangan Bandara ZAM</span
+          >
+        </div>
+
+        <!-- Judul Utama -->
+        <h1 class="hero__title">Sewa Mobil Bandara Lombok</h1>
+
+        <!-- Sub Judul -->
+        <p class="hero__subtitle">
+          Antar Jemput 24 Jam • Driver Profesional • Harga Transparan
+        </p>
+
+        <!-- Deskripsi -->
+        <p class="hero__description">
+          Armada lengkap siap jemput di Bandara ZAM sesuai jadwal penerbangan
+          Anda hingga delay tiba. Langsung antar ke hotel, villa, atau destinasi
+          wisata favorit.
+        </p>
+
+        <!-- Grup CTA -->
+        <div class="hero__cta-group">
+          <a
+            href="https://wa.me/6281234567890"
+            class="btn btn--whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="btn__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+
+            <span>Pesan Antar Jemput Sekarang</span>
+          </a>
+
+          <a href="#armada" class="btn btn--outline">
+            <span>Lihat Armada dan Harga</span>
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >arrow_downward</span
+            >
+          </a>
+        </div>
+
+        <!-- Trust Bar -->
+        <div class="hero__trust-bar">
+          <div class="trust-item">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >check_circle</span
+            >
+            <span>24 Jam Siap</span>k
+          </div>
+          <span class="hero__trust-separator" aria-hidden="true">•</span>
+          <div class="trust-item">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >flight</span
+            >
+            <span>Monitor Penerbangan Realtime</span>
+          </div>
+          <span class="hero__trust-separator" aria-hidden="true">•</span>
+          <div class="trust-item">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >verified</span
+            >
+            <span>Tanpa Biaya Tersembunyi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Visual -->
+      <div class="hero__visual">
+        <div class="arrival-card">
+          <div class="arrival-card__image-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtINHtNFr-JJVT0_ixOkQKdgnUT7_m2IP2-FM9690QA0rVhakp_jsVxJ6WhWH5wJGjA2FixXHebnIP_HbdLNYdezDNma9q2qkyIKWA7Xl5CAl_OpPK36yYqrwJe4ShbRxqKJ_IQ1sLgTfkks0QUzRig5SE2gr0Pl9pjjtMRML9OHph4CWuNy_il-ttpqKiXN471kpSWL74QqSXVx0GI0yv-hE2KZgyX-vDaYr1ufcvwrrGQf_xr6dk"
+              alt="Driver menjemput penumpang di Bandara Lombok ZAM"
+              class="arrival-card__image"
+              loading="lazy"
+            />
+            <span class="arrival-card__image-badge"
+              >Pintu Keluar Kedatangan Domestik</span
+            >
+          </div>
+
+          <!-- Terminal Pickup Indicator -->
+          <div class="pickup-grid">
+            <div class="pickup-item">
+              <div class="pickup-item__label">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >flight_land</span
+                >
+                <span>Penerbangan</span>
+              </div>
+              <p class="pickup-item__value">Tracking Aktif</p>
+              <p class="pickup-item__caption">Sesuai jam mendarat</p>
+            </div>
+            <div class="pickup-item">
+              <div class="pickup-item__label">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >badge</span
+                >
+                <span>Driver Standby</span>
+              </div>
+              <p class="pickup-item__value">Meet &amp; Greet</p>
+              <p class="pickup-item__caption">Papan nama di Gate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
