@@ -1,0 +1,184 @@
+<!-- SECTION 2: WHY US CSS-->
+<style>
+  .why-us {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--color-surface);
+    padding-block: var(--space-xl);
+  }
+
+  .why-us__container {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    padding-inline: var(--container-margin);
+    box-sizing: border-box;
+  }
+
+  /* Header */
+  .why-us__header {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: var(--space-xl);
+  }
+
+  .why-us__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-lg-mobile, 24px);
+    line-height: var(--lh-headline-lg-mobile, 32px);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  @media (min-width: 768px) {
+    .why-us__title {
+      font-size: 36px; /* headline-lg */
+      line-height: 44px;
+    }
+  }
+
+  .why-us__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-body-lg);
+    font-weight: var(--fw-body-lg);
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+
+  /* Grid — Layout & Spacing > Grid Framework */
+  .why-us__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .why-us__grid {
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); /* Tablet: 8 col fluid, disederhanakan jadi 2 kolom kartu */
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .why-us__grid {
+      grid-template-columns: repeat(
+        4,
+        1fr
+      ); /* Desktop: 12 col fluid, 4 kartu sejajar */
+    }
+  }
+
+  /* Feature Card — Container Radius (1rem) */
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Icon Box — Base Radius (0.5rem), "standard interactive tiles" */
+  .feature-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius);
+    background-color: var(--color-surface-container-low);
+    border: 1px solid var(--color-outline-variant);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+  }
+
+  .feature-card__icon .material-symbols-outlined {
+    font-size: 28px;
+  }
+
+  .feature-card__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-sm);
+    line-height: var(--lh-headline-sm);
+    font-weight: var(--fw-headline-sm);
+    color: var(--color-primary);
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  .feature-card__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-md, 16px);
+    line-height: var(--lh-body-md, 24px);
+    font-weight: 400;
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+</style>
+
+<!-- SECTION 2: WHY CHOOSE US / TRUST -->
+<section class="why-us">
+  <div class="why-us__container">
+
+    <!-- Header -->
+    <div class="why-us__header">
+      <h2 class="why-us__title">Kenapa Pilih Antar Jemput Bandara Bersama Kami?</h2>
+      <p class="why-us__description">Layanan transportasi terpercaya di Bandara Internasional Zainuddin Abdul Madjid Lombok</p>
+    </div>
+
+    <!-- Grid Fitur -->
+    <div class="why-us__grid">
+
+      <!-- Card 1 -->
+      <article class="feature-card">
+        <div class="feature-card__icon">
+          <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+        </div>
+        <h3 class="feature-card__title">Siap 24 Jam</h3>
+        <p class="feature-card__description">Siap sedia untuk penerbangan dini hari maupun larut malam tanpa kendala waktu.</p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="feature-card">
+        <div class="feature-card__icon">
+          <span class="material-symbols-outlined" aria-hidden="true">radar</span>
+        </div>
+        <h3 class="feature-card__title">Monitor Penerbangan</h3>
+        <p class="feature-card__description">Driver memantau status kedatangan pesawat secara realtime untuk kepastian jemput.</p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="feature-card">
+        <div class="feature-card__icon">
+          <span class="material-symbols-outlined" aria-hidden="true">alt_route</span>
+        </div>
+        <h3 class="feature-card__title">Antar Langsung ke Tujuan</h3>
+        <p class="feature-card__description">Pengantaran langsung ke hotel, villa, atau destinasi wisata tanpa oper kendaraan lain.</p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="feature-card">
+        <div class="feature-card__icon">
+          <span class="material-symbols-outlined" aria-hidden="true">receipt_long</span>
+        </div>
+        <h3 class="feature-card__title">Harga Transparan</h3>
+        <p class="feature-card__description">Tarif pasti tanpa biaya tersembunyi, sudah mencakup bahan bakar serta jasa sopir.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
