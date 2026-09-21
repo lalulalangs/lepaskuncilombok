@@ -1,0 +1,215 @@
+<!-- SECTION 3: DISTANCE & TRAVEL TIME TABLE CSS  -->
+<style>
+  .distance {
+    width: 100%;
+    background-color: var(--color-surface-container-lowest);
+    border-block: 1px solid var(--color-surface-container-high);
+    padding-block: var(--space-xl);
+  }
+
+  /* Container full width: hanya padding kiri/kanan, tanpa max-width cap */
+  .distance__container {
+    width: 100%;
+    padding-inline: var(--container-margin);
+  }
+
+  /* Header */
+  .distance__header {
+    max-width: 48rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .distance__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-lg-mobile, 24px);
+    line-height: var(--lh-headline-lg-mobile, 32px);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  @media (min-width: 768px) {
+    .distance__title {
+      font-size: 36px; /* headline-lg */
+      line-height: 44px;
+    }
+  }
+
+  .distance__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-body-lg);
+    font-weight: var(--fw-body-lg);
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+
+  /* Table Wrapper — Container Radius (1rem), scrollable di layar sempit */
+  .distance__table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-outline-variant);
+    background-color: var(--color-surface-container-lowest);
+  }
+
+  .distance-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .distance-table thead tr {
+    background-color: var(--color-surface-container-low);
+    border-bottom: 1px solid var(--color-outline-variant);
+  }
+
+  .distance-table th {
+    padding: 1rem 1.5rem;
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-md);
+    line-height: var(--lh-label-md);
+    font-weight: var(--fw-label-md);
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+
+  .distance-table tbody tr {
+    border-bottom: 1px solid var(--color-outline-variant);
+    transition: background-color 0.2s ease;
+  }
+
+  .distance-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .distance-table tbody tr:hover {
+    background-color: var(--color-surface-container-low);
+  }
+
+  .distance-table td {
+    padding: 1rem 1.5rem;
+    font-family: var(--font-body);
+    font-size: var(--fs-body-md, 16px);
+    line-height: var(--lh-body-md, 24px);
+    color: var(--color-on-surface);
+    white-space: nowrap;
+  }
+
+  .distance-table__name {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .distance-table__muted {
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Route Status Badge — Chips & Badges pattern */
+  .route-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm, 6px);
+    background-color: var(--color-surface-container);
+    color: var(--color-primary);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-sm);
+    line-height: var(--lh-label-sm);
+    font-weight: var(--fw-label-sm);
+  }
+
+  /* Footnote */
+  .distance__footnote {
+    margin-top: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    color: var(--color-on-surface-variant);
+  }
+</style>
+
+<!-- SECTION 3: DISTANCE & TRAVEL TIME TABLE -->
+<section class="distance">
+  <div class="distance__container">
+    <!-- Header -->
+    <div class="distance__header">
+      <h2 class="distance__title">
+        Estimasi Jarak dan Waktu dari Bandara ZAM Lombok
+      </h2>
+      <p class="distance__description">
+        Bandara Internasional Lombok berlokasi di Praya, Lombok Tengah. Berikut
+        estimasi perjalanan ke destinasi populer.
+      </p>
+    </div>
+
+    <!-- Tabel -->
+    <div class="distance__table-wrap">
+      <table class="distance-table">
+        <thead>
+          <tr>
+            <th>Destinasi</th>
+            <th>Jarak</th>
+            <th>Estimasi Waktu</th>
+            <th>Kondisi Jalan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="distance-table__name">Kota Mataram</td>
+            <td class="distance-table__muted">sekitar 28 km</td>
+            <td>45 menit</td>
+            <td><span class="route-status">Lancar</span></td>
+          </tr>
+          <tr>
+            <td class="distance-table__name">Senggigi</td>
+            <td class="distance-table__muted">sekitar 45 km</td>
+            <td>1 jam</td>
+            <td><span class="route-status">Lancar</span></td>
+          </tr>
+          <tr>
+            <td class="distance-table__name">Mandalika / Kuta</td>
+            <td class="distance-table__muted">sekitar 10 km</td>
+            <td>20 menit</td>
+            <td><span class="route-status">Lancar</span></td>
+          </tr>
+          <tr>
+            <td class="distance-table__name">Pelabuhan Lembar</td>
+            <td class="distance-table__muted">sekitar 35 km</td>
+            <td>50 menit</td>
+            <td><span class="route-status">Lancar</span></td>
+          </tr>
+          <tr>
+            <td class="distance-table__name">Sembalun / Rinjani</td>
+            <td class="distance-table__muted">sekitar 95 km</td>
+            <td>2.5 jam</td>
+            <td><span class="route-status">Berkelok aman</span></td>
+          </tr>
+          <tr>
+            <td class="distance-table__name">Pelabuhan Bangsal (Gili)</td>
+            <td class="distance-table__muted">sekitar 55 km</td>
+            <td>1.5 jam</td>
+            <td><span class="route-status">Lancar</span></td>
+          </tr>
+          <tr>
+            <td class="distance-table__name">Pantai Tanjung Aan</td>
+            <td class="distance-table__muted">sekitar 15 km</td>
+            <td>25 menit</td>
+            <td><span class="route-status">Lancar</span></td>
+          </tr>
+          <tr>
+            <td class="distance-table__name">Selong Lombok Timur</td>
+            <td class="distance-table__muted">sekitar 65 km</td>
+            <td>1.5 jam</td>
+            <td><span class="route-status">Lancar</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="distance__footnote">
+      * Estimasi waktu normal tanpa hambatan macet. Waktu bisa bervariasi
+      tergantung kondisi lalu lintas dan cuaca.
+    </p>
+  </div>
+</section>
