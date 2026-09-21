@@ -1,0 +1,123 @@
+<!-- SECTION 7: FINAL CTA CSS -->
+<style>
+  .final-cta {
+    width: 100%;
+    background-color: var(--color-surface-container-lowest);
+    border-top: 1px solid var(--color-surface-container-high);
+    padding-block: var(--space-xl);
+  }
+
+  .final-cta__container {
+    width: 100%;
+    padding-inline: var(--container-margin);
+  }
+
+  /* Kartu CTA — Container Radius (1rem) */
+  .final-cta__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-primary-container);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  /* Badge — pola Service Status Badge */
+  .final-cta__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-secondary-container);
+    color: var(--color-on-primary);
+    padding: 4px 12px;
+    border-radius: var(--radius-sm, 6px);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-sm);
+    line-height: var(--lh-label-sm);
+    font-weight: var(--fw-label-sm);
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+
+  .final-cta__badge .material-symbols-outlined {
+    font-size: 16px;
+  }
+
+  .final-cta__title {
+    font-family: var(--font-headline);
+    font-size: var(--fs-headline-lg-mobile, 24px);
+    line-height: var(--lh-headline-lg-mobile, 32px);
+    font-weight: 700;
+    color: var(--color-on-primary);
+    letter-spacing: -0.01em;
+    max-width: 42rem;
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  @media (min-width: 768px) {
+    .final-cta__title {
+      font-size: 36px; /* headline-lg */
+      line-height: 44px;
+    }
+  }
+
+  .final-cta__description {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-body-lg);
+    color: var(--color-on-primary-container);
+    max-width: 36rem;
+    margin: 0 0 var(--space-lg) 0;
+  }
+
+  .final-cta__button {
+    margin-bottom: var(--space-md);
+  }
+
+  /* Meta info bawah */
+  .final-cta__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-on-primary-container);
+    font-family: var(--font-headline);
+    font-size: var(--fs-label-sm);
+    line-height: var(--lh-label-sm);
+    font-weight: var(--fw-label-sm);
+  }
+</style>
+<!-- SECTION 7: FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta__container">
+    <div class="final-cta__card">
+      <div class="final-cta__badge">
+        <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+        <span>Fast Response WhatsApp</span>
+      </div>
+
+      <h2 class="final-cta__title">Siap Pesan Antar Jemput Bandara Lombok?</h2>
+      <p class="final-cta__description">
+        Hubungi kami sekarang dan dapatkan konfirmasi cepat dalam hitungan
+        menit.
+      </p>
+
+      <a
+        href="https://wa.me/6281234567890"
+        class="btn btn--whatsapp btn--lg final-cta__button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+        <span>Chat WhatsApp Sekarang</span>
+      </a>
+
+      <div class="final-cta__meta">
+        <span>Respon cepat</span>
+        <span>•</span>
+        <span>Armada siap 24 jam</span>
+      </div>
+    </div>
+  </div>
+</section>
