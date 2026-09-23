@@ -1,0 +1,362 @@
+<!-- SECTION 2: TENTANG KAMI CSS -->
+<style>
+  .story {
+    width: 100%;
+    background-color: var(--color-surface-container-low);
+    border-bottom: 1px solid var(--color-outline-variant);
+    padding: var(--space-xl) 0;
+  }
+
+  .story__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 var(--margin);
+  }
+
+  /* --- Heading --- */
+  .story__heading {
+    max-width: 48rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .story__eyebrow {
+    font-family: var(--font-label-sm-family);
+    font-size: var(--font-label-sm-size);
+    line-height: var(--font-label-sm-line-height);
+    font-weight: 600;
+    color: var(--color-secondary-container);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .story__title {
+    font-family: var(--font-headline-lg-family);
+    font-size: var(--font-headline-lg-size);
+    line-height: var(--font-headline-lg-line-height);
+    font-weight: var(--font-headline-lg-weight);
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  .story__subtitle {
+    font-family: var(--font-body-lg-family);
+    font-size: var(--font-body-lg-size);
+    line-height: var(--font-body-lg-line-height);
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+
+  /* --- Grid --- */
+  .story__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: var(--gutter);
+  }
+
+  @media (min-width: 1024px) {
+    .story__grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .story__text-col {
+      grid-column: span 7;
+    }
+    .story__visual-col {
+      grid-column: span 5;
+    }
+  }
+
+  /* --- Text Column --- */
+  .story__text-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .story__card {
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .story__paragraph {
+    font-family: var(--font-body-md-family);
+    font-size: var(--font-body-md-size);
+    line-height: var(--font-body-md-line-height);
+    color: var(--color-on-surface);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .story__paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  .story__paragraph--muted {
+    color: var(--color-on-surface-variant);
+  }
+
+  .story__strong {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  /* --- Stat Boxes --- */
+  .story__stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 640px) {
+    .story__stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .story__stat-box {
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .story__stat-number {
+    font-family: var(--font-headline-lg-family);
+    font-size: var(--font-headline-lg-size);
+    line-height: 1;
+    font-weight: var(--font-headline-lg-weight);
+    color: var(--color-primary);
+  }
+
+  .story__stat-number--accent {
+    color: var(--color-secondary-container);
+  }
+
+  .story__stat-label {
+    font-family: var(--font-label-md-family);
+    font-size: var(--font-label-md-size);
+    line-height: var(--font-label-md-line-height);
+    font-weight: var(--font-label-md-weight);
+    color: var(--color-primary);
+    margin-top: 0.25rem;
+  }
+
+  .story__stat-desc {
+    font-family: var(--font-body-sm-family);
+    font-size: var(--font-body-sm-size);
+    line-height: var(--font-body-sm-line-height);
+    color: var(--color-on-surface-variant);
+    margin-top: 0.125rem;
+  }
+
+  /* --- Visual Column --- */
+  .story__visual-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .story__visual-card {
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+  }
+
+  .story__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-surface-container);
+    margin-bottom: var(--space-md);
+  }
+
+  .story__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .story__visual-info {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .story__visual-icon {
+    color: var(--color-secondary-container);
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .story__visual-title {
+    font-family: var(--font-label-lg-family);
+    font-size: var(--font-label-lg-size);
+    line-height: var(--font-label-lg-line-height);
+    font-weight: var(--font-label-lg-weight);
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .story__visual-desc {
+    font-family: var(--font-body-sm-family);
+    font-size: var(--font-body-sm-size);
+    line-height: var(--font-body-sm-line-height);
+    color: var(--color-on-surface-variant);
+    margin: 0.25rem 0 0 0;
+  }
+
+  /* --- Guarantee Box --- */
+  .story__guarantee {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .story__guarantee-eyebrow {
+    font-family: var(--font-label-sm-family);
+    font-size: var(--font-label-sm-size);
+    line-height: var(--font-label-sm-line-height);
+    color: var(--color-primary-fixed);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .story__guarantee-text {
+    font-family: var(--font-label-md-family);
+    font-size: var(--font-label-md-size);
+    line-height: var(--font-label-md-line-height);
+    font-weight: var(--font-label-md-weight);
+    color: var(--color-on-primary);
+    margin-top: 0.125rem;
+  }
+
+  .story__guarantee-icon {
+    color: var(--color-secondary-container);
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+</style>
+<!-- SECTION 2: TENTANG KAMI -->
+<section class="story" id="cerita-kami">
+  <div class="story__container">
+    <!-- Section Heading -->
+    <div class="story__heading">
+      <div class="story__eyebrow">01 / Rekam Jejak</div>
+      <h2 class="story__title">Tentang Kami</h2>
+      <p class="story__subtitle">
+        Perjalanan menghadirkan kebebasan berkendara di Pulau Seribu Masjid
+        dengan standar keamanan tertinggi.
+      </p>
+    </div>
+
+    <div class="story__grid">
+      <!-- Story Text Column -->
+      <div class="story__text-col">
+        <div class="story__card">
+          <p class="story__paragraph">
+            Semua berawal dari pengalaman kami sendiri: sulit menemukan mobil
+            sewa yang benar-benar memberi kebebasan saat bepergian ke luar kota.
+            Prosedur yang berbelit-belit, kondisi armada yang tidak sesuai
+            ekspektasi, hingga tarif tersembunyi kerap menjadi keluhan umum para
+            pelancong. Dari situ, semangat untuk membangun sesuatu yang lebih
+            transparan dan nyaman pun tumbuh.
+          </p>
+          <p class="story__paragraph">
+            Kami ingin membuat layanan rental mobil yang menjunjung privasi
+            konsumen &mdash; baik untuk keperluan liburan keluarga, perjalanan
+            bisnis perorangan, hingga kebutuhan operasional instansi &mdash;
+            lewat sistem
+            <strong class="story__strong">self driving atau lepas kunci</strong>
+            yang fleksibel tanpa mengorbankan keamanan.
+          </p>
+          <p class="story__paragraph story__paragraph--muted">
+            Dengan latar belakang inilah, Jasa Rental Mobil Lepas Kunci Lombok
+            dibangun untuk mengedepankan kebebasan Anda dalam berkendara. Kami
+            ingin membantu setiap konsumen menemukan armada yang tepat dengan
+            harga yang tetap bersahabat, transparan, dan dapat diandalkan 24 jam
+            penuh.
+          </p>
+        </div>
+
+        <!-- Highlight Stat Boxes -->
+        <div class="story__stats">
+          <div class="story__stat-box">
+            <span class="story__stat-number story__stat-number--accent"
+              >7+</span
+            >
+            <span class="story__stat-label">Tahun Pengalaman</span>
+            <span class="story__stat-desc">Melayani tamu sejak 2017</span>
+          </div>
+          <div class="story__stat-box">
+            <span class="story__stat-number">10.000+</span>
+            <span class="story__stat-label">Pelanggan Puas</span>
+            <span class="story__stat-desc">Wisatawan &amp; korporasi</span>
+          </div>
+          <div class="story__stat-box">
+            <span class="story__stat-number story__stat-number--accent"
+              >50+</span
+            >
+            <span class="story__stat-label">Unit Armada Prima</span>
+            <span class="story__stat-desc">Siap lepas kunci &amp; sopir</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story Visual Column -->
+      <div class="story__visual-col">
+        <div class="story__visual-card">
+          <div class="story__image-wrap">
+            <img
+              class="story__image"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNiF7dNOIZ5UDWIOOH0EaPl937h68IhKrm_Ze2-TYkHt83iJk0FiDdnSqo2vsjgfJQpsDycCahldjCNn3Iy6XQzSZWNYXZ8mch-SkTPizjWehqIXB6_fdq73cXjtSKYIC-UfcVJAR57b9g1p8oVGmnUCmSSmXK_jV-5PpEIt9WekyidhWYaAgKb1MhM8UTbwiZyvU2bhMzhAQnfvedXmMmkpnZ_p4zObBlKQz3WTDtazMotNEl56AE"
+              alt="Staf CV Lepas Kunci Lombok menyerahkan kunci mobil kepada pelanggan"
+              loading="lazy"
+            />
+          </div>
+          <div class="story__visual-info">
+            <span class="material-symbols-outlined story__visual-icon"
+              >verified</span
+            >
+            <div>
+              <h4 class="story__visual-title">
+                Komitmen Pelayanan Terbaik di Mataram &amp; Seluruh Lombok
+              </h4>
+              <p class="story__visual-desc">
+                Kami mengoperasikan garasi mandiri dan tim mekanik berlisensi
+                guna memastikan setiap mobil yang keluar berada pada kondisi
+                performa maksimal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story__guarantee">
+          <div>
+            <div class="story__guarantee-eyebrow">Garansi Kepuasan</div>
+            <div class="story__guarantee-text">
+              Penggantian unit cepat jika ada kendala mesin
+            </div>
+          </div>
+          <span class="material-symbols-outlined story__guarantee-icon"
+            >published_with_changes</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
