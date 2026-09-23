@@ -1,0 +1,365 @@
+<!-- SECTION 1: HERO CSS -->
+<style>
+/* import icon */
+  @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+  
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--color-surface-container-lowest);
+    border-bottom: 1px solid var(--color-outline-variant);
+    padding: var(--space-xl) 0;
+  }
+
+  .hero__container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--margin);
+    box-sizing: border-box;
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--gutter);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 1024px) {
+    .hero__grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .hero__content {
+      grid-column: span 7;
+    }
+    .hero__visual {
+      grid-column: span 5;
+    }
+  }
+
+  /* --- Content --- */
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background-color: var(--color-surface-container);
+    padding: 0.375rem var(--space-md);
+    border-radius: var(--radius-default);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__badge-icon {
+    color: var(--color-secondary-container);
+    font-size: 18px;
+  }
+
+  .hero__badge-text {
+    font-family: var(--font-label-sm-family);
+    font-size: var(--font-label-sm-size);
+    line-height: var(--font-label-sm-line-height);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hero__title {
+    font-family: var(--font-headline-lg-family);
+    font-size: var(--font-headline-lg-mobile-size);
+    line-height: var(--font-headline-lg-mobile-line-height);
+    font-weight: var(--font-headline-lg-weight);
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  @media (min-width: 1024px) {
+    .hero__title {
+      font-size: var(--font-headline-lg-size);
+      line-height: var(--font-headline-lg-line-height);
+    }
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-headline-sm-family);
+    font-size: var(--font-headline-sm-size);
+    line-height: var(--font-headline-sm-line-height);
+    font-weight: var(--font-headline-sm-weight);
+    color: var(--color-secondary-container);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .hero__description {
+    font-family: var(--font-body-lg-family);
+    font-size: var(--font-body-lg-size);
+    line-height: var(--font-body-lg-line-height);
+    color: var(--color-on-surface-variant);
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 var(--space-lg) 0;
+  }
+
+  /* --- CTA Buttons --- */
+  .hero__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-md);
+    width: 100%;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.75rem var(--space-lg);
+    border-radius: var(--radius-default);
+    font-family: var(--font-label-lg-family);
+    font-size: var(--font-label-lg-size);
+    line-height: var(--font-label-lg-line-height);
+    font-weight: var(--font-label-lg-weight);
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .hero__btn {
+      width: auto;
+    }
+  }
+
+  .hero__btn--primary {
+    background-color: var(--color-secondary-container);
+    color: var(--color-on-secondary);
+  }
+
+  .hero__btn--primary:hover {
+    background-color: var(--color-secondary);
+  }
+
+  .hero__btn--secondary {
+    background-color: var(--color-surface-container);
+    color: var(--color-primary);
+    font-family: var(--font-label-md-family);
+    font-size: var(--font-label-md-size);
+    line-height: var(--font-label-md-line-height);
+    font-weight: var(--font-label-md-weight);
+  }
+
+  .hero__btn--secondary:hover {
+    background-color: var(--color-surface-container-high);
+  }
+
+  /* --- Trust Indicators --- */
+  .hero__trust-list {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-md) 0 0 0;
+    border-top: 1px solid var(--color-outline-variant);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    width: 100%;
+    color: var(--color-on-surface);
+  }
+
+  @media (min-width: 640px) {
+    .hero__trust-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: var(--font-label-sm-family);
+    font-size: var(--font-label-sm-size);
+    line-height: var(--font-label-sm-line-height);
+    font-weight: var(--font-label-sm-weight);
+  }
+
+  .hero__trust-icon {
+    color: var(--color-secondary-container);
+    font-size: 18px;
+  }
+
+  /* --- Visual --- */
+  .hero__visual {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .hero__visual-frame {
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-xl);
+    padding: var(--space-sm);
+  }
+
+  .hero__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: var(--color-surface-container);
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero__image-overlay {
+    position: absolute;
+    left: var(--space-sm);
+    right: var(--space-sm);
+    bottom: var(--space-sm);
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero__overlay-title {
+    font-family: var(--font-label-sm-family);
+    font-size: var(--font-label-sm-size);
+    line-height: var(--font-label-sm-line-height);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .hero__overlay-subtitle {
+    font-family: var(--font-body-sm-family);
+    font-size: var(--font-body-sm-size);
+    line-height: var(--font-body-sm-line-height);
+    color: var(--color-on-surface-variant);
+  }
+
+  .hero__overlay-tag {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    font-family: var(--font-label-sm-family);
+    font-size: var(--font-label-sm-size);
+    line-height: var(--font-label-sm-line-height);
+    font-weight: 600;
+    border-radius: var(--radius-default);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__grid">
+
+      <!-- Hero Text Content -->
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="material-symbols-outlined hero__badge-icon">verified</span>
+          <span class="hero__badge-text">EST. 2017 &bull; LOMBOK, INDONESIA</span>
+        </div>
+
+        <h1 class="hero__title">Tentang CV. Lepas Kunci Lombok</h1>
+
+        <p class="hero__subtitle">Rental Mobil Terpercaya di Lombok Sejak 2017</p>
+
+        <p class="hero__description">
+          Kenal lebih dekat dengan kami &mdash; penyedia rental mobil profesional dengan armada terawat,
+          layanan cepat, dan komitmen penuh pada kebebasan serta kenyamanan mobilitas Anda di Pulau Seribu Masjid.
+        </p>
+
+        <div class="hero__cta-group">
+          <a
+            class="hero__btn hero__btn--primary"
+            href="https://wa.me/6282339022477?text=Halo%20Admin%20CV%20Lepas%20Kunci%20Lombok,%20saya%20ingin%20tanya%20sewa%20mobil"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="material-symbols-outlined">chat</span>
+            <span>Hubungi Kami via WhatsApp</span>
+          </a>
+
+          <a class="hero__btn hero__btn--secondary" href="#cerita-kami">
+            <span>Baca Profil Kami</span>
+            <span class="material-symbols-outlined">south</span>
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <ul class="hero__trust-list">
+          <li class="hero__trust-item">
+            <span class="material-symbols-outlined hero__trust-icon">check_circle</span>
+            <span>Sejak 2017</span>
+          </li>
+          <li class="hero__trust-item">
+            <span class="material-symbols-outlined hero__trust-icon">check_circle</span>
+            <span>Armada Terawat</span>
+          </li>
+          <li class="hero__trust-item">
+            <span class="material-symbols-outlined hero__trust-icon">check_circle</span>
+            <span>Respons 24 Jam</span>
+          </li>
+          <li class="hero__trust-item">
+            <span class="material-symbols-outlined hero__trust-icon">check_circle</span>
+            <span>KTP &amp; SIM A</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero__visual">
+        <div class="hero__visual-frame">
+          <div class="hero__image-wrap">
+            <img
+              class="hero__image"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6_ttzt82p_pYDUTXqVj7mDbEOn9zB_SDYdEi7xXpx-5xdrS-2SlGVchG02FA0wJ2pJ-A4wgO-5aAF3twAUgPx6PYuwSzEXij2CnDCt0_rRYGR13kvgjaO8uRtjJV_F-sviHtxafdYcMA_l8ZiNU9i74Z26B05UZdBVacLr9qB7PM2EZqDGeIKtqkZ6KArx062-ucVLaiNMpLtrpIgmJitqCnCgAZFtq1BJW2I55k0umxDUs5jQA2w"
+              alt="Toyota Innova Reborn siap sewa di Lombok"
+              loading="lazy"
+            />
+
+            <div class="hero__image-overlay">
+              <div>
+                <div class="hero__overlay-title">Armada Siap Jalan Hari Ini</div>
+                <div class="hero__overlay-subtitle">Garansi AC Dingin &amp; Bersih Wangi</div>
+              </div>
+              <span class="hero__overlay-tag">Unit Siap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
