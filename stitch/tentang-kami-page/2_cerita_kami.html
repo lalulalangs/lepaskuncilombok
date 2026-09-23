@@ -2,20 +2,27 @@
 <style>
   .story {
     width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
     background-color: var(--color-surface-container-low);
     border-bottom: 1px solid var(--color-outline-variant);
     padding: var(--space-xl) 0;
   }
 
   .story__container {
-    max-width: 1240px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     padding: 0 var(--margin);
+    box-sizing: border-box;
   }
 
   /* --- Heading --- */
   .story__heading {
-    max-width: 48rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     margin-bottom: var(--space-xl);
   }
 
@@ -54,6 +61,10 @@
     grid-template-columns: 1fr;
     align-items: start;
     gap: var(--gutter);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   @media (min-width: 1024px) {
@@ -73,6 +84,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .story__card {
@@ -80,6 +95,9 @@
     border: 1px solid var(--color-outline-variant);
     border-radius: var(--radius-lg);
     padding: var(--space-lg);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .story__paragraph {
@@ -108,6 +126,9 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-md);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   @media (min-width: 640px) {
@@ -160,6 +181,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .story__visual-card {
@@ -167,6 +192,9 @@
     border: 1px solid var(--color-outline-variant);
     border-radius: var(--radius-lg);
     padding: var(--space-md);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .story__image-wrap {
@@ -225,6 +253,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .story__guarantee-eyebrow {
