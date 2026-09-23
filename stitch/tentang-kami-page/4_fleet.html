@@ -2,15 +2,20 @@
 <style>
   .fleet {
     width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
     background-color: var(--color-surface-container-low);
     border-bottom: 1px solid var(--color-outline-variant);
     padding: var(--space-xl) 0;
   }
 
   .fleet__container {
-    max-width: 1240px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     padding: 0 var(--margin);
+    box-sizing: border-box;
   }
 
   /* --- Heading Row --- */
@@ -19,6 +24,11 @@
     flex-direction: column;
     gap: var(--space-md);
     margin-bottom: var(--space-xl);
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
   }
 
   @media (min-width: 768px) {
@@ -27,6 +37,13 @@
       align-items: flex-end;
       justify-content: space-between;
     }
+  }
+
+  .fleet__heading {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .fleet__eyebrow {
@@ -52,10 +69,12 @@
 
   .fleet__subtitle {
     font-family: var(--font-body-lg-family);
-    font-size: var(--font-body-lg-size);
+    font-size: 16px;
     line-height: var(--font-body-lg-line-height);
     color: var(--color-on-surface-variant);
-    max-width: 42rem;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
     margin: 0;
   }
 
@@ -89,6 +108,10 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--gutter);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   @media (min-width: 640px) {
@@ -111,6 +134,10 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .fleet-card__image-wrap {
