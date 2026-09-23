@@ -2,20 +2,27 @@
 <style>
   .how-we-work {
     width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
     background-color: var(--color-surface-container-lowest);
     border-bottom: 1px solid var(--color-outline-variant);
     padding: var(--space-xl) 0;
   }
 
   .how-we-work__container {
-    max-width: 1240px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     padding: 0 var(--margin);
+    box-sizing: border-box;
   }
 
   /* --- Heading --- */
   .how-we-work__heading {
-    max-width: 48rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     margin-bottom: var(--space-xl);
   }
 
@@ -53,6 +60,10 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--gutter);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   @media (min-width: 768px) {
@@ -71,6 +82,10 @@
     flex-direction: column;
     justify-content: space-between;
     transition: border-color 0.15s ease;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .commitment-card:hover {
