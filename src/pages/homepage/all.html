@@ -1,0 +1,2071 @@
+<!-- wp:html -->
+<p>
+  <style data-wp-block-html="css">
+    .hero-wrap {
+      position: relative;
+      height: 100vh;
+    }
+
+    .hero-bg {
+      width: 100%;
+      max-height: calc(100vh - 60px);
+      object-fit: cover;
+      position: absolute;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      max-height: calc(100vh - 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-desc {
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.6),
+        transparent
+      );
+      width: 50vw;
+      padding: 20px 60px;
+      height: calc(100vh - 60px);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .hero-desc * {
+      margin-bottom: 0 !important;
+    }
+
+    .hero-desc .desc-icon {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .hero-desc .desc-icon div {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .hero-desc .desc-icon i {
+      background: rgba(133, 133, 228, 0.292);
+      backdrop-filter: blur(2px);
+      padding: 8px 12px;
+      font-size: 32px;
+      line-height: 1;
+      color: rgb(10, 10, 103);
+      border-radius: 8px;
+    }
+
+    .hero-desc .desc-icon p {
+      font-size: 16px;
+    }
+
+    .hero-desc button {
+      width: fit-content;
+      font-weight: 600;
+      padding: 8px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: rgb(10, 10, 103);
+      color: white;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-desc button:hover {
+      transform: translateX(5px);
+    }
+
+    .hero-desc .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      font-weight: 600;
+      padding: 8px 16px;
+      padding-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: rgb(10, 10, 103);
+      color: white;
+      text-decoration: none;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-desc .btn-cta:hover {
+      transform: translateX(5px);
+    }
+
+    .hero-desc .cta-microcopy {
+      font-size: 12px;
+      color: rgba(10, 10, 103, 0.7);
+      margin-top: 4px;
+    }
+
+    .nav-hero {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .nav-hero a {
+      height: 100%;
+      padding: 14px;
+      font-size: 22px;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+      background: rgba(133, 133, 228, 0.292);
+      border: 1px solid white;
+      backdrop-filter: blur(3px);
+      transition: transform 0.4s ease;
+    }
+
+    .nav-hero a:hover {
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-desc {
+        width: 65vw;
+      }
+
+      .hero-desc .desc-icon {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .hero-desc .desc-icon p {
+        font-size: 17px;
+      }
+
+      .hero-desc .desc-icon i {
+        font-size: 26px;
+        padding: 6px 10px;
+      }
+
+      .nav-hero a {
+        font-size: 18px;
+        padding: 10px;
+      }
+    }
+
+    /* ── Mobile: ≤ 767px ── */
+    @media (max-width: 767px) {
+      .hero-wrap {
+        height: 500px;
+      }
+
+      .hero-bg {
+        object-position: center;
+        max-height: 500px !important;
+        height: 100%;
+        border-radius: 0px 0px 8px 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .hero-desc {
+        width: 100%;
+        background: linear-gradient(to top, rgba(255, 121, 37, 1), transparent);
+        padding: 8px 16px 10px;
+        gap: 12px;
+        justify-content: end;
+        border-radius: 8px;
+        max-height: 500px;
+        height: 100%;
+      }
+
+      .hero-desc * {
+        line-height: 1;
+        color: white !important;
+        margin-bottom: 0 !important;
+      }
+
+      .hero-desc h1 {
+        font-size: 22px;
+        line-height: 1.35;
+        margin-top: 16px !important;
+      }
+
+      .hero-desc .desc-icon {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .hero-desc .desc-icon i {
+        font-size: 22px;
+        padding: 5px 8px;
+      }
+
+      .hero-desc .desc-icon p {
+        font-size: 14px;
+      }
+
+      .hero-desc button {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-hero {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-hero a {
+        font-size: 15px;
+        padding: 10px 8px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+    }
+
+    /* ── Small mobile: ≤ 450px ── */
+    @media (max-width: 450px) {
+      .hero-bg img {
+        max-width: 450px;
+      }
+
+      .nav-hero {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</p>
+<div class="hero-wrap">
+  <picture>
+    <source
+      srcset="
+        https://lepaskuncilombok.com/wp-content/uploads/2026/07/hero-bg-mobile.webp
+      "
+      media="(max-width:767px)"
+    />
+    <img
+      class="hero-bg"
+      src="https://lepaskuncilombok.com/wp-content/uploads/2026/07/hero-bg-desktop.webp"
+      alt="Mobil sewa siap pakai untuk wisata di Lombok"
+      width="1920"
+      height="1080"
+    />
+  </picture>
+  <div class="hero-content">
+    <div class="hero-desc">
+      <h1>
+        Sewa Mobil Lombok Lepas Kunci Mulai Rp300rb, Harga Jujur &amp; Unit
+        Selalu Prima
+      </h1>
+      <div class="desc-icon">
+        <div>
+          <!-- Icon: Shield (Lucide-style, inline SVG) -->
+          <p>Aman &amp; Terpercaya</p>
+        </div>
+        <div>
+          <!-- Icon: Tag / Price (Lucide-style, inline SVG) -->
+          <p>Mulai Rp300rb/Hari</p>
+        </div>
+        <div>
+          <!-- Icon: Clock (Lucide-style, inline SVG) -->
+          <p>Layanan 24 Jam</p>
+        </div>
+      </div>
+      <a
+        class="btn-cta"
+        href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+di+Lombok%3F&amp;type=phone_number&amp;app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Cek Unit &amp; Harga via WhatsApp
+        <!-- Icon: WhatsApp (custom glyph, inline SVG — bukan dari Lucide) -->
+      </a>
+      <p class="cta-microcopy">
+        Respon cepat, gratis konsultasi rute wisata Lombok
+      </p>
+    </div>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<p>
+  <style data-wp-block-html="css">
+    .readmore-toggle {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sec-desc {
+      margin-bottom: 23px;
+    }
+
+    .sec-desc::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(transparent, #ffffff);
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .readmore-btn {
+      display: inline-block;
+      cursor: pointer;
+      font-weight: 600;
+      color: #0a7d33; /* sesuaikan dengan warna brand kamu */
+      margin-bottom: 16px;
+    }
+    .readmore-btn::after {
+      content: "Baca Selengkapnya \25BE";
+    }
+
+    /* State: expanded */
+    .readmore-toggle:checked ~ .sec-desc {
+      max-height: 2000px;
+    }
+    .readmore-toggle:checked ~ .sec-desc::after {
+      opacity: 0;
+    }
+    .readmore-toggle:checked ~ .readmore-btn::after {
+      content: "Sembunyikan \25B4";
+    }
+
+    /* Desktop: tampilkan penuh dari awal, matikan seluruh mekanisme
+   read-more (tidak relevan lagi karena layout sudah cukup lega) */
+    @media (min-width: 768px) {
+      .sec-desc {
+        max-height: unset;
+        overflow: visible;
+      }
+      .sec-desc::after,
+      .readmore-btn {
+        display: none;
+      }
+    }
+  </style>
+</p>
+<div class="sec-intro-homp">
+  <div class="introduction">
+    <h2>Rental &amp; Sewa Mobil Lombok Terpercaya Sejak 2017</h2>
+    <div class="sec-desc">
+      <p>
+        Liburan ke Lombok jadi jauh lebih bebas kalau urusan transportasi sudah
+        beres sejak awal. Itu sebabnya CV. Lepas Kunci Lombok hadir sebagai
+        partner rental kamu &amp; sewa mobil Lombok yang sudah dipercaya
+        wisatawan lokal maupun mancanegara. Ada dua pilihan layanan yang bisa
+        kamu sesuaikan dengan gaya liburanmu:
+      </p>
+      <ul>
+        <li>
+          <strong
+            ><a
+              href="https://lepaskuncilombok.com/keuntungan-menggunakan-mobil-lepas-kunci-saat-di-lombok/"
+              >Sewa Mobil Lepas Kunci</a
+            ></strong
+          >
+          untuk kebebasan penuh, dan
+        </li>
+        <li>
+          <strong
+            ><a href="https://lepaskuncilombok.com/sewa-mobil-dengan-driver/"
+              >Sewa mobil plus driver</a
+            ></strong
+          >
+          untuk perjalanan santai tanpa lelah menyetir.
+        </li>
+      </ul>
+      <p>
+        Seluruh unit kami rutin diservis dan dibersihkan menyeluruh sebelum
+        diserahkan ke Basecamers, jadi armada yang kamu dapatkan selalu siap
+        pakai — mulai dari:
+      </p>
+      <ul>
+        <li>
+          <strong>City Car</strong>:
+          <a href="https://lepaskuncilombok.com/sewa-brio-lombok/">Brio</a>,
+          <a href="https://lepaskuncilombok.com/sewa-toyota-agya-lombok/"
+            >Agya</a
+          >.
+        </li>
+        <li>
+          <strong>MPV</strong>:
+          <a href="https://lepaskuncilombok.com/sewa-toyota-avanza-lombok/"
+            >Avanza</a
+          >,
+          <a href="https://lepaskuncilombok.com/sewa-innova-reborn-lombok-2/"
+            >Innova</a
+          >.
+        </li>
+        <li>
+          <strong>Minibus</strong>:
+          <a href="https://lepaskuncilombok.com/sewa-hiace-commuter-lombok/"
+            >Hiace Commuter</a
+          >,
+          <a href="https://lepaskuncilombok.com/sewa-toyota-hiace-premio/"
+            >Hiace Premio</a
+          >
+        </li>
+      </ul>
+      <p>
+        Kamu bisa menikmati kendaraan impian mulai dari Rp 300.000 saja, plus
+        <strong>gratis biaya antar unit</strong> ke mana pun selama masih dalam
+        area layanan kami. Tunggu apa lagi? Yuk pesan sekarang via WhatsApp!
+      </p>
+    </div>
+    <a
+      class="cta-unit"
+      href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+di+Lombok%3F&amp;type=phone_number&amp;app_absent=0"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Pesan Sekarang via WhatsApp
+    </a>
+  </div>
+  <div class="intro-img-homp">
+    <img
+      src="https://lepaskuncilombok.com/wp-content/uploads/2026/08/Sewa-dan-Rental-Mobil-Lombok-Murah-compress.jpg"
+      alt="Sewa mobil Lombok lepas kunci dan dengan driver - Lepas Kunci Lombok"
+      width="400"
+      height="400"
+    />
+  </div>
+</div>
+<!--
+  CATATAN:
+  - Ganti [TAHUN] dengan tahun berdiri CV. Lepas Kunci Lombok yang
+    sebenarnya. Kalau tidak ada data pasti, bisa diganti dengan
+    angka lain yang lebih terverifikasi, mis. "500+ Basecamers Puas"
+    atau rating Google (mis. "Rating 4.9/5 dari 200+ ulasan") — yang
+    penting angka itu real, bukan estimasi.
+  - Icon fa-arrow-right pada CTA belum diganti ke SVG di revisi ini
+    karena scope section 2 difokuskan ke copywriting & SEO (sesuai
+    arahan) — bisa disamakan pola inline-SVG-nya nanti saat kita
+    lakukan technical pass menyeluruh di akhir (setelah 10 section
+    selesai dianalisa).
+--><!-- /wp:html -->
+
+<!-- wp:html -->
+<p>
+  <style data-wp-block-html="css">
+    .intro-img-homp {
+      max-height: 400px;
+      height: 100%;
+      max-width: 400px;
+      width: 100%;
+    }
+    .filter-jenis-wrapper {
+      display: flex;
+      gap: 12px;
+      margin: 24px auto;
+      max-width: 1000px;
+    }
+
+    .filter-jenis {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex: 1;
+      min-width: 100px;
+      padding: 14px 10px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition:
+        border-color 0.15s ease,
+        color 0.15s ease,
+        background 0.15s ease;
+      font-size: 13px;
+      font-weight: 500;
+      color: #64748b !important;
+    }
+
+    .filter-jenis i {
+      font-size: 18px;
+      color: #f59e0b; /* oranye seperti ikon di mockup */
+    }
+
+    .filter-jenis:hover {
+      border-color: #93c5fd;
+    }
+
+    .filter-jenis.active {
+      border-color: #2563eb;
+      color: #2563eb;
+      background: #eff6ff;
+    }
+
+    .filter-jenis.active i {
+      color: #2563eb;
+    }
+
+    .filter-jenis-wrapper {
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .filter-jenis-wrapper {
+        max-width: 90vw;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .filter-jenis-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-jenis {
+        flex: 0 0 auto;
+        min-width: 90px;
+        max-width: 130px;
+      }
+    }
+    .filter-scroll-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .filter-fade-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 32px;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1)
+      );
+      pointer-events: none; /* supaya tidak menghalangi klik/scroll di bawahnya */
+    }
+
+    .filter-fade-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 32px;
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1)
+      );
+      pointer-events: none; /* supaya tidak menghalangi klik/scroll di bawahnya */
+    }
+
+    @media (min-width: 769px) {
+      .filter-fade-right,
+      .filter-fade-left {
+        display: none; /* di desktop biasanya tidak perlu, semua tombol muat */
+      }
+    }
+    .unit-mobil {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .unit-mobil.fade-up {
+      animation: fadeUpCard 0.5s ease forwards;
+      animation-delay: var(--fade-delay, 0s);
+    }
+
+    @keyframes fadeUpCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</p>
+<div class="cont-list-unit">
+  <div class="box-list-armada">
+    <div class="intro-unit-mobil">
+      <h2 class="text-center sm-text-left">
+        Daftar Armada &amp; Tarif Rental Mobil Lombok 2026
+      </h2>
+      <p class="text-center sm-text-left mb-20 sm-mb-0">
+        Harga Rental mobil di Lepas Kunci Lombok disesuaikan dengan jenis mobil,
+        durasi pemakaian, serta layanan yang dipilih.
+      </p>
+    </div>
+    <div class="filter-scroll-container">
+      <div class="filter-fade-left"> </div>
+      <div class="filter-jenis-wrapper">
+        <button class="filter-jenis active" data-target="semua">
+          <i class="fas fa-th"></i> Semua Mobil
+        </button>
+        <button class="filter-jenis" data-target="mpv">
+          <i class="fas fa-car-side"></i> MPV
+        </button>
+        <button class="filter-jenis" data-target="hatchback">
+          <i class="fas fa-car"></i> City
+        </button>
+        <button class="filter-jenis" data-target="suv">
+          <i class="fas fa-truck-pickup"></i> SUV
+        </button>
+        <button class="filter-jenis" data-target="van">
+          <i class="fas fa-shuttle-van"></i> Van
+        </button>
+        <button class="filter-jenis" data-target="bus">
+          <i class="fas fa-bus"></i> Bus
+        </button>
+        <a
+          class="filter-jenis"
+          href="https://lepaskuncilombok.com/sewa-mobil-lombok-murah/"
+        >
+          <i class="fas fa-arrow-right"></i> Selengkapnya
+        </a>
+      </div>
+      <div class="filter-fade-right"> </div>
+    </div>
+    <div class="grid-4 list-unit-mobil">
+      <!--Toyota Agya-->
+      <div class="unit-mobil jenis-hatchback">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>Hatchback
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-toyota-agya-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Agya.jpg"
+                alt="sewa agya murah lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Toyota Agya</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 300.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 650.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-toyota-agya-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Toyota+Agya%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Toyota Avanza-->
+      <div class="unit-mobil jenis-mpv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>MPV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-toyota-avanza-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2025/10/Sewa-Mobil-Lombok-Toyota-Avanza-Termurah.webp"
+                alt="sewa mobil avanza murah lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Toyota Avanza</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 350.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 650.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-toyota-avanza-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Toyota+Avanza%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Innova Reborn-->
+      <div class="unit-mobil jenis-mpv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>MPV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-innova-reborn-lombok-2/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/01/Lepas-Kunci-Lombok-Innova-Reborn.jpg"
+                alt="sewa mobil innova reborn murah lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Innova Reborn</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 500.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 900.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-innova-reborn-lombok-2/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Innova+Reborn%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Suzuki Ertiga-->
+      <div class="unit-mobil jenis-mpv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>MPV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-mobil-suzuki-ertiga-di-lombok-2026/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Ertiga-1.jpg"
+                alt="sewa mobil ertiga murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Suzuki Ertiga</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 350.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 650.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a
+              href="https://lepaskuncilombok.com/sewa-mobil-suzuki-ertiga-di-lombok-2026/"
+            >
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Suzuki+Ertiga%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Honda WR-V-->
+      <div class="unit-mobil jenis-suv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>SUV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>4 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-honda-wrv-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/WRV.jpg"
+                alt="sewa wrv murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Honda WR-V</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 450.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 800.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-honda-wrv-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Honda+WR-V%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Honda City-->
+      <div class="unit-mobil jenis-hatchback">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>Hatchback
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>4 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-mobil-honda-city-di-lombok-2026/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Honda-City-1.jpg"
+                alt="sewa honda city murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Honda City</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 450.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 800.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a
+              href="https://lepaskuncilombok.com/sewa-mobil-honda-city-di-lombok-2026/"
+            >
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Honda+City%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Honda Brio-->
+      <div class="unit-mobil jenis-hatchback">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>Hatchback
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>4 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-brio-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/01/Rental-mobil-lombok-honda-brio.jpg"
+                alt="sewa mobil brio murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Honda Brio</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 350.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 650.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-brio-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Honda+Brio%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Medium Bus-->
+      <div class="unit-mobil jenis-bus">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>BUS
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>30+ seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-medium-bus/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2025/11/Sewa-Big-Bus-di-Lombok-Murah.jpg"
+                alt="sewa Medium Bus murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Medium Bus</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">- Tidak Tersedia</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 1.700.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-medium-bus/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+Medium+Bus%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Daihatsu Terios-->
+      <div class="unit-mobil jenis-suv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>SUV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-terios-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Terrios.jpg"
+                alt="sewa mobil daihatsu terios murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Daihatsu Terios</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 350.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 700.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-terios-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Daihatsu+Terios%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Toyota Raize-->
+      <div class="unit-mobil jenis-suv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>SUV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>4 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/detail-toyota-raize-2026/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Raiz.jpg"
+                alt="sewa mobil toyota raize murah lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Toyota Raize</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 450.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 800.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/detail-toyota-raize-2026/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Toyota+Raize%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--X-Pander-->
+      <div class="unit-mobil jenis-suv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>SUV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-xpander-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Expander.jpg"
+                alt="sewa xpander murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">X-Pander</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 450.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 900.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-xpander-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Mitsubishi+Xpander%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Pajero Sport-->
+      <div class="unit-mobil jenis-suv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>SUV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-pajero-sport-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/01/Transportasi-Lombok-Dengan-Driver-Pajero-Sport.jpg"
+                alt="sewa pajero sport murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Pajero Sport</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 1.200.000 / 12 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 1.400.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-pajero-sport-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Mitsubishi+Pajero+Sport%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Innova Zenix G-->
+      <div class="unit-mobil jenis-suv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>SUV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-innova-zenix-g/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Zenix-G.jpg"
+                alt="sewa innova zenix-g murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Innova Zenix G</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 700.000 / 24 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 1.200.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-innova-zenix-g/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Innova+Zenix+G%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Innova Zenix Q-->
+      <div class="unit-mobil jenis-suv">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>SUV
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>6 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-innova-zenix-q-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Zenix-Q.jpg"
+                alt="sewa innova zenix-q murah di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Innova Zenix Q</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">Rp 1.200.000 / 12 jam</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 1.400.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-innova-zenix-q-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Innova+Zenix+Q%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Toyota Hiace-->
+      <div class="unit-mobil jenis-van">
+        <div class="bg-white rounded-lg">
+          <div
+            class="tipe-mobil-card fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>VAN
+          </div>
+          <div
+            class="jumlah-kursi fj-row"
+            style="gap: 4px; align-items: center"
+          >
+            <i class="mdi--shield-car"></i>14 seat
+          </div>
+          <p style="margin: 0px">
+            <a
+              class="img-zoom"
+              href="https://lepaskuncilombok.com/sewa-hiace-commuter-lombok/"
+            >
+              <img
+                src="https://lepaskuncilombok.com/wp-content/uploads/2025/11/Sewa-Mobil-di-Lombok-Dengan-Driver.jpg"
+                alt="sewa toyota hiace di lombok - Lepas Kunci Lombok"
+              />
+            </a>
+          </p>
+          <p class="car-name">Toyota Hiace</p>
+          <div class="data-harga-mobil">
+            <p class="tarif">Lepas Kunci</p>
+            <p class="harga-mobil">-tidak tersedia</p>
+            <p class="tarif">Driver + Bbm</p>
+            <p class="harga-mobil">Rp 1.000.000 / 12 jam</p>
+          </div>
+          <div class="cta-container">
+            <a href="https://lepaskuncilombok.com/sewa-hiace-commuter-lombok/">
+              <button class="cta-unit" style="background: navy">
+                Spesifikasi
+              </button>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6282339022477&amp;text=Halo+LepasKunciLombok%2C+saya+ingin+bertanya+tentang+sewa+mobil+Toyota+Hiace%3F&amp;type=phone_number&amp;app_absent=0"
+            >
+              <button class="cta-unit">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="width: fit-content; margin: 0 auto">
+      <a
+        class="w-fit btn-modif-1 mt-5 aos-init aos-animate"
+        href="https://lepaskuncilombok.com/armada-lepas-kunci-lombok/"
+        >Cek Mobil Lainnya <i class="fa fa-arrow-right"></i
+      ></a>
+    </p>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<div id="testimonial" class="review-gmap">
+  <h2>Bukti Kepuasan Pelanggan Kami</h2>
+  <p>[trustindex no-registration=google]</p>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<div class="cont-why-choose-us">
+  <div class="max-w-1200 m-auto">
+    <h2>
+      5 Alasan Basecamers Pilih CV. Lepas Kunci Lombok untuk Sewa &amp; Rental
+      Mobil
+    </h2>
+    <div class="fj-row box-why-choose">
+      <div class="why-choose-overflow">
+        <div class="why-choose ml-20">
+          <h3>Proses Rental Mobil Mudah &amp; Transparan</h3>
+          <p>
+            Syaratnya nggak ribet, jelas, dan tanpa drama, kamu bisa
+            <a
+              href="https://lepaskuncilombok.com/faq-sewa-mobil-lombok-lepas-kunci/"
+              >cek syarat &amp; ketentuan lengkapnya di sini</a
+            >. Cocok banget buat kamu yang mau bebas eksplor keindahan Lombok.
+          </p>
+        </div>
+      </div>
+      <div class="why-choose-overflow">
+        <div class="why-choose">
+          <h3>Harga Murah Mulai dari 300rb</h3>
+          <p>
+            Sewa mobil Lombok yang murah itu bukan berarti unitnya asal-asalan.
+            Kami tetap jaga kualitas armada selalu prima.
+          </p>
+        </div>
+      </div>
+      <div class="why-choose-overflow">
+        <div class="why-choose">
+          <h3>Unit Siap Pakai &amp; Terawat Rutin</h3>
+          <p>
+            Setiap mobil selalu kami cek sebelum diserahkan. Dijamin bersih,
+            wangi, dan mesinnya selalu dalam keadaan prima.
+          </p>
+        </div>
+      </div>
+      <div class="why-choose-overflow">
+        <div class="why-choose">
+          <h3>Driver Profesional &amp; Berpengalaman</h3>
+          <p>
+            Buat Basecamers yang milih
+            <a href="https://lepaskuncilombok.com/sewa-mobil-dengan-driver/"
+              >layanan dengan driver</a
+            >, tim kami selalu mengendarai dengan hati-hati dan menawarkan rute
+            hidden gem loh.
+          </p>
+        </div>
+      </div>
+      <div class="why-choose-overflow">
+        <div class="why-choose">
+          <h3>Support Layanan 24 Jam Nonstop</h3>
+          <p>
+            Kamu bisa pesan kapan saja. Mau pagi, siang, atau bahkan tengah
+            malam di bandara atau pelabuhan, kami siap standby menyambut
+            kedatanganmu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<div id="layanan" class="jenis-layanan-homp">
+  <h2>Layanan Sewa Mobil Kami</h2>
+  <div class="fj-row cont-layanan">
+    <div class="layanan-overflow">
+      <div class="layanan">
+        <h3>Sewa Mobil Lepas Kunci</h3>
+        <p>
+          Nikmati kebebasan dan privasi penuh keliling spot-spot cantik Lombok
+          tanpa risih. Pilihan paling pas buat Basecamers yang liburan bareng
+          pasangan atau keluarga, dengan proses verifikasi cepat dan nggak bikin
+          ribet.
+        </p>
+        <a
+          href="https://lepaskuncilombok.com/keuntungan-menggunakan-mobil-lepas-kunci-saat-di-lombok/"
+          ><i>Selengkapnya</i></a
+        >
+      </div>
+    </div>
+    <div class="layanan-overflow">
+      <div class="layanan">
+        <h3>Sewa Mobil Dengan Driver</h3>
+        <p>
+          Mau liburan santai tinggal duduk manis tanpa capek nyetir? Pilih opsi
+          ini. Driver lokal kami siap jadi pemandu yang paham jalan pintas,
+          tempat makan kuliner enak, sampai spot foto keren di Lombok.
+        </p>
+        <a href="https://lepaskuncilombok.com/sewa-mobil-dengan-driver/"
+          ><i>Selengkapnya</i></a
+        >
+      </div>
+    </div>
+    <div class="layanan-overflow">
+      <div class="layanan">
+        <h3>Antar Jemput Bandara Lombok</h3>
+        <p>
+          Layanan airport transfer 24 jam yang siap antar-jemput Basecamers dari
+          Bandara Lombok ke Senggigi, Pelabuhan Gili Trawangan, hingga Kuta
+          Mandalika secara tepat waktu tanpa perlu antre taksi.
+        </p>
+        <a href="https://lepaskuncilombok.com/sewa-mobil-bandara-lombok/"
+          ><i>Selengkapnya</i></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<p>
+  <style data-wp-block-html="css">
+    /* ========================================
+   AREA LAYANAN
+   ======================================== */
+
+    .service-area {
+      background: #f2f5fa;
+      padding: 60px 20px;
+
+      content-visibility: auto;
+      contain-intrinsic-size: 0 600px;
+    }
+
+    /* ========================================
+   LAYOUT
+   ======================================== */
+
+    .service-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .service-images {
+      width: 60%;
+      min-width: 0;
+    }
+
+    .row-wilayah {
+      width: 40%;
+    }
+
+    /* ========================================
+   IMAGE AREA - DESKTOP
+   ======================================== */
+
+    /*
+   Desktop:
+   Semua gambar tampil sekaligus.
+   Tidak ada horizontal scroll.
+*/
+
+    .image-slider {
+      display: flex;
+      gap: 16px;
+
+      overflow: visible;
+
+      padding: 10px 4px 15px;
+    }
+
+    /* ========================================
+   IMAGE CARD
+   ======================================== */
+
+    .service-image {
+      flex: 1 1 0;
+
+      min-width: 0;
+
+      aspect-ratio: 4 / 5;
+
+      margin: 0;
+
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    /* ========================================
+   IMAGE
+   ======================================== */
+
+    .service-image img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    /* Image ke-2 / index 1 */
+    .service-image:nth-child(2) img {
+      object-position: center center;
+    }
+
+    /* ========================================
+   TEXT
+   ======================================== */
+
+    .row-wilayah h2 {
+      margin-top: 0;
+    }
+
+    .daftar-wilayah {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .daftar-wilayah li {
+      margin-bottom: 8px;
+    }
+
+    .daftar-wilayah a {
+      text-decoration: none;
+    }
+
+    /* ========================================
+   TABLET
+   ======================================== */
+
+    @media (max-width: 991px) {
+      .service-content {
+        gap: 30px;
+      }
+
+      .service-images {
+        width: 55%;
+      }
+
+      .row-wilayah {
+        width: 45%;
+      }
+
+      .image-slider {
+        gap: 12px;
+      }
+    }
+
+    /* ========================================
+   MOBILE
+   ======================================== */
+
+    @media (max-width: 767px) {
+      .service-area {
+        padding: 50px 20px;
+
+        contain-intrinsic-size: 0 700px;
+      }
+
+      .service-content {
+        display: block;
+      }
+
+      .service-images {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .row-wilayah {
+        width: 100%;
+      }
+
+      /*
+     Mobile:
+     aktifkan horizontal scroll
+  */
+
+      .image-slider {
+        display: flex;
+
+        gap: 12px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 10px 4px 15px;
+
+        -webkit-overflow-scrolling: touch;
+
+        scroll-snap-type: x proximity;
+
+        scrollbar-width: thin;
+      }
+
+      .service-image {
+        flex: 0 0 auto;
+
+        width: 75%;
+
+        aspect-ratio: 4 / 5;
+
+        scroll-snap-align: start;
+      }
+    }
+
+    /* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+    @media (max-width: 480px) {
+      .service-area {
+        padding: 40px 16px;
+      }
+
+      .service-image {
+        width: 85%;
+      }
+    }
+  </style>
+</p>
+<section class="service-area">
+  <div class="max-w-1200 m-auto">
+    <div class="service-content">
+      <!-- IMAGE SLIDER -->
+      <div class="service-images">
+        <div class="image-slider">
+          <!-- IMAGE 1 -->
+          <figure class="service-image">
+            <img
+              src="https://lepaskuncilombok.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-20-at-14.10.41.jpeg"
+              alt="Kiboy menggunakan jasa sewa mobil Lombok di Lepas Kunci Lombok"
+              width="351"
+              height="200"
+            />
+          </figure>
+          <!-- IMAGE 2 -->
+          <figure class="service-image">
+            <img
+              src="https://lepaskuncilombok.com/wp-content/uploads/2026/09/wisata-whale-shark.jpg"
+              alt="Whale Shark Trip di Lombok"
+              width="351"
+              height="234"
+            />
+          </figure>
+          <!-- IMAGE 3 -->
+          <figure class="service-image">
+            <img
+              src="https://lepaskuncilombok.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-04-28-at-18.39.42-1-scaled.jpeg"
+              alt="Wisata Desa Sade di Lombok"
+              width="200"
+              height="180"
+            />
+          </figure>
+        </div>
+      </div>
+      <!-- COPYWRITING / AREA LAYANAN -->
+      <div class="row-wilayah">
+        <h2>Area Layanan Sewa Mobil Lombok</h2>
+        <p>
+          Kami melayani rental dan sewa mobil di berbagai wilayah Lombok, mulai
+          dari Mataram, Lombok Tengah, Lombok Utara, hingga Lombok Timur.
+        </p>
+        <ul class="daftar-wilayah">
+          <li>
+            <a
+              href="https://lepaskuncilombok.com/wisata-di-mataram-lombok-destinasi-seru-dan-bersejarah/"
+            >
+              Kota Mataram
+            </a>
+          </li>
+          <li>
+            <a href="https://lepaskuncilombok.com/sewa-mobil-lombok-tengah/">
+              Lombok Tengah
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://lepaskuncilombok.com/gili-gili-sepi-di-lombok-untuk-liburan-tenang-jauh-dari-keramaian/"
+            >
+              Seluruh Gili
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://lepaskuncilombok.com/sewa-mobil-sumbawa-termurah-dengan-unit-terlengkap/"
+            >
+              Sumbawa
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://lepaskuncilombok.com/wisata-di-lombok-utara-wisata-eksotis-yang-belum-dijamah/"
+            >
+              Lombok Utara
+            </a>
+          </li>
+          <li>
+            <a href="https://lepaskuncilombok.com/rental-mobil-lombok-timur/">
+              Lombok Timur
+            </a>
+          </li>
+        </ul>
+        <p>
+          Butuh mobil untuk liburan, perjalanan bisnis, atau menjelajahi Lombok?
+          Kami siap membantu menyediakan unit dan mengantarkannya ke lokasi
+          Anda.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<p>
+  <style data-wp-block-html="css">
+    /* ============================================================
+   CSS — Section 8 Teaser (PAS) — .cont-tips-sewa
+   ============================================================
+   Token lokal, di-scope ke .cont-tips-sewa supaya tidak bocor ke
+   section lain. Warna di bawah PLACEHOLDER — ganti dengan brand
+   token asli kamu kalau sudah ada (mis. var(--brand-primary)).
+   ============================================================ */
+
+    .cont-tips-sewa {
+      --tips-text: #1f2a24;
+      --tips-text-muted: #5b6660;
+      --tips-accent: #fc5f02; /* aksen teks/link, beda dari hijau WA */
+      --tips-wa: #25d366; /* warna brand WhatsApp, untuk tombol WA */
+      --tips-wa-hover: #1da851;
+      --tips-border: #e3e1da;
+
+      max-width: 100%; /* full width, mengikuti lebar container di tema */
+      color: var(--tips-text);
+      padding: 48px 20px;
+    }
+
+    /* ---------- Headline (hook) ---------- */
+    .cont-tips-sewa h2 {
+      font-size: clamp(24px, 4vw, 32px);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+    }
+
+    /* ---------- Paragraf (Problem + Agitate) ---------- */
+    .cont-tips-sewa > p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--tips-text-muted);
+      margin: 0 0 24px;
+    }
+
+    /* ---------- List highlight isi panduan ---------- */
+    .cont-tips-sewa ul {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cont-tips-sewa li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--tips-text);
+    }
+
+    /* marker custom (bukan angka, karena bukan urutan langkah) */
+    .cont-tips-sewa li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--tips-accent);
+    }
+
+    .cont-tips-sewa li strong {
+      font-weight: 600;
+    }
+
+    /* ---------- CTA 1: Baca Panduan Lengkapnya (text-link) ---------- */
+    .cont-tips-sewa .link-artikel {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--tips-accent);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease;
+    }
+
+    .cont-tips-sewa .link-artikel:hover,
+    .cont-tips-sewa .link-artikel:focus-visible {
+      border-bottom-color: var(--tips-accent);
+    }
+
+    .cont-tips-sewa .link-artikel i {
+      font-size: 13px;
+      transition: transform 0.2s ease;
+    }
+
+    .cont-tips-sewa .link-artikel:hover i {
+      transform: translateX(3px);
+    }
+
+    /* ---------- Teks penghubung antar-CTA ---------- */
+    .cont-tips-sewa .tips-alt-cta-text {
+      margin: 20px 0 12px;
+      font-size: 14px;
+      color: var(--tips-text-muted);
+    }
+
+    /* ---------- Aksesibilitas: focus state jelas untuk keyboard ---------- */
+    .cont-tips-sewa a:focus-visible {
+      outline: 2px solid var(--tips-accent);
+      outline-offset: 3px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 480px) {
+      .cont-tips-sewa {
+        padding: 36px 16px;
+      }
+      .cont-tips-sewa h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</p>
+<div class="cont-tips-sewa">
+  <h2>Bingung Pilih Mobil yang Pas untuk Liburan di Lombok?</h2>
+  <p>
+    Transportasi umum di Lombok masih terbatas untuk menjangkau spot-spot
+    tersembunyi, dan salah pilih mobil sewa bisa bikin itinerary jadi
+    berantakan. Belum lagi soal harga banyak wisatawan kena "kejutan" biaya
+    tambahan yang baru muncul saat pengembalian unit. Supaya kamu nggak salah
+    langkah, kami rangkum semuanya di satu panduan lengkap:
+  </p>
+  <ul>
+    <li>
+      Pilih <strong>Lepas Kunci</strong> atau <strong>Dengan Driver</strong>
+    </li>
+    <li>Cara pilih armada berdasarkan rute &amp; jumlah rombongan</li>
+    <li>Syarat sewa dan estimasi harga transparan, tanpa kejutan biaya</li>
+  </ul>
+  <a
+    class="link-artikel"
+    href="https://lepaskuncilombok.com/tips-memilih-sewa-mobil-lombok/"
+  >
+    Baca Panduan Lengkapnya <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<p>
+  <style data-wp-block-html="css">
+    .sec-faq-homp {
+      width: 100%;
+      padding: 0;
+      background-color: #f3f3fb;
+    }
+
+    .sec-faq-homp .fj-row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .sec-faq-homp .img-faq {
+      width: 50%;
+
+      background-image: url("https://lepaskuncilombok.com/wp-content/uploads/2026/03/Rental-Mobil-Lombok-FAQ.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .sec-faq-homp .accordi-faq {
+      width: 50%;
+      padding: 30px 15px 30px 45px;
+    }
+
+    .sec-faq-homp .accordi-faq h2 {
+      margin-top: 0;
+
+      font-size: 4em;
+      line-height: 1.3em;
+      font-weight: 400;
+
+      color: #111111;
+
+      font-family: "Archivo", sans-serif;
+      text-transform: uppercase;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .sec-faq-homp .fj-row {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sec-faq-homp .img-faq {
+        width: 100%;
+        min-height: 250px;
+      }
+
+      .sec-faq-homp .accordi-faq {
+        width: 100%;
+        padding: 30px 20px 60px;
+      }
+
+      .sec-faq-homp .accordi-faq h2 {
+        font-size: 1.7em;
+        line-height: 1.3em;
+      }
+    }
+  </style>
+</p>
+<div class="sec-faq-homp">
+  <div class="fj-row">
+    <div class="img-faq"> </div>
+    <div class="accordi-faq">
+      <h2 id="faq-heading">
+        FAQ Rental Mobil Lombok Lepas Kunci &amp; Plus Driver
+      </h2>
+      [accordion title="" open1st="1" openAll="0" style="modern"]
+      [accordion_item title="Bisa sewa mobil lepas kunci tanpa driver di
+      Lombok?"] Bisa. Kami menyediakan layanan
+      <strong>sewa mobil lepas kunci</strong> untuk Anda yang menginginkan
+      privasi penuh. Syaratnya sangat praktis: untuk wisatawan luar daerah,
+      cukup melampirkan foto E-KTP, SIM A aktif, serta bukti tiket pesawat PP
+      &amp; reservasi hotel selama di Lombok. [/accordion_item] [accordion_item
+      title="Apakah ada paket sewa mobil plus driver lokal di Lombok?"] Ya, kami
+      menyediakan paket <strong>sewa mobil plus driver</strong> lokal
+      berpengalaman yang paham seluruh rute wisata Lombok—mulai dari Senggigi,
+      Pantai Kuta Mandalika, Sembalun, hingga Pelabuhan Bangsal menuju Gili
+      Trawangan. [/accordion_item] [accordion_item title="Apakah ada layanan
+      antar-jemput Bandara Internasional Lombok (BIL)?"] Bisa. Kami melayani
+      serah terima unit dan
+      <strong
+        >antar-jemput gratis di Bandara Internasional Lombok (BIL/ZAM)</strong
+      >
+      24 jam penuh. Tim kami memantau jadwal penerbangan Anda secara real-time
+      agar mobil siap begitu Anda mendarat. [/accordion_item] [accordion_item
+      title="Apakah harga sewa transparan dan tanpa biaya tersembunyi?"] Ya,
+      semua tarif di <strong>CV. Lepas Kunci Lombok</strong> bersifat
+      transparan. Untuk paket lepas kunci, BBM ditanggung penyewa. Sedangkan
+      paket plus driver sudah termasuk BBM. Biaya parkir &amp; tol disesuaikan
+      dengan pemakaian riil di lapangan. [/accordion_item] [accordion_item
+      title="Apakah tersedia mobil rombongan seperti Toyota Hiace untuk wisata
+      keluarga?"] Tentu saja. Selain city car dan MPV keluarga (Avanza &amp;
+      Innova), kami menyediakan kendaraan rombongan seperti
+      <strong>Toyota Hiace Commuter</strong> dan
+      <strong>Hiace Premio</strong> (14 seat) yang sangat nyaman untuk wisata
+      keluarga besar atau acara kantor. [/accordion_item] [accordion_item
+      title="Bagaimana cara booking dan sistem pembayarannya?"] Caranya sangat
+      mudah—cukup hubungi <strong>WhatsApp kami di 082339022477</strong> untuk
+      cek ketersediaan unit. Anda cukup membayar DP sebesar 20–30% untuk
+      mengamankan armada, dan pelunasan sisanya dilakukan saat penyerahan unit
+      mobil. [/accordion_item] [/accordion]
+    </div>
+  </div>
+</div>
+<!-- /wp:html -->
