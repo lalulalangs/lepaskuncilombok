@@ -1,0 +1,228 @@
+<!-- ========== FAQ SECTION 10 CSS ========== -->
+<style>
+  .faq {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 4rem var(--margin);
+  }
+
+  .faq__container {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .faq__header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .faq__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .faq__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Accordion List */
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Accordion Item */
+  .faq-item {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 0.75rem);
+    padding: 1rem;
+  }
+
+  .faq-item__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-navy);
+  }
+
+  .faq-item__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__chevron {
+    flex-shrink: 0;
+    color: var(--color-orange);
+    font-weight: 700;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-item__chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-item__answer {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid #cbd5e1;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--color-slate);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 1024px) {
+    .faq__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    .faq-item__summary {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+</style>
+<!-- ========== FAQ SECTION 10 ========== -->
+<section class="faq" id="faq">
+  <div class="faq__container">
+    <div class="faq__header">
+      <span class="faq__eyebrow">Informasi Seputar Sewa</span>
+      <h2 class="faq__title">
+        FAQ Rental Mobil Lombok Lepas Kunci &amp; Plus Driver
+      </h2>
+      <p class="faq__description">
+        Jawaban lengkap seputar persyaratan, sistem pembayaran, dan ketentuan
+        sewa di CV. Lepas Kunci Lombok.
+      </p>
+    </div>
+
+    <!-- Accordion List -->
+    <div class="faq__list">
+      <!-- FAQ Item 1 -->
+      <details class="faq-item" open>
+        <summary class="faq-item__summary">
+          <span
+            >Bisa sewa mobil lepas kunci tanpa driver di Lombok? Apa saja
+            syaratnya?</span
+          >
+          <span class="faq-item__chevron" aria-hidden="true">&#9660;</span>
+        </summary>
+        <div class="faq-item__answer">
+          Bisa. Kami melayani sewa lepas kunci untuk wisatawan yang ingin
+          menyetir mandiri. Syarat cukup mudah: foto KTP (e KTP asli), foto SIM
+          A yang masih berlaku, bukti tiket pesawat PP, serta konfirmasi
+          reservasi hotel selama di Lombok.
+        </div>
+      </details>
+
+      <!-- FAQ Item 2 -->
+      <details class="faq-item">
+        <summary class="faq-item__summary">
+          <span>Apakah ada paket sewa mobil plus driver di Lombok?</span>
+          <span class="faq-item__chevron" aria-hidden="true">&#9660;</span>
+        </summary>
+        <div class="faq-item__answer">
+          Ya, kami menyediakan paket sewa mobil dengan driver lokal
+          berpengalaman. Durasi standar adalah 12 jam pemakaian per hari dan
+          sudah termasuk unit mobil, jasa pengemudi, serta BBM (tergantung paket
+          rute yang disepakati).
+        </div>
+      </details>
+
+      <!-- FAQ Item 3 -->
+      <details class="faq-item">
+        <summary class="faq-item__summary">
+          <span
+            >Apakah ada layanan antar jemput Bandara Internasional Lombok
+            (ZAM)?</span
+          >
+          <span class="faq-item__chevron" aria-hidden="true">&#9660;</span>
+        </summary>
+        <div class="faq-item__answer">
+          Tentu. Kami menyediakan layanan penjemputan dan pengantaran 24 jam di
+          Bandara ZAM Praya. Anda bisa meminta serah terima kunci unit sewa
+          lepas kunci di bandara, atau memesan mobil dengan sopir untuk langsung
+          mengantar ke hotel di Mataram, Senggigi, Mandalika, atau Pelabuhan
+          Bangsal.
+        </div>
+      </details>
+
+      <!-- FAQ Item 4 -->
+      <details class="faq-item">
+        <summary class="faq-item__summary">
+          <span>Apakah harga sewa transparan dan tanpa biaya tersembunyi?</span>
+          <span class="faq-item__chevron" aria-hidden="true">&#9660;</span>
+        </summary>
+        <div class="faq-item__answer">
+          Seluruh tarif sewa yang kami tawarkan adalah harga jujur dan
+          transparan. Rincian fasilitas (apakah sudah termasuk BBM, driver, atau
+          durasi sewa lepas kunci 24 jam) diinformasikan secara terbuka di awal
+          sebelum pembayaran tanpa ada biaya siluman.
+        </div>
+      </details>
+
+      <!-- FAQ Item 5 -->
+      <details class="faq-item">
+        <summary class="faq-item__summary">
+          <span
+            >Apakah tersedia mobil rombongan seperti Toyota Hiace untuk
+            rombongan wisata/dinas?</span
+          >
+          <span class="faq-item__chevron" aria-hidden="true">&#9660;</span>
+        </summary>
+        <div class="faq-item__answer">
+          Ya, kami memiliki armada Toyota Hiace Commuter (14 seat) dan Toyota
+          Hiace Premio (12 / 14 seat luxury) serta Medium Bus Pariwisata untuk
+          kegiatan instansi, reuni, atau liburan keluarga besar lengkap dengan
+          driver pariwisata berlisensi.
+        </div>
+      </details>
+
+      <!-- FAQ Item 6 -->
+      <details class="faq-item">
+        <summary class="faq-item__summary">
+          <span
+            >Bagaimana cara pembayaran dan apakah perlu uang muka (DP)?</span
+          >
+          <span class="faq-item__chevron" aria-hidden="true">&#9660;</span>
+        </summary>
+        <div class="faq-item__answer">
+          Pemesanan diikat dengan uang muka (DP) ringan via transfer bank resmi
+          kami (BCA, Mandiri, BNI, BRI) untuk memastikan unit diblokir pada
+          tanggal pilihan Anda. Sisa pelunasan dapat dibayarkan saat serah
+          terima unit di Lombok.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

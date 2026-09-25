@@ -1,0 +1,313 @@
+<!-- ========== HERO SECTION CSS ========== -->
+<style>
+  .hero {
+    width: 100%;
+    /* Background flat primary color (menggantikan foto) */
+    background-color: var(--color-navy);
+    padding: 4rem var(--margin);
+  }
+
+  .hero__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    text-align: center;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  /* Badge */
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    background-color: rgba(252, 95, 2, 0.15);
+    border: 1px solid rgba(252, 95, 2, 0.5);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .hero__badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-orange);
+  }
+
+  /* Title */
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-white);
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0;
+  }
+
+  /* Description */
+  .hero__description {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #cbd5e1;
+    max-width: 42rem;
+    margin: 0;
+  }
+
+  /* Actions */
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    padding-top: var(--space-sm);
+  }
+
+  .hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 14px 24px;
+    border-radius: var(--radius-base);
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .hero__btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero__btn-icon-arrow {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Primary CTA (WhatsApp) — teks berubah menjadi warna primary saat hover */
+  .hero__btn--primary {
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+  }
+
+  .hero__btn--primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+  }
+
+  /* Outline/Ghost CTA — teks berubah menjadi warna primary saat hover */
+  .hero__btn--outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--color-white);
+  }
+
+  .hero__btn--outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+    border-color: var(--color-white);
+  }
+
+  /* Trust Indicators */
+  .hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    width: 100%;
+    max-width: 48rem;
+  }
+
+  .hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: #e2e8f0;
+  }
+
+  .hero__trust-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-orange);
+    flex-shrink: 0;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 640px) {
+    .hero__actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      padding: 6rem var(--margin);
+    }
+
+    .hero__title {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    .hero__description {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+</style>
+<!-- ========== HERO SECTION ========== -->
+<section class="hero" id="hero">
+  <div class="hero__container">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Rental Mobil Terpercaya di Lombok &bull; Sejak 2017
+      </div>
+
+      <h1 class="hero__title">
+        Sewa Mobil Lombok &mdash; Nyaman, Lepas Kunci &amp; Antar Jemput Bandara
+      </h1>
+
+      <p class="hero__description">
+        Sewa mobil di Lombok untuk liburan keluarga, perjalanan bisnis, keliling
+        pulau, hingga antar jemput Bandara ZAM. Pilihan lepas kunci atau dengan
+        sopir berpengalaman, armada prima, dan harga jujur tanpa biaya
+        tersembunyi.
+      </p>
+
+      <div class="hero__actions">
+        <a
+          href="https://wa.me/6282339022477?text=Halo%20Admin%20CV.%20Lepas%20Kunci%20Lombok,%20saya%20ingin%20tanya%20ketersediaan%20unit%20mobil."
+          class="hero__btn hero__btn--primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            class="hero__btn-icon"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"
+            ></path>
+          </svg>
+          <span>Pesan via WhatsApp</span>
+        </a>
+
+        <a href="#armada" class="hero__btn hero__btn--outline">
+          <span>Lihat Pilihan Armada</span>
+          <svg
+            class="hero__btn-icon-arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero__trust">
+        <div class="hero__trust-item">
+          <svg
+            class="hero__trust-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 3v3m0 12v3M3 12h3m12 0h3m-2.636-6.364l-2.121 2.121M7.757 16.243l-2.121 2.121m0-12.728l2.121 2.121m8.486 8.486l2.121 2.121"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <circle cx="12" cy="12" r="2.5"></circle>
+          </svg>
+          <span>Unit Siap &amp; Wangi</span>
+        </div>
+        <div class="hero__trust-item">
+          <svg
+            class="hero__trust-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M2.5 19h19"></path>
+            <path
+              d="M4.5 15.5l15-6.5a1.5 1.5 0 0 0-.5-2.8l-4.5 1-4-4-2 1 2.5 4.5-4 1.5-1.5-1.5-1.5.5 1.5 3z"
+            ></path>
+          </svg>
+          <span>Antar Bandara 24 Jam</span>
+        </div>
+        <div class="hero__trust-item">
+          <svg
+            class="hero__trust-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <circle cx="9" cy="10" r="2"></circle>
+            <path d="M15 8h2m-2 4h2m-8 4h8"></path>
+          </svg>
+          <span>Syarat Cukup KTP/SIM</span>
+        </div>
+        <div class="hero__trust-item">
+          <svg
+            class="hero__trust-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path
+              d="M12 8l1.2 2.5 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4z"
+            ></path>
+          </svg>
+          <span>Garansi Unit Prima</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,232 @@
+<!-- ========== BOOKING STEPS SECTION 8 CSS ========== -->
+<style>
+  .booking-steps {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 4rem var(--margin);
+  }
+
+  .booking-steps__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .booking-steps__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .booking-steps__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .booking-steps__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .booking-steps__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Grid */
+  .booking-steps__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Step Card */
+  .step-card {
+    position: relative;
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .step-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  .step-card__number {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: var(--space-md);
+  }
+
+  .step-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .step-card__text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* CTA */
+  .booking-steps__cta-wrap {
+    margin-top: var(--space-xl);
+    text-align: center;
+  }
+
+  .booking-steps__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-base);
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .booking-steps__cta:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+    box-shadow: inset 0 0 0 1px var(--color-navy);
+  }
+
+  .booking-steps__cta-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 640px) {
+    .booking-steps__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .booking-steps__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .booking-steps__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+</style>
+<!-- ========== BOOKING STEPS SECTION 8 ========== -->
+<section class="booking-steps" id="cara-pesan">
+  <div class="booking-steps__container">
+    <div class="booking-steps__header">
+      <span class="booking-steps__eyebrow">Proses Cepat &amp; Praktis</span>
+      <h2 class="booking-steps__title">4 Langkah Mudah Sewa Mobil Lombok</h2>
+      <p class="booking-steps__description">
+        Pemesanan tanpa ribet, proses verifikasi data singkat, unit diantar
+        langsung ke lokasi Anda.
+      </p>
+    </div>
+
+    <div class="booking-steps__grid">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-card__number">1</div>
+        <h3 class="step-card__title">Pilih Mobil &amp; Layanan</h3>
+        <p class="step-card__text">
+          Tentukan jenis mobil sesuai jumlah penumpang dan tentukan paket: Lepas
+          Kunci atau Dengan Supir + BBM.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-card__number">2</div>
+        <h3 class="step-card__title">Hubungi via WhatsApp</h3>
+        <p class="step-card__text">
+          Kirim detail tanggal, jam tiba, lokasi pengantaran (Bandara/Hotel),
+          serta durasi sewa ke admin WhatsApp kami.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-card__number">3</div>
+        <h3 class="step-card__title">Konfirmasi &amp; Verifikasi</h3>
+        <p class="step-card__text">
+          Kirimkan foto identitas (KTP &amp; SIM A aktif untuk lepas kunci).
+          Admin akan mengonfirmasi ketersediaan unit Anda.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-card__number">4</div>
+        <h3 class="step-card__title">Serah Terima &amp; Berangkat</h3>
+        <p class="step-card__text">
+          Mobil diantar tepat waktu di Bandara ZAM atau lobby hotel. Cek kondisi
+          fisik mobil bersama, serah kunci, dan selamat liburan!
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick WhatsApp Button Under Steps -->
+    <div class="booking-steps__cta-wrap">
+      <a
+        href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20jadwal%20sewa%20mobil%20di%20Lombok."
+        class="booking-steps__cta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
+          class="booking-steps__cta-icon"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"
+          ></path>
+        </svg>
+        <span>Mulai Booking via WhatsApp Sekarang</span>
+      </a>
+    </div>
+  </div>
+</section>

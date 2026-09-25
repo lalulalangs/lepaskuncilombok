@@ -1,0 +1,699 @@
+<!-- ========== FLEET / ARMADA SECTION 5 CSS ========== -->
+<style>
+  .fleet {
+    width: 100%;
+    background-color: var(--color-canvas);
+    border-top: 1px solid var(--color-border);
+    padding: 4rem var(--margin);
+  }
+
+  .fleet__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .fleet__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .fleet__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .fleet__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .fleet__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Filter Tabs */
+  .fleet__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-sm);
+    overflow-x: auto;
+    padding-bottom: var(--space-md);
+    margin-bottom: var(--space-xl);
+    scrollbar-width: none;
+  }
+
+  .fleet__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fleet__tab {
+    flex-shrink: 0;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-base);
+    border: 1px solid #cbd5e1;
+    background-color: var(--color-white);
+    color: #334155;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .fleet__tab:hover {
+    background-color: var(--color-canvas);
+  }
+
+  .fleet__tab--active {
+    background-color: var(--color-navy);
+    border-color: var(--color-navy);
+    color: var(--color-white);
+    font-weight: 600;
+  }
+
+  .fleet__tab--active:hover {
+    background-color: var(--color-navy);
+  }
+
+  /* Grid */
+  .fleet__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Vehicle Card */
+  .vehicle-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .vehicle-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  .vehicle-card__visual {
+    position: relative;
+    height: 12rem;
+    background-color: #f1f5f9;
+    padding: var(--space-md);
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vehicle-card__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 0.625rem;
+    border-radius: var(--radius-sm, 0.25rem);
+  }
+
+  .vehicle-card__badge--orange {
+    background-color: var(--color-orange);
+  }
+  .vehicle-card__badge--navy {
+    background-color: var(--color-navy);
+  }
+  .vehicle-card__badge--amber {
+    background-color: var(--color-amber);
+  }
+  .vehicle-card__badge--dark {
+    background-color: #1e293b;
+  }
+  .vehicle-card__badge--emerald {
+    background-color: #059669;
+  }
+
+  .vehicle-card__type {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--color-border);
+    color: var(--color-slate);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 0.5rem;
+    border-radius: var(--radius-sm, 0.25rem);
+  }
+
+  .vehicle-card__illustration {
+    width: 9rem;
+    height: auto;
+    color: #334155;
+  }
+
+  .vehicle-card__illustration--sm {
+    width: 8rem;
+  }
+
+  .vehicle-card__illustration--lg {
+    width: 10rem;
+  }
+
+  /* Body */
+  .vehicle-card__body {
+    padding: 1.25rem;
+  }
+
+  .vehicle-card__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .vehicle-card__specs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--color-slate);
+    margin-top: var(--space-xs);
+  }
+
+  /* Prices */
+  .vehicle-card__prices {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    font-size: 12px;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm);
+    border-radius: var(--radius-base);
+    background-color: var(--color-canvas);
+    border: 1px solid #f1f5f9;
+  }
+
+  .price-row--driver {
+    background-color: #fff4ed;
+    border-color: #ffe0cc;
+  }
+
+  .price-row__label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--color-slate);
+  }
+
+  .price-row__value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-navy);
+  }
+
+  .price-row__value em {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #94a3b8;
+  }
+
+  .price-row__value--orange {
+    color: var(--color-orange);
+  }
+
+  .price-row__value--muted {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-weight: 400;
+    color: #94a3b8;
+  }
+
+  /* Footer / CTA */
+  .vehicle-card__footer {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .vehicle-card__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border-radius: var(--radius-base);
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .vehicle-card__cta:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+    box-shadow: inset 0 0 0 1px var(--color-navy);
+  }
+
+  /* Additional Fleet Info */
+  .fleet__more {
+    margin-top: var(--space-xl);
+    text-align: center;
+  }
+
+  .fleet__more-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--color-slate);
+    margin: 0;
+  }
+
+  .fleet__more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .fleet__more-link:hover {
+    color: var(--color-orange-hover);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 640px) {
+    .fleet__tabs {
+      justify-content: center;
+    }
+
+    .fleet__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .fleet__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+<!-- ========== FLEET / ARMADA SECTION 5========== -->
+<section class="fleet" id="armada">
+  <div class="fleet__container">
+    <div class="fleet__header">
+      <span class="fleet__eyebrow">Daftar Pilihan Kendaraan</span>
+      <h2 class="fleet__title">Armada Mobil CV. Lepas Kunci Lombok</h2>
+      <p class="fleet__description">
+        Pilihan kendaraan terawat, wangi, ber AC dingin, dan siap pakai untuk
+        segala rute medan Lombok dari pantai selatan hingga dataran tinggi
+        Sembalun.
+      </p>
+    </div>
+
+    <!-- Filter Tabs (Visual only, static page) -->
+    <div class="fleet__tabs">
+      <button type="button" class="fleet__tab fleet__tab--active">
+        Semua Mobil
+      </button>
+      <button type="button" class="fleet__tab">City Car (5 Seat)</button>
+      <button type="button" class="fleet__tab">MPV Keluarga (7 Seat)</button>
+      <button type="button" class="fleet__tab">SUV Tangguh</button>
+      <button type="button" class="fleet__tab">Minibus Rombongan</button>
+    </div>
+
+    <!-- Vehicle Cards Grid -->
+    <div class="fleet__grid">
+      <!-- Unit 1: Toyota All New Avanza -->
+      <div class="vehicle-card">
+        <div class="vehicle-card__visual">
+          <span class="vehicle-card__badge vehicle-card__badge--orange"
+            >Paling Diminati</span
+          >
+          <span class="vehicle-card__type">MPV</span>
+          <svg
+            class="vehicle-card__illustration"
+            viewBox="0 0 640 512"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+            ></path>
+          </svg>
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Toyota All New Avanza</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Manual / Matic</span>
+            <span>&#129530; 3 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp350.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp650.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20All%20New%20Avanza."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Avanza
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 2: Toyota Innova Reborn Diesel -->
+      <div class="vehicle-card">
+        <div class="vehicle-card__visual">
+          <span class="vehicle-card__badge vehicle-card__badge--navy"
+            >Rekomendasi Nyaman</span
+          >
+          <span class="vehicle-card__type">Diesel 2.4</span>
+          <svg
+            class="vehicle-card__illustration"
+            viewBox="0 0 640 512"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+            ></path>
+          </svg>
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Toyota Innova Reborn Diesel</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Matic / Manual</span>
+            <span>&#129530; 4 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp500.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp900.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Innova%20Reborn."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Innova
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 3: Toyota Innova Zenix Q -->
+      <div class="vehicle-card">
+        <div class="vehicle-card__visual">
+          <span class="vehicle-card__badge vehicle-card__badge--amber"
+            >Premium Captain Seat</span
+          >
+          <span class="vehicle-card__type">Tipe Tertinggi</span>
+          <svg
+            class="vehicle-card__illustration"
+            viewBox="0 0 640 512"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+            ></path>
+          </svg>
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Toyota Innova Zenix Q</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Matic CVT</span>
+            <span>&#129530; 4 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value"
+                >Rp1.200.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp1.400.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Innova%20Zenix%20Q."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Zenix Q
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 4: Mitsubishi Pajero Sport / Fortuner -->
+      <div class="vehicle-card">
+        <div class="vehicle-card__visual">
+          <span class="vehicle-card__badge vehicle-card__badge--dark"
+            >Tangguh &amp; Mewah</span
+          >
+          <span class="vehicle-card__type">Big SUV</span>
+          <svg
+            class="vehicle-card__illustration"
+            viewBox="0 0 640 512"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+            ></path>
+          </svg>
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Mitsubishi Pajero / Fortuner</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Matic 4x2</span>
+            <span>&#129530; 4 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value"
+                >Rp1.200.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp1.400.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Pajero%20atau%20Fortuner."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit SUV
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 5: Honda Brio / Toyota Agya -->
+      <div class="vehicle-card">
+        <div class="vehicle-card__visual">
+          <span class="vehicle-card__badge vehicle-card__badge--emerald"
+            >Paling Hemat &amp; Irit</span
+          >
+          <span class="vehicle-card__type">City Car</span>
+          <svg
+            class="vehicle-card__illustration vehicle-card__illustration--sm"
+            viewBox="0 0 640 512"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+            ></path>
+          </svg>
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Honda Brio / Toyota Agya</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 5 Penumpang</span>
+            <span>&#9881;&#65039; Matic / Manual</span>
+            <span>&#129530; 2 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp300.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp600.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Honda%20Brio%20atau%20Agya."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit City Car
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 6: Toyota Hiace Commuter / Premio -->
+      <div class="vehicle-card">
+        <div class="vehicle-card__visual">
+          <span class="vehicle-card__badge vehicle-card__badge--navy"
+            >Rombongan &amp; Dinas</span
+          >
+          <span class="vehicle-card__type">Minibus</span>
+          <svg
+            class="vehicle-card__illustration vehicle-card__illustration--lg"
+            viewBox="0 0 640 512"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M64 128C46.3 128 32 142.3 32 160V384c0 17.7 14.3 32 32 32H96v32c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V416H448v32c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V416h32c17.7 0 32-14.3 32-32V250.7c0-17-6.7-33.3-18.7-45.3L512 128H64zM160 336a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm320 0a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"
+            ></path>
+          </svg>
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Toyota Hiace Commuter / Premio</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 14 / 16 Seat</span>
+            <span>&#9881;&#65039; Driver Standar Pariwisata</span>
+            <span>&#129530; 8+ Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value price-row__value--muted"
+                >Hanya Dengan Driver</span
+              >
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp1.100.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Hiace%20Minibus."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Hiace
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Fleet Support Info -->
+    <div class="fleet__more">
+      <p class="fleet__more-text">
+        Tersedia juga pilihan armada lain seperti
+        <strong
+          >Daihatsu Xenia, Terios, Suzuki Ertiga, WR V, hingga Medium Bus
+          Pariwisata 30 Seat</strong
+        >.
+      </p>
+      <a
+        href="https://wa.me/6282339022477?text=Halo%20Admin,%20tanya%20daftar%20armada%20lengkap%20lainnya."
+        class="fleet__more-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>Tanyakan Ketersediaan Unit Lain ke Admin WhatsApp</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

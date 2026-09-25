@@ -1,0 +1,408 @@
+<!-- AIRPORT TRANSFER SECTION 3 CSS -->
+<style>
+  .airport {
+    width: 100%;
+    background-color: var(--color-canvas);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 4rem var(--margin);
+  }
+
+  .airport__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .airport__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  /* Left column */
+  .airport__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .airport__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    align-self: flex-start;
+    padding: var(--space-xs) 0.75rem;
+    border-radius: var(--radius-base);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    color: var(--color-slate);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .airport__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .airport__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin: 0;
+  }
+
+  /* Perks list */
+  .airport__perks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding-top: var(--space-xs);
+  }
+
+  .airport-perk {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-md, 0.75rem);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+  }
+
+  .airport-perk__check {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    border-radius: var(--radius-full);
+    background-color: #ffe8dc;
+    color: var(--color-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .airport-perk__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .airport-perk__text {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 16px;
+    color: #64748b;
+    margin-top: 2px;
+  }
+
+  /* CTA */
+  .airport__cta-wrap {
+    padding-top: var(--space-xs);
+  }
+
+  .airport__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-base);
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .airport__cta:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+  }
+
+  .airport__cta-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Right column: Travel Time Card */
+  .travel-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  .travel-card__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-navy);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .travel-card__badge {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-orange);
+    background-color: #fff4ed;
+    padding: 2px 0.625rem;
+    border-radius: var(--radius-full);
+  }
+
+  .travel-card__subtext {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--color-slate);
+    margin: 0 0 var(--space-lg);
+  }
+
+  .travel-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .travel-list__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-radius: var(--radius-base);
+    background-color: var(--color-canvas);
+    font-family: var(--font-body);
+    font-size: 13px;
+  }
+
+  .travel-list__left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .travel-list__number {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-orange);
+  }
+
+  .travel-list__name {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: #334155;
+  }
+
+  .travel-list__time {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-navy);
+  }
+
+  .travel-card__note {
+    margin-top: var(--space-lg);
+    padding: 0.75rem;
+    border-radius: var(--radius-base);
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-body);
+    font-size: 11px;
+    line-height: 16px;
+    color: var(--color-slate);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 640px) {
+    .airport__perks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .airport__grid {
+      grid-template-columns: 7fr 5fr;
+      gap: var(--space-xl);
+    }
+
+    .airport__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+</style>
+
+<!-- ========== AIRPORT TRANSFER SECTION 3========== -->
+<section class="airport" id="bandara">
+  <div class="airport__container">
+    <div class="airport__grid">
+      <!-- Left Column: Service Details & CTA -->
+      <div class="airport__content">
+        <div class="airport__tag">
+          <span aria-hidden="true">&#9992;&#65039;</span> Airport Transfer
+          Service ZAM Praya
+        </div>
+
+        <h2 class="airport__title">
+          Sewa Mobil Bandara Lombok (ZAM Praya) Antar Jemput 24 Jam
+        </h2>
+
+        <p class="airport__description">
+          Mendarat larut malam atau penerbangan pertama di Bandara Zainuddin
+          Abdul Madjid (ZAM)? Layanan antar jemput bandara kami siap menyambut
+          Anda tepat waktu. Tim kami memantau jadwal kedatangan pesawat Anda
+          secara berkala, memastikan mobil sudah siap saat keluar pintu
+          terminal.
+        </p>
+
+        <!-- Airport Perks List -->
+        <div class="airport__perks">
+          <div class="airport-perk">
+            <span class="airport-perk__check">&#10003;</span>
+            <div>
+              <h4 class="airport-perk__title">Meet &amp; Greet Terminal</h4>
+              <p class="airport-perk__text">
+                Driver memegang papan nama Anda di lobby kedatangan.
+              </p>
+            </div>
+          </div>
+          <div class="airport-perk">
+            <span class="airport-perk__check">&#10003;</span>
+            <div>
+              <h4 class="airport-perk__title">Flight Delay Protection</h4>
+              <p class="airport-perk__text">
+                Jadwal penjemputan otomatis menyesuaikan jika penerbangan delay.
+              </p>
+            </div>
+          </div>
+          <div class="airport-perk">
+            <span class="airport-perk__check">&#10003;</span>
+            <div>
+              <h4 class="airport-perk__title">Langsung ke Destinasi</h4>
+              <p class="airport-perk__text">
+                Transfer langsung ke Senggigi, Mataram, Mandalika, Sembalun,
+                dll.
+              </p>
+            </div>
+          </div>
+          <div class="airport-perk">
+            <span class="airport-perk__check">&#10003;</span>
+            <div>
+              <h4 class="airport-perk__title">Opsi Lepas Kunci di Bandara</h4>
+              <p class="airport-perk__text">
+                Serah terima unit langsung di area parkir bandara tanpa ribet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="airport__cta-wrap">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20butuh%20layanan%20Antar%20Jemput%20Bandara%20Lombok."
+            class="airport__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="airport__cta-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"
+              ></path>
+            </svg>
+            <span>Booking Antar Jemput Bandara</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Estimated Travel Times Card -->
+      <div class="airport__aside">
+        <div class="travel-card">
+          <h3 class="travel-card__heading">
+            <span>Estimasi Waktu Tempuh dari Bandara</span>
+            <span class="travel-card__badge">Bypass Road</span>
+          </h3>
+          <p class="travel-card__subtext">
+            Jarak &amp; perkiraan durasi perjalanan dari Bandara ZAM Praya ke
+            titik populer:
+          </p>
+
+          <ul class="travel-list">
+            <li class="travel-list__item">
+              <span class="travel-list__left">
+                <span class="travel-list__number">1.</span>
+                <span class="travel-list__name">Kuta Mandalika (Sirkuit)</span>
+              </span>
+              <span class="travel-list__time">&plusmn; 20 / 25 Menit</span>
+            </li>
+            <li class="travel-list__item">
+              <span class="travel-list__left">
+                <span class="travel-list__number">2.</span>
+                <span class="travel-list__name"
+                  >Kota Mataram &amp; Ampenan</span
+                >
+              </span>
+              <span class="travel-list__time">&plusmn; 40 / 45 Menit</span>
+            </li>
+            <li class="travel-list__item">
+              <span class="travel-list__left">
+                <span class="travel-list__number">3.</span>
+                <span class="travel-list__name">Kawasan Wisata Senggigi</span>
+              </span>
+              <span class="travel-list__time">&plusmn; 60 / 70 Menit</span>
+            </li>
+            <li class="travel-list__item">
+              <span class="travel-list__left">
+                <span class="travel-list__number">4.</span>
+                <span class="travel-list__name"
+                  >Pelabuhan Bangsal (ke Gili)</span
+                >
+              </span>
+              <span class="travel-list__time">&plusmn; 80 / 90 Menit</span>
+            </li>
+            <li class="travel-list__item">
+              <span class="travel-list__left">
+                <span class="travel-list__number">5.</span>
+                <span class="travel-list__name"
+                  >Sembalun (Kaki Gn. Rinjani)</span
+                >
+              </span>
+              <span class="travel-list__time">&plusmn; 2 / 2.5 Jam</span>
+            </li>
+          </ul>
+
+          <div class="travel-card__note">
+            <span aria-hidden="true">&#128161;</span>
+            <strong>Tips:</strong> Cantumkan nomor penerbangan saat reservasi
+            agar tim kami dapat memantau status gate dan pendaratan Anda.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

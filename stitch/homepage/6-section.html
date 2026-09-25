@@ -1,0 +1,301 @@
+<!-- ========== TRUST REASONS SECTION 6 CSS ========== -->
+<style>
+  .trust {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 4rem var(--margin);
+  }
+
+  .trust__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .trust__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .trust__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .trust__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .trust__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Grid */
+  .trust__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Card */
+  .trust-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .trust-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  .trust-card__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: var(--radius-base);
+    background-color: #fff4ed;
+    color: var(--color-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .trust-card__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .trust-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .trust-card__text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-xs);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 768px) {
+    .trust__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .trust__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+</style>
+<!-- ========== TRUST REASONS SECTION 6 ========== -->
+<section class="trust" id="keunggulan">
+  <div class="trust__container">
+    <div class="trust__header">
+      <span class="trust__eyebrow">Komitmen Pelayanan</span>
+      <h2 class="trust__title">Kenapa Memilih CV. Lepas Kunci Lombok?</h2>
+      <p class="trust__description">
+        Dedikasi kami adalah memberikan ketenangan pikiran selama Anda berlibur
+        maupun bertugas di Lombok.
+      </p>
+    </div>
+
+    <div class="trust__grid">
+      <!-- Card 1 -->
+      <div class="trust-card">
+        <div class="trust-card__icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+        <div class="trust-card__content">
+          <h3 class="trust-card__title">Armada Terawat Bengkel Resmi</h3>
+          <p class="trust-card__text">
+            Pengecekan rem, ban, oli, dan AC selalu dilakukan berkala sebelum
+            unit diserahterimakan kepada pelanggan.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="trust-card">
+        <div class="trust-card__icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+        <div class="trust-card__content">
+          <h3 class="trust-card__title">Harga Jujur &amp; Transparan</h3>
+          <p class="trust-card__text">
+            Biaya tertera adalah biaya riil. Tidak ada tagihan siluman, biaya
+            admin tak terduga, atau kenaikan tarif sepihak di lokasi.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="trust-card">
+        <div class="trust-card__icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+        <div class="trust-card__content">
+          <h3 class="trust-card__title">Respon Cepat 24 Jam</h3>
+          <p class="trust-card__text">
+            Customer service kami selalu aktif merespons via WhatsApp kapan pun
+            Anda butuh informasi atau konsultasi rute wisata.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="trust-card">
+        <div class="trust-card__icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+        <div class="trust-card__content">
+          <h3 class="trust-card__title">Antar Unit Gratis</h3>
+          <p class="trust-card__text">
+            Fasilitas gratis antar dan ambil mobil di area dalam Kota Mataram,
+            Ampenan, dan hotel rekanan tertentu di area Lombok.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="trust-card">
+        <div class="trust-card__icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+        <div class="trust-card__content">
+          <h3 class="trust-card__title">Driver Ramah &amp; Bebas Rokok</h3>
+          <p class="trust-card__text">
+            Pengemudi berlisensi resmi, berpakaian rapi, tidak merokok dalam
+            mobil, dan mengutamakan kenyamanan serta etika keluarga.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="trust-card">
+        <div class="trust-card__icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+        <div class="trust-card__content">
+          <h3 class="trust-card__title">Legalitas Resmi Sejak 2017</h3>
+          <p class="trust-card__text">
+            Berbadan hukum resmi CV dengan kantor fisik terverifikasi di
+            Mataram. Aman untuk instansi, korporat, maupun perorangan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

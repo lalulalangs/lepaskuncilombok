@@ -1,0 +1,249 @@
+<!-- ========== COVERAGE AREA SECTION 7 CSS ========== -->
+<style>
+  .coverage {
+    width: 100%;
+    background-color: var(--color-canvas);
+    border-top: 1px solid var(--color-border);
+    padding: 4rem var(--margin);
+  }
+
+  .coverage__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .coverage__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .coverage__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .coverage__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .coverage__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Grid */
+  .coverage__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Area Card */
+  .area-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+
+  .area-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .area-card__pin {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: var(--radius-full);
+    background-color: #fff4ed;
+    color: var(--color-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .area-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .area-card__text {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-slate);
+    margin-top: 0.75rem;
+  }
+
+  /* Tag */
+  .area-card__tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 0.5rem;
+    border-radius: var(--radius-sm, 0.25rem);
+  }
+
+  .area-card__tag--emerald {
+    color: #047857;
+    background-color: #d1fae5;
+  }
+
+  .area-card__tag--navy {
+    color: var(--color-navy);
+    background-color: #edeeef;
+  }
+
+  .area-card__tag--slate {
+    color: var(--color-slate);
+    background-color: #edeeef;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 640px) {
+    .coverage__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .coverage__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .coverage__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+</style>
+<!-- ========== COVERAGE AREA SECTION 7 ========== -->
+<section class="coverage" id="wilayah">
+  <div class="coverage__container">
+    <div class="coverage__header">
+      <span class="coverage__eyebrow">Jangkauan Seluruh Pulau</span>
+      <h2 class="coverage__title">Wilayah Layanan Rental Mobil di Lombok</h2>
+      <p class="coverage__description">
+        Kami melayani serah terima unit, penjemputan, dan pengantaran ke seluruh
+        kawasan strategis di Lombok.
+      </p>
+    </div>
+
+    <div class="coverage__grid">
+      <!-- Area 1 -->
+      <div class="area-card">
+        <div class="area-card__header">
+          <span class="area-card__pin">&#128205;</span>
+          <h3 class="area-card__title">Kota Mataram &amp; Ampenan</h3>
+        </div>
+        <p class="area-card__text">
+          Pusat perkantoran, hotel bisnis, pusat oleh oleh Lombok (Kaos Sasaku,
+          Mutiara), dan Kota Tua Ampenan.
+        </p>
+        <div class="area-card__tag area-card__tag--emerald">
+          &#10003; Free Biaya Antar/Ambil
+        </div>
+      </div>
+
+      <!-- Area 2 -->
+      <div class="area-card">
+        <div class="area-card__header">
+          <span class="area-card__pin">&#128205;</span>
+          <h3 class="area-card__title">Bandara Lombok (ZAM Praya)</h3>
+        </div>
+        <p class="area-card__text">
+          Layanan serah terima unit di gate bandara, shuttle drop, dan
+          penjemputan kedatangan domestik/internasional 24 jam.
+        </p>
+        <div class="area-card__tag area-card__tag--navy">
+          &#10003; Standby Siaga 24 Jam
+        </div>
+      </div>
+
+      <!-- Area 3 -->
+      <div class="area-card">
+        <div class="area-card__header">
+          <span class="area-card__pin">&#128205;</span>
+          <h3 class="area-card__title">Senggigi &amp; Mangsit</h3>
+        </div>
+        <p class="area-card__text">
+          Resort pantai barat Lombok, villa keluarga, kafe tepi pantai, dan rute
+          eksotis pesisir Pantai Senggigi.
+        </p>
+        <div class="area-card__tag area-card__tag--slate">
+          &#10003; Antar Unit ke Semua Hotel
+        </div>
+      </div>
+
+      <!-- Area 4 -->
+      <div class="area-card">
+        <div class="area-card__header">
+          <span class="area-card__pin">&#128205;</span>
+          <h3 class="area-card__title">Kuta Mandalika &amp; Tanjung Aan</h3>
+        </div>
+        <p class="area-card__text">
+          Area Sirkuit Pertamina Mandalika, Bukit Merese, Pantai Seger, Pantai
+          Selong Belanak, dan villa di Kuta Lombok.
+        </p>
+        <div class="area-card__tag area-card__tag--slate">
+          &#10003; Akses Bypass Mulus
+        </div>
+      </div>
+
+      <!-- Area 5 -->
+      <div class="area-card">
+        <div class="area-card__header">
+          <span class="area-card__pin">&#128205;</span>
+          <h3 class="area-card__title">Pelabuhan Bangsal &amp; Lembar</h3>
+        </div>
+        <p class="area-card__text">
+          Titik penyeberangan kapal cepat ke 3 Gili (Trawangan, Meno, Air) serta
+          pelabuhan kapal feri Lombok / Bali (Lembar).
+        </p>
+        <div class="area-card__tag area-card__tag--slate">
+          &#10003; Drop &amp; Pick Up Tepat Waktu
+        </div>
+      </div>
+
+      <!-- Area 6 -->
+      <div class="area-card">
+        <div class="area-card__header">
+          <span class="area-card__pin">&#128205;</span>
+          <h3 class="area-card__title">Sembalun &amp; Senaru Rinjani</h3>
+        </div>
+        <p class="area-card__text">
+          Dataran tinggi Sembalun, Bukit Pergasingan, kebun stroberi, serta
+          pintu pendakian Gunung Rinjani dengan armada prima.
+        </p>
+        <div class="area-card__tag area-card__tag--slate">
+          &#10003; Unit Kuat Menanjak
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

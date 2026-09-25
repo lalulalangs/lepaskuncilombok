@@ -1,0 +1,336 @@
+<!-- SECTION 2: QUICK SERVICES CSS-->
+<style>
+  .services {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 4rem var(--margin);
+  }
+
+  .services__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .services__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .services__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .services__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .services__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Grid */
+  .services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Card */
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem; /* Container Radius */
+    padding: 1.25rem;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .service-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  .service-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .service-card__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .service-card__icon--orange {
+    background-color: #ffe8dc;
+    color: var(--color-orange);
+  }
+
+  .service-card__icon--navy {
+    background-color: #dce6f5;
+    color: var(--color-navy);
+  }
+
+  .service-card__icon--amber {
+    background-color: #fdecd2;
+    color: var(--color-amber);
+  }
+
+  .service-card__icon--emerald {
+    background-color: #d1fae5;
+    color: #047857;
+  }
+
+  .service-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .service-card__text {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  .service-card__footer {
+    margin-top: var(--space-md);
+    padding-top: 0.75rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .service-card__link:hover {
+    color: var(--color-orange-hover);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 640px) {
+    .services__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .services__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .services__grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+</style>
+<!-- SECTION 2: QUICK SERVICES -->
+<section class="services" id="layanan">
+  <div class="services__container">
+    <div class="services__header">
+      <span class="services__eyebrow">Solusi Transportasi Komprehensif</span>
+      <h2 class="services__title">Pilihan Layanan Rental Mobil Lombok</h2>
+      <p class="services__description">
+        Pilih jenis paket layanan sewa kendaraan yang paling cocok untuk
+        mobilitas Anda di pulau Lombok.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      <!-- Card 1: Sewa Mobil Lombok Wisata -->
+      <div class="service-card">
+        <div class="service-card__body">
+          <div class="service-card__icon service-card__icon--orange">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Sewa Mobil Lombok</h3>
+          <p class="service-card__text">
+            Eksplorasi wisata pantai, Bukit Merese, Sembalun, hingga Air Terjun
+            Benang Kelambu tanpa repot berganti kendaraan.
+          </p>
+        </div>
+        <div class="service-card__footer">
+          <a href="#armada" class="service-card__link">
+            Lihat Detail <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Rental Mobil Mataram -->
+      <div class="service-card">
+        <div class="service-card__body">
+          <div class="service-card__icon service-card__icon--navy">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Rental Mobil Mataram</h3>
+          <p class="service-card__text">
+            Kebutuhan operasional kantor, instansi dinas, urusan bisnis, serta
+            mobilitas harian dalam Kota Mataram dan Ampenan.
+          </p>
+        </div>
+        <div class="service-card__footer">
+          <a href="#armada" class="service-card__link">
+            Lihat Detail <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Sewa Mobil Bandara Lombok -->
+      <div class="service-card">
+        <div class="service-card__body">
+          <div class="service-card__icon service-card__icon--amber">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Sewa Mobil Bandara</h3>
+          <p class="service-card__text">
+            Layanan pick up &amp; drop off Bandara Internasional Lombok (ZAM
+            Praya) 24 jam nonstop, tanpa perlu antre taksi.
+          </p>
+        </div>
+        <div class="service-card__footer">
+          <a href="#bandara" class="service-card__link">
+            Lihat Detail <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4: Sewa Lepas Kunci -->
+      <div class="service-card">
+        <div class="service-card__body">
+          <div class="service-card__icon service-card__icon--orange">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Lepas Kunci Lombok</h3>
+          <p class="service-card__text">
+            Privasi maksimal bagi Anda dan keluarga. Bebas atur waktu perjalanan
+            keliling Lombok dengan proses verifikasi ringkas.
+          </p>
+        </div>
+        <div class="service-card__footer">
+          <a href="#perbandingan" class="service-card__link">
+            Lihat Syarat <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5: Sewa Mobil Dengan Sopir -->
+      <div class="service-card">
+        <div class="service-card__body">
+          <div class="service-card__icon service-card__icon--emerald">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Dengan Sopir Lombok</h3>
+          <p class="service-card__text">
+            Perjalanan rileks bebas lelah. Driver asli Lombok yang santun, bebas
+            rokok, dan paham spot kuliner serta rute alternatif.
+          </p>
+        </div>
+        <div class="service-card__footer">
+          <a href="#perbandingan" class="service-card__link">
+            Lihat Detail <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

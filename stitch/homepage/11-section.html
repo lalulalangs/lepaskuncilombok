@@ -1,0 +1,261 @@
+<!-- ========== BLOG / GUIDES SECTION 11 CSS ========== -->
+ <!-- catatan: nanti ini bisa dibuat menjadi dynamic untuk ambil data realtime dari "POST" -->
+<style>
+  .blog {
+    width: 100%;
+    background-color: var(--color-canvas);
+    border-top: 1px solid var(--color-border);
+    padding: 4rem var(--margin);
+  }
+
+  .blog__container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .blog__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .blog__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .blog__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .blog__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Grid */
+  .blog__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Card */
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .blog-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  /* Cover placeholder (belum ada gambar artikel) */
+  .blog-card__cover {
+    height: 11rem;
+    background-color: #e1e3e4;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .blog-card__tag {
+    align-self: flex-start;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 0.5rem;
+    border-radius: var(--radius-sm, 0.25rem);
+  }
+
+  .blog-card__tag--navy {
+    background-color: var(--color-navy);
+  }
+  .blog-card__tag--orange {
+    background-color: var(--color-orange);
+  }
+  .blog-card__tag--emerald {
+    background-color: #047857;
+  }
+
+  /* Body */
+  .blog-card__body {
+    padding: 1.25rem;
+  }
+
+  .blog-card__meta {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .blog-card__excerpt {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Footer */
+  .blog-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1rem;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-orange);
+  }
+
+  .blog-card__link {
+    transition: text-decoration 0.2s ease;
+  }
+
+  .blog-card:hover .blog-card__link {
+    text-decoration: underline;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 768px) {
+    .blog__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+</style>
+<!-- ========== BLOG / GUIDES SECTION 11 ========== -->
+<!-- catatan: nanti ini bisa dibuat menjadi dynamic untuk ambil data realtime dari "POST" -->
+
+<section class="blog" id="artikel">
+  <div class="blog__container">
+    <div class="blog__header">
+      <span class="blog__eyebrow">Panduan &amp; Wawasan Wisata</span>
+      <h2 class="blog__title">Tips &amp; Informasi Rental Mobil Lombok</h2>
+      <p class="blog__description">
+        Simak panduan penting sebelum memilih armada agar rencana liburan dan
+        perjalanan kerja Anda di Lombok semakin efisien.
+      </p>
+    </div>
+
+    <div class="blog__grid">
+      <!-- Article 1 -->
+      <article class="blog-card">
+        <div class="blog-card__cover">
+          <span class="blog-card__tag blog-card__tag--navy"
+            >Tips Berkendara</span
+          >
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">Update Terbaru &bull; 5 Menit Baca</div>
+          <h3 class="blog-card__title">
+            Tips Memilih Sewa Mobil Lombok Lepas Kunci Aman dan Nyaman
+          </h3>
+          <p class="blog-card__excerpt">
+            Hal hal krusial yang wajib diperiksa sebelum menyewa mobil lepas
+            kunci, mulai dari kelengkapan dokumen, cek fisik bodi kendaraan,
+            hingga kesiapan ban cadangan.
+          </p>
+        </div>
+        <div class="blog-card__footer">
+          <span class="blog-card__link">Baca Selengkapnya</span>
+          <span aria-hidden="true">&rarr;</span>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card">
+        <div class="blog-card__cover">
+          <span class="blog-card__tag blog-card__tag--orange"
+            >Biaya &amp; Budget</span
+          >
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">Update Terbaru &bull; 7 Menit Baca</div>
+          <h3 class="blog-card__title">
+            Panduan Estimasi Rincian Biaya Liburan dan Transportasi di Lombok
+            2026
+          </h3>
+          <p class="blog-card__excerpt">
+            Rincian simulasi anggaran sewa mobil, konsumsi BBM keliling Lombok
+            dari pantai Kuta sampai kaki Gunung Rinjani, dan tiket masuk tempat
+            wisata utama.
+          </p>
+        </div>
+        <div class="blog-card__footer">
+          <span class="blog-card__link">Baca Selengkapnya</span>
+          <span aria-hidden="true">&rarr;</span>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card">
+        <div class="blog-card__cover">
+          <span class="blog-card__tag blog-card__tag--emerald"
+            >Bandara &amp; Rute</span
+          >
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">Update Terbaru &bull; 4 Menit Baca</div>
+          <h3 class="blog-card__title">
+            Sewa Mobil Bandara Lombok: Tips Penjemputan Tepat Waktu Tanpa
+            Menunggu
+          </h3>
+          <p class="blog-card__excerpt">
+            Cara praktis mengatur titik temu dengan driver di pintu kedatangan
+            Bandara ZAM Praya serta langkah mengantisipasi keterlambatan jadwal
+            terbang.
+          </p>
+        </div>
+        <div class="blog-card__footer">
+          <span class="blog-card__link">Baca Selengkapnya</span>
+          <span aria-hidden="true">&rarr;</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,316 @@
+<!-- ========== TESTIMONIAL SECTION 9 CSS ========== -->
+<style>
+  .testimonial {
+    width: 100%;
+    background-color: var(--color-canvas);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 4rem 0;
+  }
+
+  .testimonial__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 var(--margin);
+  }
+
+  /* Header */
+  .testimonial__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .testimonial__eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+
+  .testimonial__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+
+  .testimonial__description {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-slate);
+    margin-top: var(--space-sm);
+  }
+
+  /* Slider viewport: full-bleed scroll area, padded via track */
+  .testimonial__viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Horizontal scroll-snap track (siap untuk data live & slide) */
+  .testimonial-track {
+    display: flex;
+    gap: var(--space-lg);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--margin);
+    padding: var(--space-xs) var(--margin) var(--space-md);
+    margin: 0 calc(var(--margin) * -1);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .testimonial-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Card */
+  .testimonial-card {
+    scroll-snap-align: start;
+    flex: 0 0 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .testimonial-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  /* Stars */
+  .testimonial-card__stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--color-amber);
+    font-size: 14px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .testimonial-card__rating-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    color: #334155;
+    margin-left: 6px;
+  }
+
+  /* Quote */
+  .testimonial-card__quote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 13px;
+    line-height: 19px;
+    color: #334155;
+    margin: 0;
+  }
+
+  /* Footer */
+  .testimonial-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .testimonial-card__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--color-navy);
+  }
+
+  .testimonial-card__meta {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+
+  .testimonial-card__verified {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 12px;
+    color: #059669;
+    flex-shrink: 0;
+  }
+
+  /* Dots indicator */
+  .testimonial__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .testimonial__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background-color: #cbd5e1;
+  }
+
+  .testimonial__dot--active {
+    width: 20px;
+    background-color: var(--color-orange);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (min-width: 640px) {
+    .testimonial-card {
+      flex: 0 0 60%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-track {
+      scroll-snap-type: none;
+      overflow-x: visible;
+      flex-wrap: nowrap;
+    }
+
+    .testimonial-card {
+      flex: 1 1 0;
+      scroll-snap-align: none;
+    }
+
+    .testimonial__dots {
+      display: none;
+    }
+
+    .testimonial__title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+</style>
+<!-- ========== TESTIMONIAL SECTION 9 ========== -->
+<!-- CATATAN: Saat ini data statis. Struktur sudah disiapkan sebagai
+     horizontal scroll-snap slider, siap diisi ulang via data live
+     Google Maps Reviews di kemudian hari (loop .testimonial-card). -->
+<section class="testimonial" id="testimoni">
+  <div class="testimonial__container">
+    <div class="testimonial__header">
+      <span class="testimonial__eyebrow">Bukti Kepuasan Pelanggan</span>
+      <h2 class="testimonial__title">Pengalaman Pelanggan Kami</h2>
+      <p class="testimonial__description">
+        Ribuan wisatawan dan mitra bisnis telah mempercayakan perjalanannya
+        kepada CV. Lepas Kunci Lombok.
+      </p>
+    </div>
+
+    <!-- Horizontal Slider Track -->
+    <div class="testimonial__viewport">
+      <div class="testimonial-track" data-purpose="testimonial-track">
+        <!-- Review 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__top">
+            <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span
+              ><span>&#9733;</span><span>&#9733;</span>
+              <span class="testimonial-card__rating-label"
+                >5.0 / Google Review</span
+              >
+            </div>
+            <p class="testimonial-card__quote">
+              &ldquo;Sangat puas sewa Innova lepas kunci 4 hari di Lombok. Mobil
+              bersih dan wangi, mesin halus tarikan kuat pas nanjak ke Sembalun.
+              Serah terima unit di Bandara Praya langsung jalan tanpa ribet.
+              Next ke Lombok pasti sewa di sini lagi.&rdquo;
+            </p>
+          </div>
+          <div class="testimonial-card__footer">
+            <div>
+              <div class="testimonial-card__name">Dimas Prasetyo</div>
+              <div class="testimonial-card__meta">
+                Wisatawan dari Jakarta &bull; Lepas Kunci
+              </div>
+            </div>
+            <span class="testimonial-card__verified">&#10003; Verified</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__top">
+            <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span
+              ><span>&#9733;</span><span>&#9733;</span>
+              <span class="testimonial-card__rating-label"
+                >5.0 / Google Review</span
+              >
+            </div>
+            <p class="testimonial-card__quote">
+              &ldquo;Pelayanan driver Mas Hadi sangat ramah dan sopan. Kami bawa
+              anak kecil dan orang tua, dibantu bawa koper sampai lobby. Tahu
+              tempat makan lokal yang enak dan murah di Praya. Mobil Avanza All
+              New nyaman dan AC dingin pol.&rdquo;
+            </p>
+          </div>
+          <div class="testimonial-card__footer">
+            <div>
+              <div class="testimonial-card__name">Ibu Ratna &amp; Keluarga</div>
+              <div class="testimonial-card__meta">
+                Liburan Keluarga &bull; Dengan Sopir
+              </div>
+            </div>
+            <span class="testimonial-card__verified">&#10003; Verified</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__top">
+            <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span
+              ><span>&#9733;</span><span>&#9733;</span>
+              <span class="testimonial-card__rating-label"
+                >5.0 / Google Review</span
+              >
+            </div>
+            <p class="testimonial-card__quote">
+              &ldquo;Kebutuhan perjalanan dinas kantor di Mataram selama 5 hari
+              berjalan lancar. Invoice lengkap, pelayanan admin WhatsApp gercep,
+              harga jelas dari awal tanpa embel embel biaya aneh. Rekomendasi
+              rental mobil paling profesional di Lombok.&rdquo;
+            </p>
+          </div>
+          <div class="testimonial-card__footer">
+            <div>
+              <div class="testimonial-card__name">Aditya Wibowo</div>
+              <div class="testimonial-card__meta">
+                Perjalanan Bisnis &bull; Kantor Mataram
+              </div>
+            </div>
+            <span class="testimonial-card__verified">&#10003; Verified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Dots (visual indicator, CSS scroll-snap driven) -->
+    <div class="testimonial__dots" aria-hidden="true">
+      <span class="testimonial__dot testimonial__dot--active"></span>
+      <span class="testimonial__dot"></span>
+      <span class="testimonial__dot"></span>
+    </div>
+  </div>
+</section>
