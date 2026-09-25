@@ -64,6 +64,8 @@
 
   .fleet__tab {
     flex-shrink: 0;
+    width: auto; /* ⬅️ override wajib */
+    margin: 0; /* ⬅️ jaga-jaga override margin: 0 auto dari global */
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-base);
     border: 1px solid #cbd5e1;
@@ -361,10 +363,18 @@
       <button type="button" class="fleet__tab fleet__tab--active">
         Semua Mobil
       </button>
-      <button type="button" class="fleet__tab">City Car (5 Seat)</button>
-      <button type="button" class="fleet__tab">MPV Keluarga (7 Seat)</button>
-      <button type="button" class="fleet__tab">SUV Tangguh</button>
-      <button type="button" class="fleet__tab">Minibus Rombongan</button>
+      <button type="button" class="fleet__tab" data-category="citycar">
+        City Car (5 Seat)
+      </button>
+      <button type="button" class="fleet__tab" data-category="mpv">
+        MPV Keluarga (7 Seat)
+      </button>
+      <button type="button" class="fleet__tab" data-category="suv">
+        SUV Tangguh
+      </button>
+      <button type="button" class="fleet__tab" data-category="minibus">
+        Minibus Rombongan
+      </button>
     </div>
 
     <!-- Vehicle Cards Grid -->
@@ -697,3 +707,21 @@
     </div>
   </div>
 </section>
+<script>
+  document.querySelectorAll(".fleet__tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document
+        .querySelector(".fleet__tab--active")
+        ?.classList.remove("fleet__tab--active");
+      tab.classList.add("fleet__tab--active");
+
+      const selected = tab.dataset.category;
+      document.querySelectorAll(".vehicle-card").forEach((card) => {
+        card.style.display =
+          selected === "all" || card.dataset.category === selected
+            ? ""
+            : "none";
+      });
+    });
+  });
+</script>
