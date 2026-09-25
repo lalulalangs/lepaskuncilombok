@@ -131,6 +131,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* tambahan: jaga-jaga konten tidak keluar box */
   }
 
   .vehicle-card__badge {
@@ -143,6 +144,11 @@
     font-weight: 700;
     padding: 2px 0.625rem;
     border-radius: var(--radius-sm, 0.25rem);
+  }
+
+  .vehicle-card__badge,
+  .vehicle-card__type {
+    z-index: 1;
   }
 
   .vehicle-card__badge--orange {
@@ -187,6 +193,21 @@
 
   .vehicle-card__illustration--lg {
     width: 10rem;
+  }
+
+  .vehicle-card__visual--photo {
+    height: auto;
+    aspect-ratio: 5 / 4; /* sesuai rasio asli 2500x2000 */
+    padding: 0;
+    display: block; /* lepas dari flex agar sizing lebih predictable */
+  }
+
+  .vehicle-card__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   /* Body */
@@ -360,7 +381,11 @@
 
     <!-- Filter Tabs (Visual only, static page) -->
     <div class="fleet__tabs">
-      <button type="button" class="fleet__tab fleet__tab--active">
+      <button
+        type="button"
+        class="fleet__tab fleet__tab--active"
+        data-category="all"
+      >
         Semua Mobil
       </button>
       <button type="button" class="fleet__tab" data-category="citycar">
@@ -379,26 +404,68 @@
 
     <!-- Vehicle Cards Grid -->
     <div class="fleet__grid">
-      <!-- Unit 1: Toyota All New Avanza -->
-      <div class="vehicle-card">
-        <div class="vehicle-card__visual">
+      <!-- Unit 1: Toyota Agya -->
+      <div class="vehicle-card" data-category="citycar">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--emerald"
+            >Paling Hemat</span
+          >
+          <span class="vehicle-card__type">Hatchback</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Agya.jpg"
+            alt="sewa agya murah lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Toyota Agya</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 5 Penumpang</span>
+            <span>&#9881;&#65039; Manual / Matic</span>
+            <span>&#129530; 2 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp300.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp650.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Agya."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Agya
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 2: Toyota Avanza -->
+      <div class="vehicle-card" data-category="mpv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
           <span class="vehicle-card__badge vehicle-card__badge--orange"
             >Paling Diminati</span
           >
           <span class="vehicle-card__type">MPV</span>
-          <svg
-            class="vehicle-card__illustration"
-            viewBox="0 0 640 512"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
-            ></path>
-          </svg>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2025/10/Sewa-Mobil-Lombok-Toyota-Avanza-Termurah.webp"
+            alt="sewa mobil avanza murah lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
         </div>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota All New Avanza</h3>
+          <h3 class="vehicle-card__name">Toyota Avanza</h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -419,7 +486,7 @@
         </div>
         <div class="vehicle-card__footer">
           <a
-            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20All%20New%20Avanza."
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Avanza."
             class="vehicle-card__cta"
             target="_blank"
             rel="noopener noreferrer"
@@ -429,26 +496,22 @@
         </div>
       </div>
 
-      <!-- Unit 2: Toyota Innova Reborn Diesel -->
-      <div class="vehicle-card">
-        <div class="vehicle-card__visual">
+      <!-- Unit 3: Innova Reborn -->
+      <div class="vehicle-card" data-category="mpv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
           <span class="vehicle-card__badge vehicle-card__badge--navy"
             >Rekomendasi Nyaman</span
           >
-          <span class="vehicle-card__type">Diesel 2.4</span>
-          <svg
-            class="vehicle-card__illustration"
-            viewBox="0 0 640 512"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
-            ></path>
-          </svg>
+          <span class="vehicle-card__type">MPV</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/01/Lepas-Kunci-Lombok-Innova-Reborn.jpg"
+            alt="sewa mobil innova reborn murah lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
         </div>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Innova Reborn Diesel</h3>
+          <h3 class="vehicle-card__name">Innova Reborn</h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic / Manual</span>
@@ -469,88 +532,402 @@
         </div>
         <div class="vehicle-card__footer">
           <a
-            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Innova%20Reborn."
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Innova%20Reborn."
             class="vehicle-card__cta"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pesan Unit Innova
+            Pesan Unit Innova Reborn
           </a>
         </div>
       </div>
 
-      <!-- Unit 3: Toyota Innova Zenix Q -->
-      <div class="vehicle-card">
-        <div class="vehicle-card__visual">
-          <span class="vehicle-card__badge vehicle-card__badge--amber"
-            >Premium Captain Seat</span
+      <!-- Unit 4: Suzuki Ertiga -->
+      <div class="vehicle-card" data-category="mpv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--navy"
+            >Keluarga Nyaman</span
           >
-          <span class="vehicle-card__type">Tipe Tertinggi</span>
-          <svg
-            class="vehicle-card__illustration"
-            viewBox="0 0 640 512"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
-            ></path>
-          </svg>
+          <span class="vehicle-card__type">MPV</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Ertiga-1.jpg"
+            alt="sewa mobil ertiga murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
         </div>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Innova Zenix Q</h3>
+          <h3 class="vehicle-card__name">Suzuki Ertiga</h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
-            <span>&#9881;&#65039; Matic CVT</span>
-            <span>&#129530; 4 Koper</span>
+            <span>&#9881;&#65039; Manual / Matic</span>
+            <span>&#129530; 3 Koper</span>
           </div>
           <div class="vehicle-card__prices">
             <div class="price-row">
               <span class="price-row__label">Lepas Kunci:</span>
-              <span class="price-row__value"
-                >Rp1.200.000 <em>/ 12 Jam</em></span
-              >
+              <span class="price-row__value">Rp350.000 <em>/ 24 Jam</em></span>
             </div>
             <div class="price-row price-row--driver">
               <span class="price-row__label">Driver + BBM:</span>
               <span class="price-row__value price-row__value--orange"
-                >Rp1.400.000 <em>/ 12 Jam</em></span
+                >Rp650.000 <em>/ 12 Jam</em></span
               >
             </div>
           </div>
         </div>
         <div class="vehicle-card__footer">
           <a
-            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Innova%20Zenix%20Q."
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Suzuki%20Ertiga."
             class="vehicle-card__cta"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pesan Unit Zenix Q
+            Pesan Unit Ertiga
           </a>
         </div>
       </div>
 
-      <!-- Unit 4: Mitsubishi Pajero Sport / Fortuner -->
-      <div class="vehicle-card">
-        <div class="vehicle-card__visual">
+      <!-- Unit 5: Honda WR-V -->
+      <div class="vehicle-card" data-category="suv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--amber"
+            >SUV Kompak</span
+          >
+          <span class="vehicle-card__type">SUV</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/WRV.jpg"
+            alt="sewa wrv murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Honda WR-V</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 5 Penumpang</span>
+            <span>&#9881;&#65039; Matic</span>
+            <span>&#129530; 3 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp450.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp800.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Honda%20WR-V."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit WR-V
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 6: Honda City -->
+      <div class="vehicle-card" data-category="citycar">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--dark"
+            >Sedan Nyaman</span
+          >
+          <span class="vehicle-card__type">Hatchback</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Honda-City-1.jpg"
+            alt="sewa honda city murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Honda City</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 5 Penumpang</span>
+            <span>&#9881;&#65039; Matic</span>
+            <span>&#129530; 2 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp450.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp800.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Honda%20City."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit City
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 7: Honda Brio -->
+      <div class="vehicle-card" data-category="citycar">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--emerald"
+            >Paling Hemat &amp; Irit</span
+          >
+          <span class="vehicle-card__type">City Car</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/01/Rental-mobil-lombok-honda-brio.jpg"
+            alt="sewa mobil brio murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Honda Brio</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 5 Penumpang</span>
+            <span>&#9881;&#65039; Manual / Matic</span>
+            <span>&#129530; 2 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp350.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp650.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Honda%20Brio."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Brio
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 8: Medium Bus -->
+      <div class="vehicle-card" data-category="minibus">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--dark"
+            >Rombongan Besar</span
+          >
+          <span class="vehicle-card__type">Bus</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2025/11/Sewa-Big-Bus-di-Lombok-Murah.jpg"
+            alt="sewa Medium Bus murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Medium Bus</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 30+ Seat</span>
+            <span>&#9881;&#65039; Driver Pariwisata</span>
+            <span>&#129530; Bagasi Luas</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value price-row__value--muted"
+                >Tidak Tersedia</span
+              >
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp1.700.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Medium%20Bus."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Medium Bus
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 9: Daihatsu Terios -->
+      <div class="vehicle-card" data-category="suv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--orange"
+            >Favorit Keluarga</span
+          >
+          <span class="vehicle-card__type">SUV</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Terrios.jpg"
+            alt="sewa mobil daihatsu terios murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Daihatsu Terios</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Manual / Matic</span>
+            <span>&#129530; 3 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp350.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp700.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Daihatsu%20Terios."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Terios
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 10: Toyota Raize -->
+      <div class="vehicle-card" data-category="suv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--amber"
+            >SUV Kompak</span
+          >
+          <span class="vehicle-card__type">SUV</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Raiz.jpg"
+            alt="sewa mobil toyota raize murah lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Toyota Raize</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 5 Penumpang</span>
+            <span>&#9881;&#65039; Matic</span>
+            <span>&#129530; 3 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp450.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp800.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Raize."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Raize
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 11: X-Pander -->
+      <div class="vehicle-card" data-category="suv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--orange"
+            >Favorit Keluarga</span
+          >
+          <span class="vehicle-card__type">SUV</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Expander.jpg"
+            alt="sewa xpander murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">X-Pander</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Matic</span>
+            <span>&#129530; 4 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value">Rp450.000 <em>/ 24 Jam</em></span>
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp900.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Mitsubishi%20Xpander."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit X-Pander
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 12: Pajero Sport -->
+      <div class="vehicle-card" data-category="suv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
           <span class="vehicle-card__badge vehicle-card__badge--dark"
             >Tangguh &amp; Mewah</span
           >
           <span class="vehicle-card__type">Big SUV</span>
-          <svg
-            class="vehicle-card__illustration"
-            viewBox="0 0 640 512"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
-            ></path>
-          </svg>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/01/Transportasi-Lombok-Dengan-Driver-Pajero-Sport.jpg"
+            alt="sewa pajero sport murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
         </div>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Mitsubishi Pajero / Fortuner</h3>
+          <h3 class="vehicle-card__name">Pajero Sport</h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic 4x2</span>
@@ -573,109 +950,149 @@
         </div>
         <div class="vehicle-card__footer">
           <a
-            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Pajero%20atau%20Fortuner."
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Pajero%20Sport."
             class="vehicle-card__cta"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pesan Unit SUV
+            Pesan Unit Pajero Sport
           </a>
         </div>
       </div>
 
-      <!-- Unit 5: Honda Brio / Toyota Agya -->
-      <div class="vehicle-card">
-        <div class="vehicle-card__visual">
-          <span class="vehicle-card__badge vehicle-card__badge--emerald"
-            >Paling Hemat &amp; Irit</span
+      <!-- Unit 13: Innova Zenix G -->
+      <div class="vehicle-card" data-category="suv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--amber"
+            >Premium Hybrid</span
           >
-          <span class="vehicle-card__type">City Car</span>
-          <svg
-            class="vehicle-card__illustration vehicle-card__illustration--sm"
-            viewBox="0 0 640 512"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M171.3 96H468.7L521.8 192H118.2L171.3 96zM77.4 200.7L132.8 100.3C143.7 80.5 164.5 68 187.2 68H452.8c22.7 0 43.5 12.5 54.4 32.3l55.4 100.4c29.1 8.8 50.4 35.8 50.4 67.7V400c0 17.7-14.3 32-32 32H544c-17.7 0-32-14.3-32-32V384H128v16c0 17.7-14.3 32-32 32H59c-17.7 0-32-14.3-32-32V268.4c0-31.9 21.3-58.9 50.4-67.7zM128 320a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm384 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
-            ></path>
-          </svg>
+          <span class="vehicle-card__type">SUV</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Zenix-G.jpg"
+            alt="sewa innova zenix-g murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
         </div>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Honda Brio / Toyota Agya</h3>
+          <h3 class="vehicle-card__name">Innova Zenix G</h3>
           <div class="vehicle-card__specs">
-            <span>&#128101; 5 Penumpang</span>
-            <span>&#9881;&#65039; Matic / Manual</span>
-            <span>&#129530; 2 Koper</span>
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Matic CVT</span>
+            <span>&#129530; 4 Koper</span>
           </div>
           <div class="vehicle-card__prices">
             <div class="price-row">
               <span class="price-row__label">Lepas Kunci:</span>
-              <span class="price-row__value">Rp300.000 <em>/ 24 Jam</em></span>
+              <span class="price-row__value">Rp700.000 <em>/ 24 Jam</em></span>
             </div>
             <div class="price-row price-row--driver">
               <span class="price-row__label">Driver + BBM:</span>
               <span class="price-row__value price-row__value--orange"
-                >Rp600.000 <em>/ 12 Jam</em></span
+                >Rp1.200.000 <em>/ 12 Jam</em></span
               >
             </div>
           </div>
         </div>
         <div class="vehicle-card__footer">
           <a
-            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Honda%20Brio%20atau%20Agya."
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Innova%20Zenix%20G."
             class="vehicle-card__cta"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pesan Unit City Car
+            Pesan Unit Zenix G
           </a>
         </div>
       </div>
 
-      <!-- Unit 6: Toyota Hiace Commuter / Premio -->
-      <div class="vehicle-card">
-        <div class="vehicle-card__visual">
+      <!-- Unit 14: Innova Zenix Q -->
+      <div class="vehicle-card" data-category="suv">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
+          <span class="vehicle-card__badge vehicle-card__badge--amber"
+            >Premium Captain Seat</span
+          >
+          <span class="vehicle-card__type">Tipe Tertinggi</span>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/04/Zenix-Q.jpg"
+            alt="sewa innova zenix-q murah di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
+        </div>
+        <div class="vehicle-card__body">
+          <h3 class="vehicle-card__name">Innova Zenix Q</h3>
+          <div class="vehicle-card__specs">
+            <span>&#128101; 7 Penumpang</span>
+            <span>&#9881;&#65039; Matic CVT</span>
+            <span>&#129530; 4 Koper</span>
+          </div>
+          <div class="vehicle-card__prices">
+            <div class="price-row">
+              <span class="price-row__label">Lepas Kunci:</span>
+              <span class="price-row__value"
+                >Rp1.200.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+            <div class="price-row price-row--driver">
+              <span class="price-row__label">Driver + BBM:</span>
+              <span class="price-row__value price-row__value--orange"
+                >Rp1.400.000 <em>/ 12 Jam</em></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="vehicle-card__footer">
+          <a
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Innova%20Zenix%20Q."
+            class="vehicle-card__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pesan Unit Zenix Q
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 15: Toyota Hiace -->
+      <div class="vehicle-card" data-category="minibus">
+        <div class="vehicle-card__visual vehicle-card__visual--photo">
           <span class="vehicle-card__badge vehicle-card__badge--navy"
             >Rombongan &amp; Dinas</span
           >
           <span class="vehicle-card__type">Minibus</span>
-          <svg
-            class="vehicle-card__illustration vehicle-card__illustration--lg"
-            viewBox="0 0 640 512"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M64 128C46.3 128 32 142.3 32 160V384c0 17.7 14.3 32 32 32H96v32c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V416H448v32c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V416h32c17.7 0 32-14.3 32-32V250.7c0-17-6.7-33.3-18.7-45.3L512 128H64zM160 336a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm320 0a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"
-            ></path>
-          </svg>
+          <img
+            class="vehicle-card__photo"
+            src="https://lepaskuncilombok.com/wp-content/uploads/2025/11/Sewa-Mobil-di-Lombok-Dengan-Driver.jpg"
+            alt="sewa toyota hiace di lombok - Lepas Kunci Lombok"
+            loading="lazy"
+          />
         </div>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Hiace Commuter / Premio</h3>
+          <h3 class="vehicle-card__name">Toyota Hiace</h3>
           <div class="vehicle-card__specs">
-            <span>&#128101; 14 / 16 Seat</span>
-            <span>&#9881;&#65039; Driver Standar Pariwisata</span>
+            <span>&#128101; 14 Seat</span>
+            <span>&#9881;&#65039; Driver Pariwisata</span>
             <span>&#129530; 8+ Koper</span>
           </div>
           <div class="vehicle-card__prices">
             <div class="price-row">
               <span class="price-row__label">Lepas Kunci:</span>
               <span class="price-row__value price-row__value--muted"
-                >Hanya Dengan Driver</span
+                >Tidak Tersedia</span
               >
             </div>
             <div class="price-row price-row--driver">
               <span class="price-row__label">Driver + BBM:</span>
               <span class="price-row__value price-row__value--orange"
-                >Rp1.100.000 <em>/ 12 Jam</em></span
+                >Rp1.000.000 <em>/ 12 Jam</em></span
               >
             </div>
           </div>
         </div>
         <div class="vehicle-card__footer">
           <a
-            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Hiace%20Minibus."
+            href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20ingin%20booking%20Toyota%20Hiace."
             class="vehicle-card__cta"
             target="_blank"
             rel="noopener noreferrer"
@@ -689,11 +1106,9 @@
     <!-- Additional Fleet Support Info -->
     <div class="fleet__more">
       <p class="fleet__more-text">
-        Tersedia juga pilihan armada lain seperti
-        <strong
-          >Daihatsu Xenia, Terios, Suzuki Ertiga, WR V, hingga Medium Bus
-          Pariwisata 30 Seat</strong
-        >.
+        Semua unit di atas tersedia dalam pilihan
+        <strong>lepas kunci &amp; dengan driver</strong> (khusus Medium Bus
+        &amp; Hiace hanya dengan driver).
       </p>
       <a
         href="https://wa.me/6282339022477?text=Halo%20Admin,%20tanya%20daftar%20armada%20lengkap%20lainnya."
