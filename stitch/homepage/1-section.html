@@ -2,14 +2,18 @@
 <style>
   .hero {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     /* Background flat primary color (menggantikan foto) */
     background-color: var(--color-navy);
     padding: 4rem var(--margin);
   }
 
   .hero__container {
-    max-width: 1240px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   .hero__content {
@@ -18,7 +22,8 @@
     align-items: center;
     gap: var(--space-lg);
     text-align: center;
-    max-width: 56rem;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -53,6 +58,7 @@
     font-size: 32px;
     line-height: 40px;
     margin: 0;
+    max-width: 64rem;
   }
 
   /* Description */
@@ -62,7 +68,7 @@
     font-size: 16px;
     line-height: 24px;
     color: #cbd5e1;
-    max-width: 42rem;
+    max-width: 48rem;
     margin: 0;
   }
 
@@ -138,7 +144,7 @@
     padding-top: var(--space-md);
     border-top: 1px solid rgba(148, 163, 184, 0.3);
     width: 100%;
-    max-width: 48rem;
+    max-width: 100%;
   }
 
   .hero__trust-item {
