@@ -1,8 +1,21 @@
 <!-- ========== HERO SECTION CSS ========== -->
 <style>
-  .hero {
+  /* override margin */
+  .mcb-column-inner-0418f759f {
+    --mfn-column-gap-top: 0px;
+    --mfn-column-gap-bottom: 0px;
+    --mfn-column-gap-left: 0px;
+    --mfn-column-gap-right: 0px;
+  }
+
+  .hero__banner {
     width: 100%;
     max-width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
     /* Background flat primary color (menggantikan foto) */
     background-color: var(--color-navy);
@@ -173,7 +186,7 @@
   }
 
   @media (min-width: 1024px) {
-    .hero {
+    .hero__banner {
       padding: 6rem var(--margin);
     }
 
@@ -189,7 +202,7 @@
   }
 </style>
 <!-- ========== HERO SECTION ========== -->
-<section class="hero" id="hero">
+<section class="hero__banner" id="hero">
   <div class="hero__container">
     <div class="hero__content">
       <div class="hero__badge">
