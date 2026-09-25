@@ -108,18 +108,29 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-border);
+    background-color: var(--color-white, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
     border-radius: 1rem;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
     transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
       border-color 0.2s ease,
-      transform 0.2s ease;
+      box-shadow 0.2s ease;
   }
 
-  .vehicle-card:hover {
+  .vehicle-card.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--fade-delay, 0s);
+  }
+
+  .vehicle-card.fade-up:hover {
     border-color: #cbd5e1;
     transform: translateY(-2px);
+    transition-delay: 0s;
   }
 
   .vehicle-card__visual {
@@ -134,37 +145,8 @@
     overflow: hidden; /* tambahan: jaga-jaga konten tidak keluar box */
   }
 
-  .vehicle-card__badge {
-    position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
-    color: var(--color-white);
-    font-family: var(--font-display);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 0.625rem;
-    border-radius: var(--radius-sm, 0.25rem);
-  }
-
-  .vehicle-card__badge,
   .vehicle-card__type {
     z-index: 1;
-  }
-
-  .vehicle-card__badge--orange {
-    background-color: var(--color-orange);
-  }
-  .vehicle-card__badge--navy {
-    background-color: var(--color-navy);
-  }
-  .vehicle-card__badge--amber {
-    background-color: var(--color-amber);
-  }
-  .vehicle-card__badge--dark {
-    background-color: #1e293b;
-  }
-  .vehicle-card__badge--emerald {
-    background-color: #059669;
   }
 
   .vehicle-card__type {
@@ -407,9 +389,6 @@
       <!-- Unit 1: Toyota Agya -->
       <div class="vehicle-card" data-category="citycar">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--emerald"
-            >Paling Hemat</span
-          >
           <span class="vehicle-card__type">Hatchback</span>
           <img
             class="vehicle-card__photo"
@@ -453,9 +432,6 @@
       <!-- Unit 2: Toyota Avanza -->
       <div class="vehicle-card" data-category="mpv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--orange"
-            >Paling Diminati</span
-          >
           <span class="vehicle-card__type">MPV</span>
           <img
             class="vehicle-card__photo"
@@ -499,9 +475,6 @@
       <!-- Unit 3: Innova Reborn -->
       <div class="vehicle-card" data-category="mpv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--navy"
-            >Rekomendasi Nyaman</span
-          >
           <span class="vehicle-card__type">MPV</span>
           <img
             class="vehicle-card__photo"
@@ -545,9 +518,6 @@
       <!-- Unit 4: Suzuki Ertiga -->
       <div class="vehicle-card" data-category="mpv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--navy"
-            >Keluarga Nyaman</span
-          >
           <span class="vehicle-card__type">MPV</span>
           <img
             class="vehicle-card__photo"
@@ -591,9 +561,6 @@
       <!-- Unit 5: Honda WR-V -->
       <div class="vehicle-card" data-category="suv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--amber"
-            >SUV Kompak</span
-          >
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -637,9 +604,6 @@
       <!-- Unit 6: Honda City -->
       <div class="vehicle-card" data-category="citycar">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--dark"
-            >Sedan Nyaman</span
-          >
           <span class="vehicle-card__type">Hatchback</span>
           <img
             class="vehicle-card__photo"
@@ -683,9 +647,6 @@
       <!-- Unit 7: Honda Brio -->
       <div class="vehicle-card" data-category="citycar">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--emerald"
-            >Paling Hemat &amp; Irit</span
-          >
           <span class="vehicle-card__type">City Car</span>
           <img
             class="vehicle-card__photo"
@@ -729,9 +690,6 @@
       <!-- Unit 8: Medium Bus -->
       <div class="vehicle-card" data-category="minibus">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--dark"
-            >Rombongan Besar</span
-          >
           <span class="vehicle-card__type">Bus</span>
           <img
             class="vehicle-card__photo"
@@ -777,9 +735,6 @@
       <!-- Unit 9: Daihatsu Terios -->
       <div class="vehicle-card" data-category="suv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--orange"
-            >Favorit Keluarga</span
-          >
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -823,9 +778,6 @@
       <!-- Unit 10: Toyota Raize -->
       <div class="vehicle-card" data-category="suv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--amber"
-            >SUV Kompak</span
-          >
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -869,9 +821,6 @@
       <!-- Unit 11: X-Pander -->
       <div class="vehicle-card" data-category="suv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--orange"
-            >Favorit Keluarga</span
-          >
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -915,9 +864,6 @@
       <!-- Unit 12: Pajero Sport -->
       <div class="vehicle-card" data-category="suv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--dark"
-            >Tangguh &amp; Mewah</span
-          >
           <span class="vehicle-card__type">Big SUV</span>
           <img
             class="vehicle-card__photo"
@@ -963,9 +909,6 @@
       <!-- Unit 13: Innova Zenix G -->
       <div class="vehicle-card" data-category="suv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--amber"
-            >Premium Hybrid</span
-          >
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -1009,9 +952,6 @@
       <!-- Unit 14: Innova Zenix Q -->
       <div class="vehicle-card" data-category="suv">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--amber"
-            >Premium Captain Seat</span
-          >
           <span class="vehicle-card__type">Tipe Tertinggi</span>
           <img
             class="vehicle-card__photo"
@@ -1057,9 +997,6 @@
       <!-- Unit 15: Toyota Hiace -->
       <div class="vehicle-card" data-category="minibus">
         <div class="vehicle-card__visual vehicle-card__visual--photo">
-          <span class="vehicle-card__badge vehicle-card__badge--navy"
-            >Rombongan &amp; Dinas</span
-          >
           <span class="vehicle-card__type">Minibus</span>
           <img
             class="vehicle-card__photo"
@@ -1123,20 +1060,60 @@
   </div>
 </section>
 <script>
-  document.querySelectorAll(".fleet__tab").forEach((tab) => {
-    tab.addEventListener("click", () => {
-      document
-        .querySelector(".fleet__tab--active")
-        ?.classList.remove("fleet__tab--active");
-      tab.classList.add("fleet__tab--active");
+  (function () {
+    function initFleetFilter() {
+      var fleetSection = document.getElementById("armada");
+      if (!fleetSection) return;
 
-      const selected = tab.dataset.category;
-      document.querySelectorAll(".vehicle-card").forEach((card) => {
-        card.style.display =
-          selected === "all" || card.dataset.category === selected
-            ? ""
-            : "none";
+      var tabs = fleetSection.querySelectorAll(".fleet__tab");
+      var cards = fleetSection.querySelectorAll(".vehicle-card");
+      if (!tabs.length || !cards.length) return;
+
+      var DELAY_STEP = 0.05; // 50ms stagger per card
+
+      function applyFilter(category) {
+        var visibleCards = [];
+
+        cards.forEach(function (card) {
+          var matches = category === "all" || card.dataset.category === category;
+          if (matches) {
+            card.style.display = "";
+            visibleCards.push(card);
+          } else {
+            card.style.display = "none";
+            card.classList.remove("fade-up");
+            card.style.removeProperty("--fade-delay");
+          }
+        });
+
+        // Trigger staggered fade-up transition
+        visibleCards.forEach(function (card, index) {
+          card.classList.remove("fade-up");
+          card.style.removeProperty("--fade-delay");
+          void card.offsetWidth; // Force browser reflow to restart transition
+          card.style.setProperty("--fade-delay", (index * DELAY_STEP) + "s");
+          card.classList.add("fade-up");
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var currentActive = fleetSection.querySelector(".fleet__tab--active");
+          if (currentActive) currentActive.classList.remove("fleet__tab--active");
+          tab.classList.add("fleet__tab--active");
+
+          applyFilter(tab.dataset.category || "all");
+        });
       });
-    });
-  });
+
+      // Run on initial load
+      applyFilter("all");
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initFleetFilter);
+    } else {
+      initFleetFilter();
+    }
+  })();
 </script>
