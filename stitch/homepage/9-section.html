@@ -1,11 +1,11 @@
-<!-- ========== TESTIMONIAL SECTION 9 CSS ========== -->
+<!-- ========== GOOGLE MAPS TESTIMONIAL / REVIEWS SECTION 9 CSS ========== -->
 <style>
   .testimonial {
     width: 100%;
     background-color: var(--color-canvas);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    padding: 4rem 0;
+    padding: 4.5rem 0;
   }
 
   .testimonial__container {
@@ -18,50 +18,74 @@
   .testimonial__header {
     text-align: center;
     max-width: 48rem;
-    margin: 0 auto var(--space-xl);
+    margin: 0 auto 2.5rem;
   }
 
-  .testimonial__eyebrow {
-    display: block;
+  .testimonial__google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 9999px;
     font-family: var(--font-display);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--color-orange);
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .testimonial__google-badge:hover {
+    transform: translateY(-1px);
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  }
+
+  .testimonial__google-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .testimonial__google-stars {
+    color: #fbbc04;
+    letter-spacing: 1px;
+    font-size: 14px;
   }
 
   .testimonial__title {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 26px;
+    line-height: 34px;
     color: var(--color-navy);
-    margin-top: var(--space-xs);
+    margin: 1rem 0 0.5rem;
   }
 
   .testimonial__description {
     font-family: var(--font-body);
     font-size: 14px;
-    line-height: 20px;
+    line-height: 22px;
     color: var(--color-slate);
-    margin-top: var(--space-sm);
+    margin: 0 auto;
   }
 
-  /* Slider viewport: full-bleed scroll area, padded via track */
+  /* Slider Viewport & Track */
   .testimonial__viewport {
+    position: relative;
     width: 100%;
-    overflow: hidden;
   }
 
-  /* Horizontal scroll-snap track (siap untuk data live & slide) */
   .testimonial-track {
     display: flex;
-    gap: var(--space-lg);
+    gap: 1.25rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-left: var(--margin);
-    padding: var(--space-xs) var(--margin) var(--space-md);
+    padding: 0.5rem var(--margin) 1.5rem;
     margin: 0 calc(var(--margin) * -1);
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -75,6 +99,7 @@
   .testimonial-card {
     scroll-snap-align: start;
     flex: 0 0 85%;
+    max-width: 85%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -82,235 +107,994 @@
     border: 1px solid var(--color-border);
     border-radius: 1rem;
     padding: 1.5rem;
-    transition:
-      border-color 0.2s ease,
-      transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .testimonial-card:hover {
+    transform: translateY(-3px);
     border-color: #cbd5e1;
-    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -3px rgba(15, 23, 42, 0.08);
   }
 
-  /* Stars */
-  .testimonial-card__stars {
+  /* User Info in Card Header */
+  .testimonial-card__header {
     display: flex;
     align-items: center;
-    gap: 2px;
-    color: var(--color-amber);
-    font-size: 14px;
-    margin-bottom: var(--space-sm);
+    gap: 12px;
+    margin-bottom: 1rem;
   }
 
-  .testimonial-card__rating-label {
+  .testimonial-card__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 12px;
-    color: #334155;
-    margin-left: 6px;
+    font-size: 15px;
+    color: #ffffff;
+    flex-shrink: 0;
   }
 
-  /* Quote */
-  .testimonial-card__quote {
-    font-family: var(--font-body);
-    font-style: italic;
-    font-size: 13px;
-    line-height: 19px;
-    color: #334155;
-    margin: 0;
-  }
-
-  /* Footer */
-  .testimonial-card__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: var(--space-lg);
-    padding-top: var(--space-md);
-    border-top: 1px solid #f1f5f9;
+  .testimonial-card__author {
+    flex-grow: 1;
+    min-width: 0;
   }
 
   .testimonial-card__name {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--color-navy);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .testimonial-card__meta {
+  .testimonial-card__date {
     font-family: var(--font-body);
     font-size: 11px;
     color: #94a3b8;
     margin-top: 2px;
   }
 
-  .testimonial-card__verified {
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 12px;
-    color: #059669;
+  .testimonial-card__google-source {
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
+    opacity: 0.85;
   }
 
-  /* Dots indicator */
-  .testimonial__dots {
+  /* Stars */
+  .testimonial-card__rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #fbbc04;
+    font-size: 15px;
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonial-card__badge-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    color: #0284c7;
+    margin-left: auto;
+  }
+
+  /* Review Text */
+  .testimonial-card__text {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 20px;
+    color: #334155;
+    margin: 0;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Navigation Arrow Buttons & Call To Actions */
+  .testimonial__nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-sm);
-    margin-top: var(--space-md);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
   }
 
-  .testimonial__dot {
-    width: 6px;
-    height: 6px;
-    border-radius: var(--radius-full);
-    background-color: #cbd5e1;
+  .testimonial__nav-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 
-  .testimonial__dot--active {
-    width: 20px;
+  .testimonial__nav-btn:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+    color: var(--color-orange);
+  }
+
+  .testimonial__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .testimonial__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .testimonial__btn--primary {
     background-color: var(--color-orange);
+    color: #ffffff;
+    border: 1px solid var(--color-orange);
   }
 
-  /* ========== RESPONSIVE ========== */
+  .testimonial__btn--primary:hover {
+    background-color: var(--color-orange-hover);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+  }
+
+  .testimonial__btn--secondary {
+    background-color: #ffffff;
+    color: var(--color-navy);
+    border: 1px solid #cbd5e1;
+  }
+
+  .testimonial__btn--secondary:hover {
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+  }
+
+  /* Responsive Breakpoints */
   @media (min-width: 640px) {
     .testimonial-card {
-      flex: 0 0 60%;
+      flex: 0 0 45%;
+      max-width: 45%;
     }
   }
 
   @media (min-width: 1024px) {
-    .testimonial-track {
-      scroll-snap-type: none;
-      overflow-x: visible;
-      flex-wrap: nowrap;
-    }
-
-    .testimonial-card {
-      flex: 1 1 0;
-      scroll-snap-align: none;
-    }
-
-    .testimonial__dots {
-      display: none;
-    }
-
     .testimonial__title {
       font-size: 36px;
       line-height: 44px;
     }
+
+    .testimonial-card {
+      flex: 0 0 31.5%;
+      max-width: 31.5%;
+    }
   }
 </style>
-<!-- ========== TESTIMONIAL SECTION 9 ========== -->
-<!-- CATATAN: Saat ini data statis. Struktur sudah disiapkan sebagai
-     horizontal scroll-snap slider, siap diisi ulang via data live
-     Google Maps Reviews di kemudian hari (loop .testimonial-card). -->
-<section class="testimonial" id="testimoni">
+
+<!-- ========== TESTIMONIAL SECTION 9 (GOOGLE MAPS REAL REVIEWS) ========== -->
+<section class="testimonial" id="testimoni" aria-label="Ulasan Pelanggan Google Maps">
   <div class="testimonial__container">
     <div class="testimonial__header">
-      <span class="testimonial__eyebrow">&#11088; 4.9/5 Berdasarkan 200+ Ulasan Google</span>
+      <a
+        href="https://maps.app.goo.gl/AsmdSMNb8E8nji1N8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="testimonial__google-badge"
+        title="Buka profil ulasan Google Maps"
+      >
+        <svg class="testimonial__google-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+        </svg>
+        <span><strong>4.9 / 5.0</strong></span>
+        <span class="testimonial__google-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>(200+ Ulasan Google)</span>
+        <span aria-hidden="true">&nearr;</span>
+      </a>
       <h2 class="testimonial__title">Pengalaman Nyata Pelanggan Kami</h2>
       <p class="testimonial__description">
-        Ribuan wisatawan, keluarga, dan mitra dinas telah mempercayakan perjalanannya
-        bersama armada CV. Lepas Kunci Lombok.
+        Ulasan asli dan terverifikasi dari wisatawan, keluarga, dan mitra dinas yang mempercayakan sewa mobil lepas kunci &amp; sopir di Lombok.
       </p>
     </div>
 
-    <!-- Horizontal Slider Track -->
+    <!-- Horizontal Scroll-Snap Slider Track (17 Ulasan Asli Google) -->
     <div class="testimonial__viewport">
-      <div class="testimonial-track" data-purpose="testimonial-track">
-        <!-- Review 1 -->
-        <div class="testimonial-card">
-          <div class="testimonial-card__top">
-            <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span
-              ><span>&#9733;</span><span>&#9733;</span>
-              <span class="testimonial-card__rating-label"
-                >5.0 / Google Review</span
-              >
+      <div class="testimonial-track" id="testimonialTrack">
+        <!-- Review 1: Lalu B. Ramadhan -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #2563eb;" aria-hidden="true">LR</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Lalu B. Ramadhan</div>
+              <div class="testimonial-card__date">2 minggu lalu &bull; Google Maps</div>
             </div>
-            <p class="testimonial-card__quote">
-              &ldquo;Sangat puas sewa Innova lepas kunci 4 hari di Lombok. Mobil
-              bersih dan wangi, mesin halus tarikan kuat pas nanjak ke Sembalun.
-              Serah terima unit di Bandara Praya langsung jalan tanpa ribet.
-              Next ke Lombok pasti sewa di sini lagi.&rdquo;
-            </p>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
           </div>
-          <div class="testimonial-card__footer">
-            <div>
-              <div class="testimonial-card__name">Dimas Prasetyo</div>
-              <div class="testimonial-card__meta">
-                Wisatawan dari Jakarta &bull; Lepas Kunci
-              </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;mobilnya oke, bersih, wangi. pelayanan friendly&rdquo;
+          </p>
+        </article>
+        <!-- Review 2: Putra -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #059669;" aria-hidden="true">PU</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Putra</div>
+              <div class="testimonial-card__date">3 bulan lalu &bull; Google Maps</div>
             </div>
-            <span class="testimonial-card__verified">&#10003; Verified</span>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
           </div>
-        </div>
-
-        <!-- Review 2 -->
-        <div class="testimonial-card">
-          <div class="testimonial-card__top">
-            <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span
-              ><span>&#9733;</span><span>&#9733;</span>
-              <span class="testimonial-card__rating-label"
-                >5.0 / Google Review</span
-              >
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Asli gak ribet! Mobilnya bersih dan enak banget dipake keliling Lombok&rdquo;
+          </p>
+        </article>
+        <!-- Review 3: Deo bagas Prayogi -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #d97706;" aria-hidden="true">DP</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Deo bagas Prayogi</div>
+              <div class="testimonial-card__date">3 bulan lalu &bull; Google Maps</div>
             </div>
-            <p class="testimonial-card__quote">
-              &ldquo;Pelayanan driver Mas Hadi sangat ramah dan sopan. Kami bawa
-              anak kecil dan orang tua, dibantu bawa koper sampai lobby. Tahu
-              tempat makan lokal yang enak dan murah di Praya. Mobil Avanza All
-              New nyaman dan AC dingin pol.&rdquo;
-            </p>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
           </div>
-          <div class="testimonial-card__footer">
-            <div>
-              <div class="testimonial-card__name">Ibu Ratna &amp; Keluarga</div>
-              <div class="testimonial-card__meta">
-                Liburan Keluarga &bull; Dengan Sopir
-              </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Mantap parah! Mobilnya bersih, wangi, dan mesinnya sehat diajak nanjak. Prosesnya gak ribet sama sekali. Next ke Lombok fix order sini lagi!&rdquo;
+          </p>
+        </article>
+        <!-- Review 4: Bagas Adinata -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #7c3aed;" aria-hidden="true">BA</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Bagas Adinata</div>
+              <div class="testimonial-card__date">3 bulan lalu &bull; Google Maps</div>
             </div>
-            <span class="testimonial-card__verified">&#10003; Verified</span>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
           </div>
-        </div>
-
-        <!-- Review 3 -->
-        <div class="testimonial-card">
-          <div class="testimonial-card__top">
-            <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span
-              ><span>&#9733;</span><span>&#9733;</span>
-              <span class="testimonial-card__rating-label"
-                >5.0 / Google Review</span
-              >
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Recomended buat yang mau jalan jalan sekitar lombok, unitnya bersih, drivernya ramah, pokoknya terbaik&rdquo;
+          </p>
+        </article>
+        <!-- Review 5: ida bagus bajra naryama -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #dc2626;" aria-hidden="true">IN</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">ida bagus bajra naryama</div>
+              <div class="testimonial-card__date">3 bulan lalu &bull; Google Maps</div>
             </div>
-            <p class="testimonial-card__quote">
-              &ldquo;Kebutuhan perjalanan dinas kantor di Mataram selama 5 hari
-              berjalan lancar. Invoice lengkap, pelayanan admin WhatsApp gercep,
-              harga jelas dari awal tanpa embel embel biaya aneh. Rekomendasi
-              rental mobil paling profesional di Lombok.&rdquo;
-            </p>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
           </div>
-          <div class="testimonial-card__footer">
-            <div>
-              <div class="testimonial-card__name">Aditya Wibowo</div>
-              <div class="testimonial-card__meta">
-                Perjalanan Bisnis &bull; Kantor Mataram
-              </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Servicenya terbaik, mobil aman dan nyaman. Pemiliknya ramah, staffnya responsif. High recommended&rdquo;
+          </p>
+        </article>
+        <!-- Review 6: vivin wijayanti -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #0891b2;" aria-hidden="true">VW</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">vivin wijayanti</div>
+              <div class="testimonial-card__date">4 bulan lalu &bull; Google Maps</div>
             </div>
-            <span class="testimonial-card__verified">&#10003; Verified</span>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
           </div>
-        </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;unitnya bersih dan baru 👍🏻&rdquo;
+          </p>
+        </article>
+        <!-- Review 7: Fauzan Akbar -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #4f46e5;" aria-hidden="true">FA</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Fauzan Akbar</div>
+              <div class="testimonial-card__date">4 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Driver terbaik semua&rdquo;
+          </p>
+        </article>
+        <!-- Review 8: Jian Taufiq Al Kautsar -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #ea580c;" aria-hidden="true">JK</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Jian Taufiq Al Kautsar</div>
+              <div class="testimonial-card__date">7 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Pasti ndak bakal nyesel kalo rental mobil di sini dan sangat recommended sekali👍&rdquo;
+          </p>
+        </article>
+        <!-- Review 9: Dominic Horvàth -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #2563eb;" aria-hidden="true">DH</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Dominic Horvàth</div>
+              <div class="testimonial-card__date">11 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Mobil bagus dengan harga bagus. Mobil diserahkan kepada kami di pelabuhan dan diambil kembali setelahnya&rdquo;
+          </p>
+        </article>
+        <!-- Review 10: Moh Fachri Agam -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #059669;" aria-hidden="true">MA</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Moh Fachri Agam</div>
+              <div class="testimonial-card__date">11 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Rental mobil di lombok yang sangat direkomendasikan, mobil bersih, nyaman, staff ramah, harga terjangkau dan juga mobil2nya enak saat di kendarai&rdquo;
+          </p>
+        </article>
+        <!-- Review 11: noy land -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #d97706;" aria-hidden="true">NL</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">noy land</div>
+              <div class="testimonial-card__date">11 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Semua staff disini fast respond & sangat teliti dalam pengecekan unit, semua dijelaskan secara detail memang recommend banget sewa disini💯👍🏻👍🏻&rdquo;
+          </p>
+        </article>
+        <!-- Review 12: Conel Ing -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #7c3aed;" aria-hidden="true">CI</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Conel Ing</div>
+              <div class="testimonial-card__date">11 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Sangat seru vacation bareng driver sini, sangat informatif dan lucu. Dan yang paling penting itu pada jago moto dong😭 😂 sepuas itu sama pelayanannya🤍💯&rdquo;
+          </p>
+        </article>
+        <!-- Review 13: Lyg A -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #dc2626;" aria-hidden="true">LA</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Lyg A</div>
+              <div class="testimonial-card__date">11 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;So at that time, I was in a hurry to make the crossing at 4 am at Bangsal Harbor and didn't have time to return the car to their garage. But the staff there were happy to take me straight away because they cared about my condition and stamina. I suggest y'all use the services here because they are highly recommended👍🏻💯💯&rdquo;
+          </p>
+        </article>
+        <!-- Review 14: Niy Pet -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #0891b2;" aria-hidden="true">NP</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Niy Pet</div>
+              <div class="testimonial-card__date">11 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Fast respond & sangat dipermudah pas booking, sejauh ini ya cuma ini yang paling worth it 💯🤍&rdquo;
+          </p>
+        </article>
+        <!-- Review 15: Geril Zyzy -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #4f46e5;" aria-hidden="true">GZ</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Geril Zyzy</div>
+              <div class="testimonial-card__date">11 bulan lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Mobil bersih, pelayanan luar biasa, Top banget pokoknya Lepas Kunci Lombok&rdquo;
+          </p>
+        </article>
+        <!-- Review 16: Iten Juwita sari -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #ea580c;" aria-hidden="true">IS</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Iten Juwita sari</div>
+              <div class="testimonial-card__date">setahun lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Tempatnya sangat bagus, karyawannya juga Rama. Pokoknya tempt ini sangat recommended 😃&rdquo;
+          </p>
+        </article>
+        <!-- Review 17: Cahya Faradina -->
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar" style="background-color: #2563eb;" aria-hidden="true">CF</div>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__name">Cahya Faradina</div>
+              <div class="testimonial-card__date">setahun lalu &bull; Google Maps</div>
+            </div>
+            <svg class="testimonial-card__google-source" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div class="testimonial-card__rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="testimonial-card__badge-verified">&#10003; Terverifikasi</span>
+          </div>
+          <p class="testimonial-card__text">
+            &ldquo;Mobilnya sangat bersih dan nyaman untuk di gunakan selain itu pelayanan nya juga ramah dan baik.&rdquo;
+          </p>
+        </article>
       </div>
     </div>
 
-    <!-- Slider Dots (visual indicator, CSS scroll-snap driven) -->
-    <div class="testimonial__dots" aria-hidden="true">
-      <span class="testimonial__dot testimonial__dot--active"></span>
-      <span class="testimonial__dot"></span>
-      <span class="testimonial__dot"></span>
+    <!-- Slider Navigation Buttons -->
+    <div class="testimonial__nav" aria-label="Kontrol Slider">
+      <button type="button" class="testimonial__nav-btn" id="prevReviewBtn" aria-label="Ulasan Sebelumnya">&larr;</button>
+      <button type="button" class="testimonial__nav-btn" id="nextReviewBtn" aria-label="Ulasan Berikutnya">&rarr;</button>
+    </div>
+
+    <!-- Footer Actions (Tulis Ulasan & Lihat Semua) -->
+    <div class="testimonial__actions">
+      <a
+        href="https://maps.app.goo.gl/AsmdSMNb8E8nji1N8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="testimonial__btn testimonial__btn--primary"
+      >
+        <span>&#9733; Beri Ulasan di Google</span>
+      </a>
+      <a
+        href="https://maps.app.goo.gl/AsmdSMNb8E8nji1N8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="testimonial__btn testimonial__btn--secondary"
+      >
+        <span>Lihat Semua 200+ Ulasan di Google Maps &nearr;</span>
+      </a>
     </div>
   </div>
 </section>
+
+<!-- ========== SLIDER CAROUSEL CONTROLLER SCRIPT ========== -->
+<script>
+(function() {
+  var track = document.getElementById('testimonialTrack');
+  var prevBtn = document.getElementById('prevReviewBtn');
+  var nextBtn = document.getElementById('nextReviewBtn');
+
+  if (track && prevBtn && nextBtn) {
+    var getScrollAmount = function() {
+      var firstCard = track.querySelector('.testimonial-card');
+      return firstCard ? firstCard.offsetWidth + 20 : 320;
+    };
+
+    prevBtn.addEventListener('click', function() {
+      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', function() {
+      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+
+<!-- ========== SEO STRUCTURED DATA: SCHEMA.ORG AUTORENTAL & REVIEWS ========== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRental",
+  "name": "Sewa dan Rental Mobil Lepas Kunci Lombok",
+  "url": "https://lepaskuncilombok.com",
+  "hasMap": "https://maps.app.goo.gl/AsmdSMNb8E8nji1N8",
+  "priceRange": "Rp 300.000 - Rp 900.000",
+  "telephone": "+628123456789",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mataram",
+    "addressRegion": "Nusa Tenggara Barat",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -8.5670919,
+    "longitude": 116.0895996
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "200"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Lalu B. Ramadhan"
+      },
+      "datePublished": "2026-09-14",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "mobilnya oke, bersih, wangi. pelayanan friendly",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Putra"
+      },
+      "datePublished": "2026-06-25",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Asli gak ribet! Mobilnya bersih dan enak banget dipake keliling Lombok",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Deo bagas Prayogi"
+      },
+      "datePublished": "2026-06-20",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Mantap parah! Mobilnya bersih, wangi, dan mesinnya sehat diajak nanjak. Prosesnya gak ribet sama sekali. Next ke Lombok fix order sini lagi!",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Bagas Adinata"
+      },
+      "datePublished": "2026-06-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Recomended buat yang mau jalan jalan sekitar lombok, unitnya bersih, drivernya ramah, pokoknya terbaik",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "ida bagus bajra naryama"
+      },
+      "datePublished": "2026-06-10",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Servicenya terbaik, mobil aman dan nyaman. Pemiliknya ramah, staffnya responsif. High recommended",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "vivin wijayanti"
+      },
+      "datePublished": "2026-05-20",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "unitnya bersih dan baru 👍🏻",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Fauzan Akbar"
+      },
+      "datePublished": "2026-05-10",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Driver terbaik semua",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Jian Taufiq Al Kautsar"
+      },
+      "datePublished": "2026-02-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Pasti ndak bakal nyesel kalo rental mobil di sini dan sangat recommended sekali👍",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Dominic Horvàth"
+      },
+      "datePublished": "2025-10-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Mobil bagus dengan harga bagus. Mobil diserahkan kepada kami di pelabuhan dan diambil kembali setelahnya",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Moh Fachri Agam"
+      },
+      "datePublished": "2025-10-12",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Rental mobil di lombok yang sangat direkomendasikan, mobil bersih, nyaman, staff ramah, harga terjangkau dan juga mobil2nya enak saat di kendarai",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "noy land"
+      },
+      "datePublished": "2025-10-10",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Semua staff disini fast respond & sangat teliti dalam pengecekan unit, semua dijelaskan secara detail memang recommend banget sewa disini💯👍🏻👍🏻",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Conel Ing"
+      },
+      "datePublished": "2025-10-08",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Sangat seru vacation bareng driver sini, sangat informatif dan lucu. Dan yang paling penting itu pada jago moto dong😭 😂 sepuas itu sama pelayanannya🤍💯",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Lyg A"
+      },
+      "datePublished": "2025-10-05",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "So at that time, I was in a hurry to make the crossing at 4 am at Bangsal Harbor and didn't have time to return the car to their garage. But the staff there were happy to take me straight away because they cared about my condition and stamina. I suggest y'all use the services here because they are highly recommended👍🏻💯💯",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Niy Pet"
+      },
+      "datePublished": "2025-10-03",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Fast respond & sangat dipermudah pas booking, sejauh ini ya cuma ini yang paling worth it 💯🤍",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Geril Zyzy"
+      },
+      "datePublished": "2025-10-01",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Mobil bersih, pelayanan luar biasa, Top banget pokoknya Lepas Kunci Lombok",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Iten Juwita sari"
+      },
+      "datePublished": "2025-08-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Tempatnya sangat bagus, karyawannya juga Rama. Pokoknya tempt ini sangat recommended 😃",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Cahya Faradina"
+      },
+      "datePublished": "2025-08-01",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Mobilnya sangat bersih dan nyaman untuk di gunakan selain itu pelayanan nya juga ramah dan baik.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      }
+    }
+  ]
+}
+</script>
