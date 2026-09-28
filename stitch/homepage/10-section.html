@@ -99,6 +99,39 @@
     color: var(--color-slate);
   }
 
+  /* FAQ Footer Help */
+  .faq__footer {
+    margin-top: var(--space-xl);
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-border);
+  }
+
+  .faq__footer-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--color-slate);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .faq__footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .faq__footer-link:hover {
+    color: var(--color-orange-hover);
+  }
+
   /* ========== RESPONSIVE ========== */
   @media (min-width: 1024px) {
     .faq__title {
@@ -139,9 +172,10 @@
         </summary>
         <div class="faq-item__answer">
           Bisa. Kami melayani sewa lepas kunci untuk wisatawan yang ingin
-          menyetir mandiri. Syarat cukup mudah: foto KTP (e KTP asli), foto SIM
+          menyetir mandiri. Syarat cukup mudah: foto KTP (e-KTP asli), foto SIM
           A yang masih berlaku, bukti tiket pesawat PP, serta konfirmasi
-          reservasi hotel selama di Lombok.
+          reservasi hotel selama di Lombok. Bagi wisatawan mancanegara (WNA),
+          cukup lampirkan Paspor dan International Driving Permit (IDP).
         </div>
       </details>
 
@@ -223,6 +257,22 @@
           terima unit di Lombok.
         </div>
       </details>
+    </div>
+
+    <!-- FAQ Footer Help -->
+    <div class="faq__footer">
+      <p class="faq__footer-text">
+        Punya pertanyaan khusus seputar rute wisata, sewa mingguan, atau paket plus sopir?
+      </p>
+      <a
+        href="https://wa.me/6282339022477?text=Halo%20Admin,%20saya%20punya%20pertanyaan%20seputar%20sewa%20mobil%20di%20Lombok."
+        class="faq__footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>Tanyakan Langsung ke Admin WhatsApp</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>

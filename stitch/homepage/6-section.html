@@ -105,6 +105,40 @@
     margin-top: var(--space-xs);
   }
 
+  /* Trust CTA */
+  .trust__cta-wrap {
+    margin-top: var(--space-xl);
+    text-align: center;
+  }
+
+  .trust__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 14px 28px;
+    border-radius: var(--radius-base);
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .trust__cta:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+  }
+
+  .trust__cta-icon {
+    width: 20px;
+    height: 20px;
+  }
+
   /* ========== RESPONSIVE ========== */
   @media (min-width: 768px) {
     .trust__grid {
@@ -161,8 +195,9 @@
         <div class="trust-card__content">
           <h3 class="trust-card__title">Armada Terawat Bengkel Resmi</h3>
           <p class="trust-card__text">
-            Pengecekan rem, ban, oli, dan AC selalu dilakukan berkala sebelum
-            unit diserahterimakan kepada pelanggan.
+            Pengecekan rem, ban, oli, dan AC selalu dilakukan berkala. Dilengkapi
+            garansi tukar unit pengganti jika kendaraan mengalami kendala di
+            perjalanan.
           </p>
         </div>
       </div>
@@ -291,11 +326,33 @@
         <div class="trust-card__content">
           <h3 class="trust-card__title">Legalitas Resmi Sejak 2017</h3>
           <p class="trust-card__text">
-            Berbadan hukum resmi CV dengan kantor fisik terverifikasi di
-            Mataram. Aman untuk instansi, korporat, maupun perorangan.
+            Berbadan hukum resmi CV dengan kantor dan garasi operasional di
+            Ampenan, Kota Mataram. Aman untuk instansi, korporat, maupun perorangan.
           </p>
         </div>
       </div>
+    </div>
+
+    <!-- Trust CTA Button -->
+    <div class="trust__cta-wrap">
+      <a
+        href="https://wa.me/6282339022477?text=Halo%20Admin%20CV.%20Lepas%20Kunci%20Lombok,%20saya%20ingin%20konsultasi%20paket%20sewa%20mobil."
+        class="trust__cta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
+          class="trust__cta-icon"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"
+          ></path>
+        </svg>
+        <span>Konsultasikan Perjalanan Anda via WhatsApp</span>
+      </a>
     </div>
   </div>
 </section>

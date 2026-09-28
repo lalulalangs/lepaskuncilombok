@@ -1,0 +1,157 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AutoRental",
+      "@id": "https://lepaskuncilombok.com/#autorental",
+      "name": "CV. Lepas Kunci Lombok",
+      "alternateName": "Lepas Kunci Lombok",
+      "url": "https://lepaskuncilombok.com",
+      "logo": "https://lepaskuncilombok.com/wp-content/uploads/2024/01/cropped-lgoo-lkl.png",
+      "telephone": "+6282339022477",
+      "priceRange": "Rp 250.000 - Rp 1.500.000",
+      "currenciesAccepted": "IDR",
+      "paymentAccepted": "Cash, Bank Transfer",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pelembak, Jl. Koperasi No.178, Pejeruk, Kec. Ampenan",
+        "addressLocality": "Mataram",
+        "addressRegion": "Nusa Tenggara Barat",
+        "postalCode": "83113",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -8.5670919,
+        "longitude": 116.0895996
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Kota Mataram" },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Lombok Tengah (Bandara ZAM & Mandalika)"
+        },
+        { "@type": "AdministrativeArea", "name": "Lombok Barat (Senggigi)" },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Lombok Utara (Pelabuhan Bangsal)"
+        },
+        { "@type": "AdministrativeArea", "name": "Lombok Timur (Sembalun)" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lepaskuncilombok.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Bisa sewa mobil lepas kunci tanpa driver di Lombok? Apa saja syaratnya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. Kami melayani sewa lepas kunci untuk wisatawan yang ingin menyetir mandiri. Syarat cukup mudah: foto KTP (e-KTP asli), foto SIM A yang masih berlaku, bukti tiket pesawat PP, serta konfirmasi reservasi hotel selama di Lombok."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada paket sewa mobil plus driver di Lombok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, kami menyediakan paket sewa mobil dengan driver lokal berpengalaman. Durasi standar adalah 12 jam pemakaian per hari dan sudah termasuk unit mobil, jasa pengemudi, serta BBM (tergantung paket rute yang disepakati)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada layanan antar jemput Bandara Internasional Lombok (ZAM)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tentu. Kami menyediakan layanan penjemputan dan pengantaran 24 jam di Bandara ZAM Praya. Anda bisa meminta serah terima kunci unit sewa lepas kunci di bandara, atau memesan mobil dengan sopir untuk langsung mengantar ke hotel di Mataram, Senggigi, Mandalika, atau Pelabuhan Bangsal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah harga sewa transparan dan tanpa biaya tersembunyi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seluruh tarif sewa yang kami tawarkan adalah harga jujur dan transparan. Rincian fasilitas diinformasikan secara terbuka di awal sebelum pembayaran tanpa ada biaya siluman."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah tersedia mobil rombongan seperti Toyota Hiace untuk rombongan wisata/dinas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, kami memiliki armada Toyota Hiace Commuter (14 seat), Toyota Hiace Premio luxury, dan Medium Bus Pariwisata untuk kegiatan instansi, reuni, atau liburan keluarga besar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara pembayaran dan apakah perlu uang muka (DP)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pemesanan diikat dengan uang muka (DP) ringan via transfer bank resmi kami (BCA, Mandiri, BNI, BRI) untuk memastikan unit diblokir pada tanggal pilihan Anda. Sisa pelunasan dapat dibayarkan saat serah terima unit di Lombok."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://lepaskuncilombok.com/#carapesan",
+      "name": "Cara Sewa Mobil di Lombok Lepas Kunci & Plus Driver",
+      "description": "Panduan 4 langkah praktis memesan rental mobil di CV. Lepas Kunci Lombok.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pilih Mobil & Layanan",
+          "text": "Tentukan jenis mobil sesuai jumlah penumpang dan paket: Lepas Kunci atau Dengan Supir + BBM."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Hubungi via WhatsApp",
+          "text": "Kirim detail tanggal, jam tiba, lokasi pengantaran (Bandara/Hotel), serta durasi sewa ke admin WhatsApp kami di 0823-3902-2477."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Konfirmasi & Verifikasi",
+          "text": "Kirimkan foto identitas (KTP & SIM A aktif untuk lepas kunci). Admin akan mengonfirmasi ketersediaan unit dalam 5-10 menit."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Serah Terima & Berangkat",
+          "text": "Mobil diantar tepat waktu di Bandara ZAM atau lobby hotel. Cek kondisi fisik mobil bersama tim kami, serah terima kunci, dan mulai perjalanan."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lepaskuncilombok.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://lepaskuncilombok.com"
+        }
+      ]
+    }
+  ]
+}

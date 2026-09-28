@@ -147,11 +147,17 @@
   }
 
   .blog-card__link {
-    transition: text-decoration 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
 
   .blog-card:hover .blog-card__link {
     text-decoration: underline;
+    color: var(--color-orange-hover);
   }
 
   /* ========== RESPONSIVE ========== */
@@ -202,8 +208,10 @@
           </p>
         </div>
         <div class="blog-card__footer">
-          <span class="blog-card__link">Baca Selengkapnya</span>
-          <span aria-hidden="true">&rarr;</span>
+          <a href="/tips-sewa-mobil-lombok-lepas-kunci/" class="blog-card__link">
+            <span>Baca Panduan Lepas Kunci</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </article>
 
@@ -217,8 +225,7 @@
         <div class="blog-card__body">
           <div class="blog-card__meta">Update Terbaru &bull; 7 Menit Baca</div>
           <h3 class="blog-card__title">
-            Panduan Estimasi Rincian Biaya Liburan dan Transportasi di Lombok
-            2026
+            Rincian Biaya Transportasi Liburan ke Lombok 2026: Hemat Mana Lepas Kunci vs Naik Taksi?
           </h3>
           <p class="blog-card__excerpt">
             Rincian simulasi anggaran sewa mobil, konsumsi BBM keliling Lombok
@@ -227,8 +234,10 @@
           </p>
         </div>
         <div class="blog-card__footer">
-          <span class="blog-card__link">Baca Selengkapnya</span>
-          <span aria-hidden="true">&rarr;</span>
+          <a href="/biaya-liburan-dan-transportasi-lombok/" class="blog-card__link">
+            <span>Lihat Simulasi Biaya</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </article>
 
@@ -252,8 +261,10 @@
           </p>
         </div>
         <div class="blog-card__footer">
-          <span class="blog-card__link">Baca Selengkapnya</span>
-          <span aria-hidden="true">&rarr;</span>
+          <a href="/sewa-mobil-bandara-lombok/" class="blog-card__link">
+            <span>Baca Tips Penjemputan Bandara</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </article>
     </div>

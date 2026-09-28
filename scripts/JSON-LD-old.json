@@ -1,0 +1,37 @@
+
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRental",
+  "name": "CV. Lepas Kunci Lombok",
+  "image": "[URL-LOGO-ATAU-FOTO-KANTOR]",
+  "url": "https://lepaskuncilombok.com/",
+  "telephone": "+6282339022477",
+  "email": "lepaskuncilombok@gmail.com",
+  "priceRange": "Rp300.000 - Rp1.400.000",
+  "foundingDate": "2017",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Koperasi No.178, Pelembak, Pejeruk",
+    "addressLocality": "Mataram",
+    "addressRegion": "Nusa Tenggara Barat",
+    "addressCountry": "ID"
+  },
+  "areaServed": [
+    "Kota Mataram",
+    "Lombok Tengah",
+    "Lombok Utara",
+    "Lombok Timur",
+    "Gili Trawangan",
+    "Sumbawa"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday",
+      "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "sameAs": []
+}
