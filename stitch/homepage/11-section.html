@@ -1,5 +1,4 @@
 <!-- ========== BLOG / GUIDES SECTION 11 CSS ========== -->
- <!-- catatan: nanti ini bisa dibuat menjadi dynamic untuk ambil data realtime dari "POST" -->
 <style>
   .blog {
     width: 100%;
@@ -65,32 +64,59 @@
     overflow: hidden;
     transition:
       border-color 0.2s ease,
+      box-shadow 0.2s ease,
       transform 0.2s ease;
   }
 
   .blog-card:hover {
     border-color: #cbd5e1;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
   }
 
-  /* Cover placeholder (belum ada gambar artikel) */
+  /* Cover Image & Fallback */
   .blog-card__cover {
-    height: 11rem;
+    position: relative;
+    height: 12rem;
     background-color: #e1e3e4;
+    overflow: hidden;
     padding: var(--space-md);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
 
+  .blog-card__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .blog-card:hover .blog-card__photo {
+    transform: scale(1.05);
+  }
+
+  .blog-card__cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 30%, rgba(15, 23, 42, 0.65) 100%);
+    pointer-events: none;
+  }
+
   .blog-card__tag {
+    position: relative;
+    z-index: 2;
     align-self: flex-start;
     color: var(--color-white);
     font-family: var(--font-display);
     font-size: 11px;
     font-weight: 600;
-    padding: 2px 0.5rem;
+    padding: 3px 0.6rem;
     border-radius: var(--radius-sm, 0.25rem);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   }
 
   .blog-card__tag--navy {
@@ -106,6 +132,9 @@
   /* Body */
   .blog-card__body {
     padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .blog-card__meta {
@@ -122,6 +151,10 @@
     line-height: 24px;
     color: var(--color-navy);
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .blog-card__excerpt {
@@ -130,6 +163,10 @@
     line-height: 18px;
     color: var(--color-slate);
     margin-top: var(--space-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* Footer */
@@ -152,12 +189,13 @@
     gap: var(--space-xs);
     color: var(--color-orange);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, gap 0.2s ease;
   }
 
   .blog-card:hover .blog-card__link {
     text-decoration: underline;
     color: var(--color-orange-hover);
+    gap: calc(var(--space-xs) + 3px);
   }
 
   /* ========== RESPONSIVE ========== */
@@ -174,9 +212,8 @@
     }
   }
 </style>
-<!-- ========== BLOG / GUIDES SECTION 11 ========== -->
-<!-- catatan: nanti ini bisa dibuat menjadi dynamic untuk ambil data realtime dari "POST" -->
 
+<!-- ========== BLOG / GUIDES SECTION 11 ========== -->
 <section class="blog" id="artikel">
   <div class="blog__container">
     <div class="blog__header">
@@ -188,81 +225,90 @@
       </p>
     </div>
 
-    <div class="blog__grid">
-      <!-- Article 1 -->
+    <!-- Container Grid: Memiliki data statis awal (SEO friendly) dan auto-sync realtime via WP REST API -->
+    <div class="blog__grid" id="blogGrid">
+      <!-- Article 1 (Static Fallback untuk Instant SEO) -->
       <article class="blog-card">
         <div class="blog-card__cover">
-          <span class="blog-card__tag blog-card__tag--navy"
-            >Tips Berkendara</span
-          >
+          <img
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/09/Web.jpg.jpeg"
+            alt="Tips Memilih Sewa Mobil Lombok Agar Perjalanan Lebih Aman dan Nyaman"
+            class="blog-card__photo"
+            loading="lazy"
+          />
+          <div class="blog-card__cover-overlay"></div>
+          <span class="blog-card__tag blog-card__tag--navy">Transportasi Lombok</span>
         </div>
         <div class="blog-card__body">
-          <div class="blog-card__meta">Update Terbaru &bull; 5 Menit Baca</div>
+          <div class="blog-card__meta">17 Sep 2026 &bull; 5 Menit Baca</div>
           <h3 class="blog-card__title">
-            Tips Memilih Sewa Mobil Lombok Lepas Kunci Aman dan Nyaman
+            Tips Memilih Sewa Mobil Lombok Agar Perjalanan Lebih Aman dan Nyaman
           </h3>
           <p class="blog-card__excerpt">
-            Hal hal krusial yang wajib diperiksa sebelum menyewa mobil lepas
-            kunci, mulai dari kelengkapan dokumen, cek fisik bodi kendaraan,
-            hingga kesiapan ban cadangan.
+            Liburan ke Lombok sebenarnya cukup simpel. Syaratnya, urusan transportasi harus sudah beres sejak awal. Panduan lengkap sebelum memilih sewa mobil di Lombok...
           </p>
         </div>
         <div class="blog-card__footer">
-          <a href="/tips-sewa-mobil-lombok-lepas-kunci/" class="blog-card__link">
-            <span>Baca Panduan Lepas Kunci</span>
+          <a href="https://lepaskuncilombok.com/tips-memilih-sewa-mobil-lombok/" class="blog-card__link">
+            <span>Baca Selengkapnya</span>
             <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </article>
 
-      <!-- Article 2 -->
+      <!-- Article 2 (Static Fallback untuk Instant SEO) -->
       <article class="blog-card">
         <div class="blog-card__cover">
-          <span class="blog-card__tag blog-card__tag--orange"
-            >Biaya &amp; Budget</span
-          >
+          <img
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/09/almaz.png"
+            alt="Sewa mobil mataram harga murah kualitas bagus"
+            class="blog-card__photo"
+            loading="lazy"
+          />
+          <div class="blog-card__cover-overlay"></div>
+          <span class="blog-card__tag blog-card__tag--orange">Rental Mobil</span>
         </div>
         <div class="blog-card__body">
-          <div class="blog-card__meta">Update Terbaru &bull; 7 Menit Baca</div>
+          <div class="blog-card__meta">3 Sep 2026 &bull; 4 Menit Baca</div>
           <h3 class="blog-card__title">
-            Rincian Biaya Transportasi Liburan ke Lombok 2026: Hemat Mana Lepas Kunci vs Naik Taksi?
+            Sewa mobil mataram harga murah kualitas bagus
           </h3>
           <p class="blog-card__excerpt">
-            Rincian simulasi anggaran sewa mobil, konsumsi BBM keliling Lombok
-            dari pantai Kuta sampai kaki Gunung Rinjani, dan tiket masuk tempat
-            wisata utama.
+            Sebagai ibu kota NTB, Kota Mataram adalah pusat ekonomi dan gerbang utama mobilitas bisnis maupun wisata keliling Lombok dengan armada terawat...
           </p>
         </div>
         <div class="blog-card__footer">
-          <a href="/biaya-liburan-dan-transportasi-lombok/" class="blog-card__link">
-            <span>Lihat Simulasi Biaya</span>
+          <a href="https://lepaskuncilombok.com/sewa-mobil-mataram-harga-murah-kualitas-super-bagus/" class="blog-card__link">
+            <span>Baca Selengkapnya</span>
             <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </article>
 
-      <!-- Article 3 -->
+      <!-- Article 3 (Static Fallback untuk Instant SEO) -->
       <article class="blog-card">
         <div class="blog-card__cover">
-          <span class="blog-card__tag blog-card__tag--emerald"
-            >Bandara &amp; Rute</span
-          >
+          <img
+            src="https://lepaskuncilombok.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-21-2026-06_44_21-PM.jpg"
+            alt="Tips Menghitung Rincian Biaya Nonton MotoGP Mandalika 2026"
+            class="blog-card__photo"
+            loading="lazy"
+          />
+          <div class="blog-card__cover-overlay"></div>
+          <span class="blog-card__tag blog-card__tag--emerald">MotoGP Mandalika</span>
         </div>
         <div class="blog-card__body">
-          <div class="blog-card__meta">Update Terbaru &bull; 4 Menit Baca</div>
+          <div class="blog-card__meta">21 Ags 2026 &bull; 6 Menit Baca</div>
           <h3 class="blog-card__title">
-            Sewa Mobil Bandara Lombok: Tips Penjemputan Tepat Waktu Tanpa
-            Menunggu
+            Tips Menghitung Rincian Biaya Nonton MotoGP Mandalika 2026
           </h3>
           <p class="blog-card__excerpt">
-            Cara praktis mengatur titik temu dengan driver di pintu kedatangan
-            Bandara ZAM Praya serta langkah mengantisipasi keterlambatan jadwal
-            terbang.
+            Menonton ajang balap dunia langsung di Sirkuit Mandalika jadi impian banyak orang. Simak estimasi anggaran tiket, akomodasi, dan transportasi hemat...
           </p>
         </div>
         <div class="blog-card__footer">
-          <a href="/sewa-mobil-bandara-lombok/" class="blog-card__link">
-            <span>Baca Tips Penjemputan Bandara</span>
+          <a href="https://lepaskuncilombok.com/tips-menghitung-rincian-biaya-nonton-motogp-mandalika-2026/" class="blog-card__link">
+            <span>Baca Selengkapnya</span>
             <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -270,3 +316,107 @@
     </div>
   </div>
 </section>
+
+<!-- ========== WP REST API REALTIME HYDRATION SCRIPT UNTUK SECTION 11========== -->
+<script>
+(function() {
+  var endpoint = '/wp-json/wp/v2/posts?_embed&per_page=3';
+  var tagClasses = ['blog-card__tag--navy', 'blog-card__tag--orange', 'blog-card__tag--emerald'];
+
+  function stripHtml(html) {
+    if (!html) return '';
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || '';
+  }
+
+  function formatDate(isoStr) {
+    if (!isoStr) return 'Update Terbaru';
+    try {
+      var d = new Date(isoStr);
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'];
+      return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+    } catch(e) {
+      return 'Update Terbaru';
+    }
+  }
+
+  function calcReadingTime(contentHtml) {
+    var text = stripHtml(contentHtml);
+    var wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+    var minutes = Math.max(3, Math.round(wordCount / 200));
+    return minutes + ' Menit Baca';
+  }
+
+  fetch(endpoint)
+    .then(function(res) {
+      if (!res.ok) throw new Error('API request failed');
+      return res.json();
+    })
+    .then(function(posts) {
+      if (!Array.isArray(posts) || posts.length === 0) return;
+      var grid = document.getElementById('blogGrid');
+      if (!grid) return;
+
+      var cardsHtml = posts.map(function(post, index) {
+        var title = post.title && post.title.rendered ? post.title.rendered : 'Artikel Rental Mobil';
+        var link = post.link || '#';
+        var dateStr = formatDate(post.date);
+        var readTime = calcReadingTime(post.content && post.content.rendered ? post.content.rendered : '');
+        var rawExcerpt = stripHtml(post.excerpt && post.excerpt.rendered ? post.excerpt.rendered : '');
+        var excerpt = rawExcerpt.length > 150 ? rawExcerpt.substring(0, 150) + '...' : rawExcerpt;
+
+        // Category Tag
+        var category = 'Tips Sewa';
+        if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0]) {
+          var terms = post._embedded['wp:term'][0];
+          var validTerm = terms.find(function(t) {
+            return t.name && t.name.toLowerCase() !== 'uncategorized';
+          });
+          if (validTerm) category = validTerm.name;
+        }
+
+        // Featured Image
+        var imgHtml = '';
+        var overlayHtml = '';
+        if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+          var media = post._embedded['wp:featuredmedia'][0];
+          var imgSrc = (media.media_details && media.media_details.sizes && media.media_details.sizes.medium_large)
+            ? media.media_details.sizes.medium_large.source_url
+            : media.source_url;
+          if (imgSrc) {
+            var imgAlt = (media.alt_text || title).replace(/"/g, '&quot;');
+            imgHtml = '<img src="' + imgSrc + '" alt="' + imgAlt + '" class="blog-card__photo" loading="lazy" />';
+            overlayHtml = '<div class="blog-card__cover-overlay"></div>';
+          }
+        }
+
+        var tagClass = tagClasses[index % tagClasses.length];
+
+        return '<article class="blog-card">' +
+          '<div class="blog-card__cover">' +
+            imgHtml +
+            overlayHtml +
+            '<span class="blog-card__tag ' + tagClass + '">' + category + '</span>' +
+          '</div>' +
+          '<div class="blog-card__body">' +
+            '<div class="blog-card__meta">' + dateStr + ' &bull; ' + readTime + '</div>' +
+            '<h3 class="blog-card__title">' + title + '</h3>' +
+            '<p class="blog-card__excerpt">' + excerpt + '</p>' +
+          '</div>' +
+          '<div class="blog-card__footer">' +
+            '<a href="' + link + '" class="blog-card__link">' +
+              '<span>Baca Selengkapnya</span>' +
+              '<span aria-hidden="true">&rarr;</span>' +
+            '</a>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+
+      grid.innerHTML = cardsHtml;
+    })
+    .catch(function(err) {
+      // Graceful fallback: 3 artikel statis di HTML tetap aktif melayani pengunjung
+      console.warn('WP REST API hydration notice:', err);
+    });
+})();
+</script>
