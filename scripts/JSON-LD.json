@@ -53,7 +53,14 @@
           "name": "Lombok Utara (Pelabuhan Bangsal)"
         },
         { "@type": "AdministrativeArea", "name": "Lombok Timur (Sembalun)" }
-      ]
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "200"
+      }
     },
     {
       "@type": "FAQPage",
@@ -93,10 +100,10 @@
         },
         {
           "@type": "Question",
-          "name": "Apakah tersedia mobil rombongan seperti Toyota Hiace untuk rombongan wisata/dinas?",
+          "name": "Apakah tersedia armada rombongan seperti Toyota Hiace dan Bus Pariwisata?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya, kami memiliki armada Toyota Hiace Commuter (14 seat), Toyota Hiace Premio luxury, dan Medium Bus Pariwisata untuk kegiatan instansi, reuni, atau liburan keluarga besar."
+            "text": "Ya, kami menyediakan pilihan armada rombongan lengkap dengan driver pariwisata berpengalaman: Toyota Hiace Commuter (14 seat), Toyota Hiace Premio luxury (12-14 seat), Medium Bus kapasitas 35 seat, hingga Big Bus kapasitas 53 seat untuk kebutuhan rombongan keluarga besar, gathering perusahaan, study tour, maupun agenda dinas instansi di Lombok."
           }
         },
         {
