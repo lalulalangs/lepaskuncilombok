@@ -99,7 +99,7 @@
   /* Grid */
   .fleet__grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
   }
 
@@ -332,6 +332,84 @@
   }
 
   /* ========== RESPONSIVE ========== */
+  @media (max-width: 639.98px) {
+    .fleet__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.625rem;
+    }
+
+    .vehicle-card {
+      border-radius: 0.75rem;
+    }
+
+    .vehicle-card__type {
+      top: 0.375rem;
+      right: 0.375rem;
+      font-size: 9.5px;
+      padding: 1px 0.35rem;
+      border-radius: 3px;
+    }
+
+    .vehicle-card__body {
+      padding: 0.625rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .vehicle-card__name {
+      font-size: 13.5px;
+      line-height: 18px;
+    }
+
+    .vehicle-card__specs {
+      font-size: 10px;
+      line-height: 14px;
+      gap: 2px 6px;
+      margin-top: 0.3rem;
+    }
+
+    .vehicle-card__prices {
+      margin-top: auto;
+      padding-top: 0.5rem;
+      gap: 0.25rem;
+    }
+
+    .price-row {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.3rem 0.4rem;
+      gap: 1px;
+      border-radius: 4px;
+    }
+
+    .price-row__label {
+      font-size: 9.5px;
+      line-height: 12px;
+    }
+
+    .price-row__value {
+      font-size: 11px;
+      line-height: 14px;
+    }
+
+    .price-row__value em {
+      font-size: 8.5px;
+    }
+
+    .vehicle-card__footer {
+      padding: 0 0.5rem 0.5rem;
+    }
+
+    .vehicle-card__cta {
+      padding: 0.45rem 0.25rem;
+      font-size: 10.5px;
+      line-height: 14px;
+      text-align: center;
+      border-radius: 4px;
+    }
+  }
+
   @media (min-width: 640px) {
     .fleet__tabs {
       justify-content: center;
