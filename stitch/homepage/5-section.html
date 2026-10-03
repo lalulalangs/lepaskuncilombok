@@ -272,6 +272,41 @@
     color: #94a3b8;
   }
 
+  /* Vehicle Card Link Enhancements */
+  .vehicle-card__name a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .vehicle-card__name a:hover {
+    color: var(--color-orange);
+    text-decoration: underline;
+  }
+
+  a.vehicle-card__visual {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+
+  .vehicle-card__detail-link {
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-slate);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .vehicle-card__detail-link:hover {
+    color: var(--color-orange);
+    text-decoration: underline;
+  }
+
   /* Footer / CTA */
   .vehicle-card__footer {
     padding: 0 1.25rem 1.25rem;
@@ -408,6 +443,11 @@
       text-align: center;
       border-radius: 4px;
     }
+
+    .vehicle-card__detail-link {
+      font-size: 9.5px;
+      margin-top: 0.35rem;
+    }
   }
 
   @media (min-width: 640px) {
@@ -469,7 +509,7 @@
     <div class="fleet__grid">
       <!-- Unit 1: Toyota Avanza -->
       <div class="vehicle-card" data-category="mpv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-toyota-avanza-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Toyota Avanza">
           <span class="vehicle-card__type">MPV</span>
           <img
             class="vehicle-card__photo"
@@ -480,9 +520,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Avanza</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-toyota-avanza-lombok/">Toyota Avanza</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -508,12 +548,14 @@
           >
             Pesan Unit Avanza
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-toyota-avanza-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 2: Innova Reborn -->
       <div class="vehicle-card" data-category="mpv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-innova-reborn-lombok-2/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Innova Reborn">
           <span class="vehicle-card__type">MPV</span>
           <img
             class="vehicle-card__photo"
@@ -524,9 +566,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Innova Reborn</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-innova-reborn-lombok-2/">Innova Reborn</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic / Manual</span>
@@ -552,12 +594,14 @@
           >
             Pesan Unit Innova Reborn
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-innova-reborn-lombok-2/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 3: Toyota Agya -->
       <div class="vehicle-card" data-category="hatchback">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-toyota-agya-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Toyota Agya">
           <span class="vehicle-card__type">Hatchback</span>
           <img
             class="vehicle-card__photo"
@@ -568,9 +612,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Agya</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-toyota-agya-lombok/">Toyota Agya</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 5 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -596,12 +640,14 @@
           >
             Pesan Unit Agya
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-toyota-agya-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 4: Suzuki Ertiga -->
       <div class="vehicle-card" data-category="mpv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-mobil-suzuki-ertiga-di-lombok-2026/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Suzuki Ertiga">
           <span class="vehicle-card__type">MPV</span>
           <img
             class="vehicle-card__photo"
@@ -612,9 +658,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Suzuki Ertiga</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-mobil-suzuki-ertiga-di-lombok-2026/">Suzuki Ertiga</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -640,12 +686,14 @@
           >
             Pesan Unit Ertiga
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-mobil-suzuki-ertiga-di-lombok-2026/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 5: Honda WR-V -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-honda-wrv-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Honda WR-V">
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -656,9 +704,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Honda WR-V</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-honda-wrv-lombok/">Honda WR-V</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 5 Penumpang</span>
             <span>&#9881;&#65039; Matic</span>
@@ -684,12 +732,14 @@
           >
             Pesan Unit WR-V
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-honda-wrv-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 6: Honda City -->
       <div class="vehicle-card" data-category="hatchback">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-mobil-honda-city-di-lombok-2026/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Honda City">
           <span class="vehicle-card__type">Hatchback</span>
           <img
             class="vehicle-card__photo"
@@ -700,9 +750,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Honda City</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-mobil-honda-city-di-lombok-2026/">Honda City</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 5 Penumpang</span>
             <span>&#9881;&#65039; Matic</span>
@@ -728,12 +778,14 @@
           >
             Pesan Unit City
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-mobil-honda-city-di-lombok-2026/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 7: Honda Brio -->
       <div class="vehicle-card" data-category="hatchback">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-brio-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Honda Brio">
           <span class="vehicle-card__type">Hatchback</span>
           <img
             class="vehicle-card__photo"
@@ -744,9 +796,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Honda Brio</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-brio-lombok/">Honda Brio</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 5 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -772,12 +824,14 @@
           >
             Pesan Unit Brio
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-brio-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 8: Honda Mobilio -->
       <div class="vehicle-card" data-category="mpv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/honda-mobilio/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Honda Mobilio">
           <span class="vehicle-card__type">MPV</span>
           <img
             class="vehicle-card__photo"
@@ -788,9 +842,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Honda Mobilio</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/honda-mobilio/">Honda Mobilio</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -816,12 +870,14 @@
           >
             Pesan Unit Mobilio
           </a>
+        
+          <a href="https://lepaskuncilombok.com/honda-mobilio/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 9: Honda BRV -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/honda-brv/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Honda BRV">
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -832,9 +888,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Honda BRV</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/honda-brv/">Honda BRV</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -860,12 +916,14 @@
           >
             Pesan Unit BRV
           </a>
+        
+          <a href="https://lepaskuncilombok.com/honda-brv/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 10: Daihatsu Terios -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-terios-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Daihatsu Terios">
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -876,9 +934,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Daihatsu Terios</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-terios-lombok/">Daihatsu Terios</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Manual / Matic</span>
@@ -904,12 +962,14 @@
           >
             Pesan Unit Terios
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-terios-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 11: Toyota Raize -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/detail-toyota-raize-2026/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Toyota Raize">
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -920,9 +980,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Raize</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/detail-toyota-raize-2026/">Toyota Raize</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 5 Penumpang</span>
             <span>&#9881;&#65039; Matic</span>
@@ -948,12 +1008,14 @@
           >
             Pesan Unit Raize
           </a>
+        
+          <a href="https://lepaskuncilombok.com/detail-toyota-raize-2026/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 12: X-Pander -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-xpander-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa X-Pander">
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -964,9 +1026,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">X-Pander</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-xpander-lombok/">X-Pander</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic</span>
@@ -992,12 +1054,14 @@
           >
             Pesan Unit X-Pander
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-xpander-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 13: Pajero Sport -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-pajero-sport-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Pajero Sport">
           <span class="vehicle-card__type">Big SUV</span>
           <img
             class="vehicle-card__photo"
@@ -1008,9 +1072,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Pajero Sport</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-pajero-sport-lombok/">Pajero Sport</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic 4x2</span>
@@ -1036,12 +1100,14 @@
           >
             Pesan Unit Pajero Sport
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-pajero-sport-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 14: Innova Zenix G -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-innova-zenix-g/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Innova Zenix G">
           <span class="vehicle-card__type">SUV</span>
           <img
             class="vehicle-card__photo"
@@ -1052,9 +1118,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Innova Zenix G</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-innova-zenix-g/">Innova Zenix G</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic CVT</span>
@@ -1080,12 +1146,14 @@
           >
             Pesan Unit Zenix G
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-innova-zenix-g/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 15: Innova Zeniq Q -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-innova-zenix-q-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Innova Zeniq Q">
           <span class="vehicle-card__type">Tipe Tertinggi</span>
           <img
             class="vehicle-card__photo"
@@ -1096,9 +1164,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Innova Zeniq Q</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-innova-zenix-q-lombok/">Innova Zeniq Q</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic CVT</span>
@@ -1124,12 +1192,14 @@
           >
             Pesan Unit Zenix Q
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-innova-zenix-q-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 16: Toyota Hiace -->
       <div class="vehicle-card" data-category="van">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-hiace-commuter-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Toyota Hiace">
           <span class="vehicle-card__type">Van</span>
           <img
             class="vehicle-card__photo"
@@ -1140,9 +1210,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Hiace</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-hiace-commuter-lombok/">Toyota Hiace</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 14 Seat</span>
             <span>&#9881;&#65039; Driver Pariwisata</span>
@@ -1168,12 +1238,14 @@
           >
             Pesan Unit Hiace
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-hiace-commuter-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 17: Toyota Fortuner -->
       <div class="vehicle-card" data-category="suv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-fortuner-lombok-2/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Toyota Fortuner">
           <span class="vehicle-card__type">Big SUV</span>
           <img
             class="vehicle-card__photo"
@@ -1184,9 +1256,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Fortuner</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-fortuner-lombok-2/">Toyota Fortuner</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic</span>
@@ -1212,12 +1284,14 @@
           >
             Pesan Unit Fortuner
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-fortuner-lombok-2/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 18: Hiace Premio -->
       <div class="vehicle-card" data-category="van">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-toyota-hiace-premio/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Hiace Premio">
           <span class="vehicle-card__type">Van</span>
           <img
             class="vehicle-card__photo"
@@ -1228,9 +1302,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Hiace Premio</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-toyota-hiace-premio/">Hiace Premio</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 12-14 Seat</span>
             <span>&#9881;&#65039; Driver Pariwisata</span>
@@ -1256,12 +1330,14 @@
           >
             Pesan Hiace Premio
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-toyota-hiace-premio/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 19: Camri -->
       <div class="vehicle-card" data-category="sedan">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/toyota-camry/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Camri">
           <span class="vehicle-card__type">Sedan</span>
           <img
             class="vehicle-card__photo"
@@ -1272,9 +1348,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Camri</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/toyota-camry/">Camri</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 5 Penumpang</span>
             <span>&#9881;&#65039; Matic Premium</span>
@@ -1300,12 +1376,14 @@
           >
             Pesan Unit Camry
           </a>
+        
+          <a href="https://lepaskuncilombok.com/toyota-camry/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 20: Medium Bus -->
       <div class="vehicle-card" data-category="bus">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-medium-bus/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Medium Bus">
           <span class="vehicle-card__type">Bus</span>
           <img
             class="vehicle-card__photo"
@@ -1316,9 +1394,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Medium Bus</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-medium-bus/">Medium Bus</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 35 Seat</span>
             <span>&#9881;&#65039; Driver Pariwisata</span>
@@ -1344,12 +1422,14 @@
           >
             Pesan Unit Medium Bus
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-medium-bus/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 21: Big Bus -->
       <div class="vehicle-card" data-category="bus">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-medium-bus/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Big Bus">
           <span class="vehicle-card__type">Bus</span>
           <img
             class="vehicle-card__photo"
@@ -1360,9 +1440,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Big Bus</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-medium-bus/">Big Bus</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 53 Seat</span>
             <span>&#9881;&#65039; Driver Pariwisata</span>
@@ -1388,12 +1468,14 @@
           >
             Pesan Unit Big Bus
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-medium-bus/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 22: Toyota Alphard -->
       <div class="vehicle-card" data-category="mpv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-toyota-alphard-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Toyota Alphard">
           <span class="vehicle-card__type">Luxury MPV</span>
           <img
             class="vehicle-card__photo"
@@ -1404,9 +1486,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Alphard</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-toyota-alphard-lombok/">Toyota Alphard</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic Luxury</span>
@@ -1432,12 +1514,14 @@
           >
             Pesan Unit Alphard
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-toyota-alphard-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 23: Hiace Premio Luxury -->
       <div class="vehicle-card" data-category="van">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-hiace-premio-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Hiace Premio Luxury">
           <span class="vehicle-card__type">Luxury Van</span>
           <img
             class="vehicle-card__photo"
@@ -1448,9 +1532,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Hiace Premio Luxury</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-hiace-premio-lombok/">Hiace Premio Luxury</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 8-10 Seat</span>
             <span>&#9881;&#65039; Driver Pariwisata</span>
@@ -1476,12 +1560,14 @@
           >
             Pesan Hiace Luxury
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-hiace-premio-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 24: Toyota Alphard Hybrid -->
       <div class="vehicle-card" data-category="mpv">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/sewa-alphard-hybrid-murah-di-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Toyota Alphard Hybrid">
           <span class="vehicle-card__type">Luxury Hybrid</span>
           <img
             class="vehicle-card__photo"
@@ -1492,9 +1578,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Toyota Alphard Hybrid</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/sewa-alphard-hybrid-murah-di-lombok/">Toyota Alphard Hybrid</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 7 Penumpang</span>
             <span>&#9881;&#65039; Matic Hybrid</span>
@@ -1520,12 +1606,14 @@
           >
             Pesan Alphard Hybrid
           </a>
+        
+          <a href="https://lepaskuncilombok.com/sewa-alphard-hybrid-murah-di-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
 
       <!-- Unit 25: Elf Long -->
       <div class="vehicle-card" data-category="bus">
-        <div class="vehicle-card__visual vehicle-card__visual--photo">
+        <a href="https://lepaskuncilombok.com/armada-lepas-kunci-lombok/" class="vehicle-card__visual vehicle-card__visual--photo" aria-label="Lihat spesifikasi dan detail sewa Elf Long">
           <span class="vehicle-card__type">Microbus</span>
           <img
             class="vehicle-card__photo"
@@ -1536,9 +1624,9 @@
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </a>
         <div class="vehicle-card__body">
-          <h3 class="vehicle-card__name">Elf Long</h3>
+          <h3 class="vehicle-card__name"><a href="https://lepaskuncilombok.com/armada-lepas-kunci-lombok/">Elf Long</a></h3>
           <div class="vehicle-card__specs">
             <span>&#128101; 19 Seat</span>
             <span>&#9881;&#65039; Driver Pariwisata</span>
@@ -1564,6 +1652,8 @@
           >
             Pesan Unit Elf Long
           </a>
+        
+          <a href="https://lepaskuncilombok.com/armada-lepas-kunci-lombok/" class="vehicle-card__detail-link">Lihat Detail &amp; Spesifikasi &rarr;</a>
         </div>
       </div>
     </div>
