@@ -1,0 +1,70 @@
+/* Font: taruh di <head> (header.php) atau enqueue via functions.php, lebih baik daripada @import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+:root {
+  /* Colors: brand */
+  --color-navy: #132d4e;
+  --color-navy-hover: #0e2139;
+  --color-orange: #fc5f02;
+  --color-orange-hover: #e05300;
+  --color-orange-soft: #fff4ed;
+  --color-amber: #f5951c;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1ebe5d;
+
+  /* Colors: surface & text */
+  --color-white: #ffffff;
+  --color-canvas: #f8f9fa;
+  --color-charcoal: #1a202c;
+  --color-slate: #4a5568;
+  --color-border: #e2e8f0;
+  --color-on-navy-muted: #b0c8f1; /* inverse-primary */
+  --color-on-navy-line: #30486a; /* on-primary-fixed-variant */
+
+  /* Typography */
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --fs-display: 48px;
+  --lh-display: 56px;
+  --fs-headline-lg: 36px;
+  --lh-headline-lg: 44px;
+  --fs-headline-md: 24px;
+  --lh-headline-md: 32px;
+  --fs-headline-sm: 20px;
+  --lh-headline-sm: 28px;
+  --fs-body-lg: 18px;
+  --lh-body-lg: 28px;
+  --fs-body-md: 16px;
+  --lh-body-md: 24px;
+  --fs-body-sm: 14px;
+  --lh-body-sm: 20px;
+  --fs-label-sm: 12px;
+  --lh-label-sm: 16px;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-chip: 6px;
+  --radius-base: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Spacing (8px rhythm) */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --gutter: 1.5rem;
+  --container-max: 1240px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-display: 32px;
+    --lh-display: 40px;
+    --fs-headline-lg: 24px;
+    --lh-headline-lg: 32px;
+    --gutter: 1rem;
+  }
+}

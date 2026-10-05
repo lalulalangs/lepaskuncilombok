@@ -1,0 +1,1206 @@
+<style>
+.mcb-section-ec64b1ac8 {
+    --mfn-column-gap-top: 0px;
+    --mfn-column-gap-bottom: 0px;
+    --mfn-column-gap-left: 0px;
+    --mfn-column-gap-right: 0px;
+  }
+  /* ===== Paket Wisata Lombok (scoped .lk-page, butuh :root global) ===== */
+  .lk-page,
+  .lk-page *,
+  .lk-page *::before,
+  .lk-page *::after {
+    box-sizing: border-box;
+  }
+  .lk-page {
+    font-family: var(--font-body);
+    font-size: var(--fs-body-md);
+    line-height: var(--lh-body-md);
+    color: var(--color-charcoal);
+    background: var(--color-white);
+  }
+  .lk-page h1,
+  .lk-page h2,
+  .lk-page h3,
+  .lk-page h4,
+  .lk-page p,
+  .lk-page ul {
+    margin: 0;
+    padding: 0;
+  }
+  .lk-page ul {
+    list-style: none;
+  }
+  .lk-page a {
+    text-decoration: none;
+  }
+  .lk-page h1,
+  .lk-page h2,
+  .lk-page h3,
+  .lk-page h4 {
+    font-family: var(--font-heading);
+  }
+  .lk-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .lk-section {
+    padding: calc(var(--space-xl) * 2) 0;
+  }
+  .lk-section--canvas {
+    background: var(--color-canvas);
+  }
+  .lk-section--navy {
+    background: var(--color-navy);
+    color: var(--color-white);
+  }
+  .lk-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* Buttons */
+  .lk-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 12px 24px;
+    border-radius: var(--radius-base);
+    border: 1px solid transparent;
+    font-family: var(--font-heading);
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .lk-btn--primary {
+    background: var(--color-orange);
+  }
+  .lk-btn--primary:hover {
+    background: var(--color-orange-hover);
+  }
+  .lk-btn--wa {
+    background: var(--color-whatsapp);
+  }
+  .lk-btn--wa:hover {
+    background: var(--color-whatsapp-hover);
+  }
+  .lk-btn--outline {
+    border-color: var(--color-on-navy-line);
+    color: var(--color-white);
+  }
+  .lk-btn--outline:hover {
+    background: var(--color-on-navy-line);
+  }
+  .lk-btn--outline .lk-icon {
+    color: var(--color-whatsapp);
+    font-size: 18px;
+  }
+  .lk-btn .lk-icon {
+    font-size: 18px;
+  }
+
+  /* Section heading */
+  .lk-head {
+    max-width: 720px;
+    margin: 0 auto calc(var(--space-xl) * 1.5);
+    text-align: center;
+  }
+  .lk-eyebrow {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: var(--fs-label-sm);
+    line-height: var(--lh-label-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: var(--space-sm);
+  }
+  .lk-eyebrow--amber {
+    color: var(--color-amber);
+  }
+  .lk-eyebrow--badge {
+    background: var(--color-orange-soft);
+    padding: var(--space-xs) 12px;
+    border-radius: var(--radius-full);
+  }
+  .lk-title {
+    font-size: var(--fs-headline-lg);
+    line-height: var(--lh-headline-lg);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-md);
+  }
+  .lk-lead {
+    color: var(--color-slate);
+  }
+  .lk-section--navy .lk-title {
+    color: var(--color-white);
+  }
+  .lk-section--navy .lk-lead {
+    color: var(--color-on-navy-muted);
+  }
+
+  /* 1. Hero */
+  .lk-hero {
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: calc(var(--space-xl) * 2) 0 calc(var(--space-xl) * 3);
+    text-align: center;
+  }
+  .lk-hero__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 6px 16px;
+    border: 1px solid var(--color-on-navy-line);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-lg);
+    font-family: var(--font-heading);
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-amber);
+  }
+  .lk-hero__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-amber);
+  }
+  .lk-hero__title {
+    max-width: 860px;
+    margin: 0 auto var(--space-lg);
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    font-weight: 700;
+  }
+  .lk-hero__desc {
+    max-width: 680px;
+    margin: 0 auto calc(var(--space-xl) * 1.25);
+    font-size: var(--fs-body-lg);
+    line-height: var(--lh-body-lg);
+    color: var(--color-on-navy-muted);
+  }
+  .lk-hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  .lk-filter {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    border: 1px solid var(--color-on-navy-line);
+    border-radius: var(--radius-lg);
+  }
+  .lk-filter a {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-base);
+    font-family: var(--font-heading);
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--color-on-navy-muted);
+  }
+  .lk-filter a:hover {
+    background: var(--color-on-navy-line);
+    color: var(--color-white);
+  }
+  .lk-filter a.is-active {
+    background: var(--color-orange);
+    color: var(--color-white);
+  }
+
+  /* 2. Value strip */
+  .lk-values {
+    margin-top: calc(var(--space-xl) * -1.25);
+    position: relative;
+    z-index: 2;
+  }
+  .lk-values__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+  .lk-value {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-lg);
+    border-left: 1px solid var(--color-border);
+  }
+  .lk-value:first-child {
+    border-left: 0;
+  }
+  .lk-value__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md, 0.75rem);
+    background: var(--color-orange-soft);
+    color: var(--color-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .lk-value__icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .lk-value h4 {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-xs);
+  }
+  .lk-value p {
+    font-size: var(--fs-label-sm);
+    line-height: var(--lh-label-sm);
+    color: var(--color-slate);
+  }
+
+  /* 3. Packages */
+  .lk-packages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+  .lk-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    scroll-margin-top: 100px;
+  }
+  .lk-card--featured {
+    border: 2px solid var(--color-orange);
+  }
+  .lk-card--wide {
+    grid-column: span 2;
+  }
+  .lk-card__badge {
+    background: var(--color-orange);
+    color: var(--color-white);
+    text-align: center;
+    padding: 6px var(--space-md);
+    font-family: var(--font-heading);
+    font-size: var(--fs-label-sm);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .lk-card__body {
+    padding: var(--space-xl) var(--space-lg);
+  }
+  .lk-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding-bottom: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .lk-card__kicker {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-amber);
+  }
+  .lk-card__kicker--orange {
+    color: var(--color-orange);
+  }
+  .lk-card__title {
+    font-size: var(--fs-headline-md);
+    line-height: var(--lh-headline-md);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-top: var(--space-xs);
+  }
+  .lk-card__sub {
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    color: var(--color-amber);
+    margin-top: var(--space-xs);
+  }
+  .lk-card__meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .lk-tag {
+    display: inline-block;
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: 6px 12px;
+    border-radius: var(--radius-base);
+    font-family: var(--font-heading);
+    font-size: var(--fs-label-sm);
+    font-weight: 700;
+  }
+  .lk-card__meta small {
+    display: block;
+    margin-top: var(--space-xs);
+    font-size: var(--fs-label-sm);
+    color: var(--color-slate);
+  }
+  .lk-card__desc {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    color: var(--color-slate);
+    margin-bottom: var(--space-lg);
+  }
+  .lk-routes {
+    display: grid;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+  .lk-card--wide .lk-routes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lk-route {
+    padding: var(--space-md);
+    background: var(--color-canvas);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+  }
+  .lk-card--featured .lk-route {
+    background: var(--color-orange-soft);
+    border-color: var(--color-orange-soft);
+  }
+  .lk-route span {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-heading);
+    font-size: var(--fs-label-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+  }
+  .lk-route p {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+  .lk-incl {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+  .lk-incl h4 {
+    margin-bottom: var(--space-md);
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-slate);
+  }
+  .lk-incl__list {
+    display: grid;
+    gap: var(--space-sm) var(--space-lg);
+  }
+  .lk-card--wide .lk-incl__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lk-incl li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-label-sm);
+    line-height: var(--lh-label-sm);
+    color: var(--color-slate);
+  }
+  .lk-incl li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-orange);
+    flex-shrink: 0;
+  }
+  .lk-card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-canvas);
+    border-top: 1px solid var(--color-border);
+  }
+  .lk-price small {
+    display: block;
+    font-size: var(--fs-label-sm);
+    color: var(--color-slate);
+  }
+  .lk-price strong {
+    font-family: var(--font-heading);
+    font-size: var(--fs-headline-sm);
+    line-height: var(--lh-headline-sm);
+    font-weight: 700;
+    color: var(--color-orange);
+  }
+  .lk-price strong span {
+    font-family: var(--font-body);
+    font-size: var(--fs-label-sm);
+    font-weight: 400;
+    color: var(--color-slate);
+  }
+
+  /* 4. Why us */
+  .lk-why {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+  }
+  .lk-why__item {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-on-navy-line);
+    border-radius: var(--radius-lg);
+  }
+  .lk-why__item:hover {
+    border-color: var(--color-orange);
+  }
+  .lk-why__num {
+    display: block;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-heading);
+    font-size: var(--fs-headline-lg);
+    line-height: var(--lh-headline-lg);
+    font-weight: 700;
+    color: var(--color-orange);
+  }
+  .lk-why__item h3 {
+    margin-bottom: var(--space-sm);
+    font-size: var(--fs-headline-sm);
+    line-height: var(--lh-headline-sm);
+    font-weight: 600;
+    color: var(--color-white);
+  }
+  .lk-why__item p {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    color: var(--color-on-navy-muted);
+  }
+
+  /* 5. FAQ */
+  .lk-faq {
+    max-width: 880px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--space-md);
+  }
+  .lk-faq details {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+  }
+  .lk-faq details[open] {
+    border-color: var(--color-orange);
+  }
+  .lk-faq summary {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-heading);
+    font-size: var(--fs-body-md);
+    font-weight: 700;
+    color: var(--color-navy);
+  }
+  .lk-faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .lk-faq summary::after {
+    content: "+";
+    font-size: var(--fs-headline-md);
+    line-height: 1;
+    color: var(--color-orange);
+  }
+  .lk-faq details[open] summary::after {
+    content: "\2212";
+  }
+  .lk-faq details p {
+    margin-top: var(--space-md);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-md);
+    color: var(--color-slate);
+  }
+
+  /* 7. Final CTA */
+  .lk-cta {
+    background: var(--color-navy);
+    color: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: calc(var(--space-xl) * 1.5) var(--space-lg);
+    text-align: center;
+  }
+  .lk-cta__inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .lk-cta .lk-title {
+    color: var(--color-white);
+  }
+  .lk-cta .lk-lead {
+    color: var(--color-on-navy-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Floating WhatsApp */
+  .lk-float {
+    position: fixed;
+    right: var(--space-lg);
+    bottom: var(--space-lg);
+    z-index: 50;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-whatsapp);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: background 0.15s;
+  }
+  .lk-float:hover {
+    background: var(--color-whatsapp-hover);
+  }
+
+  /* Responsive */
+  @media (max-width: 1199px) {
+    .lk-values__grid,
+    .lk-why {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .lk-value:nth-child(3) {
+      border-left: 0;
+    }
+    .lk-value:nth-child(n + 3) {
+      border-top: 1px solid var(--color-border);
+    }
+  }
+  @media (max-width: 899px) {
+    .lk-packages {
+      grid-template-columns: 1fr;
+    }
+    .lk-card--wide {
+      grid-column: auto;
+    }
+    .lk-card--wide .lk-routes,
+    .lk-card--wide .lk-incl__list {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 767px) {
+    .lk-section {
+      padding: calc(var(--space-xl) * 1.5) 0;
+    }
+    .lk-values__grid,
+    .lk-why {
+      grid-template-columns: 1fr;
+    }
+    .lk-value,
+    .lk-value:nth-child(3) {
+      border-left: 0;
+    }
+    .lk-value:nth-child(n + 2) {
+      border-top: 1px solid var(--color-border);
+    }
+    .lk-hero__cta .lk-btn {
+      width: 100%;
+    }
+    .lk-card__top {
+      flex-direction: column;
+    }
+    .lk-card__meta {
+      text-align: left;
+    }
+    .lk-card__foot {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="lk-page">
+  <!-- SVG sprite -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="lk-wa" viewBox="0 0 24 24">
+      <path
+        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.777.818 2.796.818 3.182 0 5.768-2.586 5.768-5.767 0-3.18-2.586-5.768-5.768-5.768zm0 10.373c-.947 0-1.748-.276-2.529-.739l-.181-.108-1.577.414.421-1.538-.119-.189c-.508-.809-.775-1.579-.775-2.583 0-2.539 2.066-4.605 4.606-4.605 2.539 0 4.606 2.066 4.606 4.605 0 2.54-2.067 4.605-4.606 4.605zm3.013-3.486c-.165-.083-.979-.483-1.13-.539-.153-.055-.264-.083-.376.083-.111.166-.432.539-.529.65-.097.111-.194.125-.359.042-.165-.083-.699-.258-1.332-.822-.493-.439-.826-.981-.923-1.147-.097-.166-.01-.256.072-.338.075-.074.166-.194.249-.291.083-.097.111-.166.166-.277.056-.111.028-.208-.014-.291-.042-.083-.376-.906-.514-1.241-.135-.327-.272-.283-.376-.288l-.321-.005c-.111 0-.291.042-.444.208-.153.166-.583.57-.583 1.39 0 .82.597 1.612.68 1.723.083.111 1.175 1.794 2.846 2.516.398.172.709.275.952.352.401.127.766.109 1.055.066.321-.048.979-.4 1.118-.786.139-.387.139-.718.097-.786-.042-.068-.153-.111-.318-.194z"
+      />
+    </symbol>
+  </svg>
+
+  <!-- //section 1 - HERO -->
+  <section class="lk-hero">
+    <div class="lk-container">
+      <div class="lk-hero__pill">
+        <span class="lk-hero__dot"></span>Trip Lombok tanpa ribet
+      </div>
+      <h1 class="lk-hero__title">
+        Paket Wisata Lombok Bersama Supir Lokal Ramah
+      </h1>
+      <p class="lk-hero__desc">
+        Nikmati indahnya laut dan pegunungan Lombok tanpa pusing susun rute.
+        Mobil bersih, bensin, supir berpengalaman, dan antar jemput bandara siap
+        menemani perjalanan Anda.
+      </p>
+      <div class="lk-hero__cta">
+        <a class="lk-btn lk-btn--primary" href="#pilihan-paket"
+          >Lihat Pilihan Rute</a
+        >
+        <a
+          class="lk-btn lk-btn--outline"
+          href="https://wa.me/6282339022477"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><svg class="lk-icon"><use href="#lk-wa" /></svg>Tanya Rute
+          WhatsApp</a
+        >
+      </div>
+      <nav class="lk-filter" aria-label="Filter durasi paket">
+        <a class="is-active" href="#pilihan-paket">Semua Paket</a>
+        <a href="#paket-2d1n">2 Hari 1 Malam</a>
+        <a href="#paket-3d2n">3 Hari 2 Malam</a>
+        <a href="#paket-4d3n">4 Hari 3 Malam</a>
+        <a href="#paket-5d4n">5 Hari 4 Malam</a>
+        <a href="#paket-whaleshark">Trip Sumbawa</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- //section 2 - VALUE STRIP -->
+  <section class="lk-values">
+    <div class="lk-container">
+      <div class="lk-values__grid">
+        <div class="lk-value">
+          <div class="lk-value__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4>Jemput Bandara Tepat Waktu</h4>
+            <p>
+              Supir standby di pintu kedatangan Bandara Lombok sebelum pesawat
+              mendarat
+            </p>
+          </div>
+        </div>
+        <div class="lk-value">
+          <div class="lk-value__icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h4>100% Private Trip</h4>
+            <p>Mobil khusus rombongan Anda tanpa digabung dengan tamu lain</p>
+          </div>
+        </div>
+        <div class="lk-value">
+          <div class="lk-value__icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+              />
+            </svg>
+          </div>
+          <div>
+            <h4>Bebas Pilih Rute</h4>
+            <p>Tersedia dua opsi jalur wisata pantai atau bukit per paket</p>
+          </div>
+        </div>
+        <div class="lk-value">
+          <div class="lk-value__icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h4>Tarif Jujur dan Pasti</h4>
+            <p>Sudah termasuk mobil, bensin, supir, dan tiket masuk wisata</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- //section 3 - PAKET WISATA -->
+  <section class="lk-section lk-section--canvas" id="pilihan-paket">
+    <div class="lk-container">
+      <div class="lk-head">
+        <span class="lk-eyebrow lk-eyebrow--badge"
+          >Pilihan itinerary fleksibel</span
+        >
+        <h2 class="lk-title">Paket Wisata Lombok Sesuai Waktu Liburan Anda</h2>
+        <p class="lk-lead">
+          Tiap paket dirancang santai agar Anda punya banyak waktu menikmati
+          destinasi tanpa terburu buru.
+        </p>
+      </div>
+
+      <div class="lk-packages">
+        <!-- Card 2D1N -->
+        <article class="lk-card" id="paket-2d1n">
+          <div class="lk-card__body">
+            <div class="lk-card__top">
+              <div>
+                <span class="lk-card__kicker">Liburan akhir pekan singkat</span>
+                <h3 class="lk-card__title">Trip Lombok 2 Hari 1 Malam</h3>
+              </div>
+              <div class="lk-card__meta">
+                <span class="lk-tag">2D1N</span><small>2 Rute Tersedia</small>
+              </div>
+            </div>
+            <p class="lk-card__desc">
+              Solusi liburan akhir pekan praktis menikmati gili jernih atau
+              pesisir selatan berpasir merica.
+            </p>
+            <div class="lk-routes">
+              <div class="lk-route">
+                <span>Rute Opsi A</span>
+                <p>Gili Trawangan • Snorkeling Gili Meno • Sunset Gili Air</p>
+              </div>
+              <div class="lk-route">
+                <span>Rute Opsi B</span>
+                <p>
+                  Pantai Pink • Snorkeling Gili Petelu • Tebing Tanjung Ringgit
+                </p>
+              </div>
+            </div>
+            <div class="lk-incl">
+              <h4>Fasilitas Termasuk</h4>
+              <ul class="lk-incl__list">
+                <li>Mobil ber AC dingin dan wangi</li>
+                <li>Supir merangkap pemandu jalan lokal</li>
+                <li>Perahu snorkeling dan pelampung lengkap</li>
+                <li>Tiket masuk seluruh objek wisata</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lk-card__foot">
+            <div class="lk-price">
+              <small>Mulai dari</small
+              ><strong>Rp 950.000 <span>/ orang</span></strong>
+            </div>
+            <a
+              class="lk-btn lk-btn--primary"
+              href="https://wa.me/6282339022477?text=Halo%20Lepas%20Kunci%20Lombok,%20saya%20tertarik%20dengan%20Paket%202D1N"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Pilih Paket Ini</a
+            >
+          </div>
+        </article>
+
+        <!-- Card 3D2N -->
+        <article class="lk-card lk-card--featured" id="paket-3d2n">
+          <div class="lk-card__badge">Paling populer • Pilihan keluarga</div>
+          <div class="lk-card__body">
+            <div class="lk-card__top">
+              <div>
+                <span class="lk-card__kicker lk-card__kicker--orange"
+                  >Favorit keluarga • Paling fleksibel</span
+                >
+                <h3 class="lk-card__title">Trip Lombok 3 Hari 2 Malam</h3>
+              </div>
+              <div class="lk-card__meta">
+                <span class="lk-tag">3D2N</span><small>2 Rute Tersedia</small>
+              </div>
+            </div>
+            <p class="lk-card__desc">
+              Kombinasi lengkap gili eksotis, sirkuit Mandalika, desa adat
+              Sasak, dan panorama perbukitan selatan.
+            </p>
+            <div class="lk-routes">
+              <div class="lk-route">
+                <span>Rute Opsi A</span>
+                <p>
+                  Gili Trawangan Island Hopping • Sirkuit Mandalika • Desa Sade
+                </p>
+              </div>
+              <div class="lk-route">
+                <span>Rute Opsi B</span>
+                <p>
+                  Eksplorasi Pantai Pink • Bukit Merese • Pusat Tenun Sukarara
+                </p>
+              </div>
+            </div>
+            <div class="lk-incl">
+              <h4>Fasilitas Termasuk</h4>
+              <ul class="lk-incl__list">
+                <li>Hotel bintang pilihan dua malam termasuk sarapan</li>
+                <li>Mobil keluarga bersih dan bensin selama trip</li>
+                <li>Supir lokal ramah paham spot foto terbaik</li>
+                <li>Dokumentasi foto selama keliling wisata</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lk-card__foot">
+            <div class="lk-price">
+              <small>Mulai dari</small
+              ><strong>Rp 1.450.000 <span>/ orang</span></strong>
+            </div>
+            <a
+              class="lk-btn lk-btn--primary"
+              href="https://wa.me/6282339022477?text=Halo%20Lepas%20Kunci%20Lombok,%20saya%20tertarik%20dengan%20Paket%203D2N"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Amankan Jadwal Trip</a
+            >
+          </div>
+        </article>
+
+        <!-- Card 4D3N -->
+        <article class="lk-card" id="paket-4d3n">
+          <div class="lk-card__body">
+            <div class="lk-card__top">
+              <div>
+                <span class="lk-card__kicker">Jelajah alam dan kuliner</span>
+                <h3 class="lk-card__title">Trip Lombok 4 Hari 3 Malam</h3>
+              </div>
+              <div class="lk-card__meta">
+                <span class="lk-tag">4D3N</span><small>2 Rute Tersedia</small>
+              </div>
+            </div>
+            <p class="lk-card__desc">
+              Nikmati segarnya air terjun kaki Gunung Rinjani berpadu indahnya
+              pantai eksotis dan kuliner khas.
+            </p>
+            <div class="lk-routes">
+              <div class="lk-route">
+                <span>Rute Opsi A</span>
+                <p>Sirkuit Mandalika • Air Terjun Sendang Gile • Tiu Kelep</p>
+              </div>
+              <div class="lk-route">
+                <span>Rute Opsi B</span>
+                <p>Pantai Pink • Desa Sukarara • Air Terjun Benang Kelambu</p>
+              </div>
+            </div>
+            <div class="lk-incl">
+              <h4>Fasilitas Termasuk</h4>
+              <ul class="lk-incl__list">
+                <li>Hotel berbintang nyaman selama empat hari</li>
+                <li>Unit Toyota Innova Reborn atau Avanza prima</li>
+                <li>Supir merangkap pemandu jalur pegunungan</li>
+                <li>Seluruh tiket wisata dan perahu lokal</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lk-card__foot">
+            <div class="lk-price">
+              <small>Mulai dari</small
+              ><strong>Rp 1.950.000 <span>/ orang</span></strong>
+            </div>
+            <a
+              class="lk-btn lk-btn--primary"
+              href="https://wa.me/6282339022477?text=Halo%20Lepas%20Kunci%20Lombok,%20saya%20tertarik%20dengan%20Paket%204D3N"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Pilih Paket Ini</a
+            >
+          </div>
+        </article>
+
+        <!-- Card 5D4N -->
+        <article class="lk-card" id="paket-5d4n">
+          <div class="lk-card__body">
+            <div class="lk-card__top">
+              <div>
+                <span class="lk-card__kicker"
+                  >Eksplorasi lengkap pulau Lombok</span
+                >
+                <h3 class="lk-card__title">Trip Lombok 5 Hari 4 Malam</h3>
+              </div>
+              <div class="lk-card__meta">
+                <span class="lk-tag">5D4N</span><small>2 Rute Tersedia</small>
+              </div>
+            </div>
+            <p class="lk-card__desc">
+              Eksplorasi menyeluruh dari dinginnya agrowisata Sembalun hingga
+              tenangnya pulau gili rahasia.
+            </p>
+            <div class="lk-routes">
+              <div class="lk-route">
+                <span>Rute Opsi A</span>
+                <p>Kuta Mandalika • Savana Sembalun Rinjani • Petik Stroberi</p>
+              </div>
+              <div class="lk-route">
+                <span>Rute Opsi B</span>
+                <p>Pantai Pink • Bukit Selong • Snorkeling Gili Nanggu</p>
+              </div>
+            </div>
+            <div class="lk-incl">
+              <h4>Fasilitas Termasuk</h4>
+              <ul class="lk-incl__list">
+                <li>Hotel nyaman empat malam berbintang dengan sarapan</li>
+                <li>Mobil sewa private full BBM selama lima hari</li>
+                <li>Tiket masuk agrowisata dan pemandu lokal</li>
+                <li>Rekomendasi kuliner ayam taliwang legendaris</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lk-card__foot">
+            <div class="lk-price">
+              <small>Mulai dari</small
+              ><strong>Rp 2.450.000 <span>/ orang</span></strong>
+            </div>
+            <a
+              class="lk-btn lk-btn--primary"
+              href="https://wa.me/6282339022477?text=Halo%20Lepas%20Kunci%20Lombok,%20saya%20tertarik%20dengan%20Paket%205D4N"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Pilih Paket Ini</a
+            >
+          </div>
+        </article>
+
+        <!-- Card Whaleshark Sumbawa -->
+        <article
+          class="lk-card lk-card--featured lk-card--wide"
+          id="paket-whaleshark"
+        >
+          <div class="lk-card__badge">
+            Petualangan laut spesial • Trending trip
+          </div>
+          <div class="lk-card__body">
+            <div class="lk-card__top">
+              <div>
+                <span class="lk-card__kicker lk-card__kicker--orange"
+                  >Spesial overland dan marine</span
+                >
+                <h3 class="lk-card__title">
+                  Trip Whaleshark Teluk Saleh Sumbawa
+                </h3>
+                <p class="lk-card__sub">
+                  Berenang dekat bersama hiu paus ramah di habitat alami
+                </p>
+              </div>
+              <div class="lk-card__meta">
+                <span class="lk-tag">2D1N / One Day</span
+                ><small>2 Rute Tersedia</small>
+              </div>
+            </div>
+            <p class="lk-card__desc">
+              Pengalaman langka menyapa kawanan hiu paus di perairan tenang
+              Teluk Saleh didampingi nelayan lokal terlatih.
+            </p>
+            <div class="lk-routes">
+              <div class="lk-route">
+                <span>Rute Opsi A</span>
+                <p>
+                  Penyeberangan Ferry Kayangan Pototano • Labuhan Jering •
+                  Berenang Bersama Hiu Paus
+                </p>
+              </div>
+              <div class="lk-route">
+                <span>Rute Opsi B</span>
+                <p>
+                  Snorkeling Sunrise Teluk Saleh • Pulau Kenawa Sunset • Kuliner
+                  Khas Sumbawa
+                </p>
+              </div>
+            </div>
+            <div class="lk-incl">
+              <h4>Fasilitas Termasuk</h4>
+              <ul class="lk-incl__list">
+                <li>Mobil AC antar jemput Lombok Sumbawa</li>
+                <li>Pemandu lokal pemantau lokasi hiu paus</li>
+                <li>Tiket kapal ferry pulang pergi</li>
+                <li>Tiket konservasi perairan Teluk Saleh</li>
+                <li>Perahu khusus menuju bagan hiu paus</li>
+                <li>Dokumentasi foto video bawah air GoPro</li>
+                <li>Alat snorkeling dan pelampung standar aman</li>
+                <li>Sarapan hangat dan kopi di atas bagan</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lk-card__foot">
+            <div class="lk-price">
+              <small>Mulai dari</small
+              ><strong>Rp 1.750.000 <span>/ orang</span></strong>
+            </div>
+            <a
+              class="lk-btn lk-btn--primary"
+              href="https://wa.me/6282339022477?text=Halo%20Lepas%20Kunci%20Lombok,%20saya%20tertarik%20dengan%20Paket%20Whaleshark%20Teluk%20Saleh%20Sumbawa"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Konsultasi Trip Whaleshark</a
+            >
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- //section 4 - KENAPA KAMI -->
+  <section class="lk-section lk-section--navy">
+    <div class="lk-container">
+      <div class="lk-head">
+        <span class="lk-eyebrow lk-eyebrow--amber">Komitmen layanan kami</span>
+        <h2 class="lk-title">Bukan Sekadar Antar, Kami Jamin Liburan Tenang</h2>
+        <p class="lk-lead">
+          Kami pastikan rombongan Anda menikmati setiap sudut Lombok tanpa drama
+          dan rasa khawatir.
+        </p>
+      </div>
+      <div class="lk-why">
+        <div class="lk-why__item">
+          <span class="lk-why__num">01</span>
+          <h3>Perjalanan Privat Sepenuhnya</h3>
+          <p>
+            Mobil khusus rombongan Anda tanpa digabung tamu asing. Ritme santai
+            tanpa terburu buru.
+          </p>
+        </div>
+        <div class="lk-why__item">
+          <span class="lk-why__num">02</span>
+          <h3>Supir Paham Jalur Lokal</h3>
+          <p>
+            Supir asli Lombok yang sopan, paham rute bebas macet, serta tahu
+            spot foto tersembunyi.
+          </p>
+        </div>
+        <div class="lk-why__item">
+          <span class="lk-why__num">03</span>
+          <h3>Bantuan Dokumentasi Trip</h3>
+          <p>
+            Supir kami sigap mengabadikan momen terbaik rombongan Anda di setiap
+            titik panorama terindah.
+          </p>
+        </div>
+        <div class="lk-why__item">
+          <span class="lk-why__num">04</span>
+          <h3>Rute Fleksibel dan Terbuka</h3>
+          <p>
+            Bebas mampir beli oleh oleh atau singgah di kedai kopi lokal tanpa
+            biaya tambahan.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- //section 5 - FAQ -->
+  <section class="lk-section lk-section--canvas">
+    <div class="lk-container">
+      <div class="lk-head">
+        <span class="lk-eyebrow">Pertanyaan umum</span>
+        <h2 class="lk-title">Semua Hal yang Perlu Anda Ketahui</h2>
+      </div>
+      <div class="lk-faq">
+        <details>
+          <summary>
+            Bagaimana jika pesawat saya tiba terlambat di Bandara Lombok?
+          </summary>
+          <p>
+            Supir kami memantau jadwal kedatangan Anda secara berkala.
+            Penjemputan tetap dilakukan tepat waktu saat Anda mendarat tanpa
+            biaya tunggu tambahan.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Bisakah rute paket wisata disesuaikan dengan keinginan kami?
+          </summary>
+          <p>
+            Tentu bisa. Anda bebas memilih destinasi yang sejalur atau
+            menambahkan kunjungan wisata budaya dan pusat oleh oleh khas Sasak
+            sesuai minat rombongan.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Apakah ada biaya tersembunyi selama perjalanan wisata?
+          </summary>
+          <p>
+            Tidak ada. Tarif kami transparan dan sudah mencakup mobil sewa,
+            bensin, supir, tiket masuk wisata, serta perahu penyeberangan sesuai
+            isi paket yang dipilih.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Bagaimana proses pemesanan dan pembayaran uang muka?
+          </summary>
+          <p>
+            Cukup kirim tanggal kedatangan dan jumlah peserta melalui WhatsApp.
+            Admin kami akan mengirimkan rincian jadwal, lalu Anda cukup membayar
+            uang muka untuk mengunci jadwal.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- //section 6 - FINAL CTA -->
+  <section class="lk-section">
+    <div class="lk-container">
+      <div class="lk-cta">
+        <div class="lk-cta__inner">
+          <span class="lk-eyebrow lk-eyebrow--amber"
+            >Konsultasi gratis kapan saja</span
+          >
+          <h2 class="lk-title">Rencanakan Liburan Lombok Anda Hari Ini</h2>
+          <p class="lk-lead">
+            Ceritakan rencana liburan Anda, tanggal kedatangan, dan destinasi
+            impian. Kami buatkan rekomendasi jadwal terbaik tanpa dipungut
+            biaya.
+          </p>
+          <a
+            class="lk-btn lk-btn--wa"
+            href="https://wa.me/6282339022477?text=Halo%20Lepas%20Kunci%20Lombok,%20saya%20ingin%20konsultasi%20paket%20wisata"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg class="lk-icon"><use href="#lk-wa" /></svg>Konsultasi via
+            WhatsApp Sekarang</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- //section 7 - FLOATING WHATSAPP -->
+  <a
+    class="lk-float"
+    href="https://wa.me/6282339022477"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat WhatsApp"
+    ><svg class="lk-icon"><use href="#lk-wa" /></svg
+  ></a>
+</div>
