@@ -1,5 +1,75 @@
 <style>
-.mcb-section-ec64b1ac8 {
+:root {
+  /* Colors: brand */
+  --color-navy: #132d4e;
+  --color-navy-hover: #0e2139;
+  --color-orange: #fc5f02;
+  --color-orange-hover: #e05300;
+  --color-orange-soft: #fff4ed;
+  --color-amber: #f5951c;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1ebe5d;
+
+  /* Colors: surface & text */
+  --color-white: #ffffff;
+  --color-canvas: #f8f9fa;
+  --color-charcoal: #1a202c;
+  --color-slate: #4a5568;
+  --color-border: #e2e8f0;
+  --color-on-navy-muted: #b0c8f1; /* inverse-primary */
+  --color-on-navy-line: #30486a; /* on-primary-fixed-variant */
+
+  /* Typography */
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --fs-display: 48px;
+  --lh-display: 56px;
+  --fs-headline-lg: 36px;
+  --lh-headline-lg: 44px;
+  --fs-headline-md: 24px;
+  --lh-headline-md: 32px;
+  --fs-headline-sm: 20px;
+  --lh-headline-sm: 28px;
+  --fs-body-lg: 18px;
+  --lh-body-lg: 28px;
+  --fs-body-md: 16px;
+  --lh-body-md: 24px;
+  --fs-body-sm: 14px;
+  --lh-body-sm: 20px;
+  --fs-label-sm: 12px;
+  --lh-label-sm: 16px;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-chip: 6px;
+  --radius-base: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Spacing (8px rhythm) */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --gutter: 1.5rem;
+  --container-max: 1240px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-display: 32px;
+    --lh-display: 40px;
+    --fs-headline-lg: 24px;
+    --lh-headline-lg: 32px;
+    --gutter: 1rem;
+  }
+}
+
+
+
+  .mcb-section-ec64b1ac8 {
     --mfn-column-gap-top: 0px;
     --mfn-column-gap-bottom: 0px;
     --mfn-column-gap-left: 0px;
@@ -130,18 +200,32 @@
     padding: var(--space-xs) 12px;
     border-radius: var(--radius-full);
   }
-  .lk-title {
+  .lk-title,
+  .lk-page h2.lk-title {
     font-size: var(--fs-headline-lg);
     line-height: var(--lh-headline-lg);
     font-weight: 700;
-    color: var(--color-navy);
+    color: var(--color-white) !important;
     margin-bottom: var(--space-md);
+    text-align: center;
   }
-  .lk-lead {
+  .lk-lead,
+  .lk-head p,
+  .lk-page .lk-lead,
+  .lk-page .lk-head p {
     color: var(--color-slate);
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
-  .lk-section--navy .lk-title {
-    color: var(--color-white);
+  .lk-section--navy .lk-title,
+  .lk-page .lk-section--navy h2.lk-title,
+  .lk-cta .lk-title {
+    color: var(--color-white) !important;
+  }
+  .lk-section--canvas .lk-title,
+  .lk-page .lk-section--canvas h2.lk-title {
+    color: var(--color-navy) !important;
   }
   .lk-section--navy .lk-lead {
     color: var(--color-on-navy-muted);
@@ -152,7 +236,7 @@
     background: var(--color-navy);
     color: var(--color-white);
     padding: calc(var(--space-xl) * 2) 0 calc(var(--space-xl) * 3);
-    text-align: center;
+    text-align: center !important;
   }
   .lk-hero__pill {
     display: inline-flex;
@@ -175,19 +259,30 @@
     border-radius: 50%;
     background: var(--color-amber);
   }
-  .lk-hero__title {
+  .lk-hero__title,
+  .lk-hero h1,
+  .lk-page .lk-hero h1 {
     max-width: 860px;
     margin: 0 auto var(--space-lg);
     font-size: var(--fs-display);
     line-height: var(--lh-display);
     font-weight: 700;
+    color: var(--color-white) !important;
+    text-align: center !important;
   }
-  .lk-hero__desc {
+  .lk-hero__desc,
+  .lk-hero p,
+  .lk-page .lk-hero__desc,
+  .lk-page .lk-hero p {
     max-width: 680px;
-    margin: 0 auto calc(var(--space-xl) * 1.25);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: calc(var(--space-xl) * 1.25) !important;
     font-size: var(--fs-body-lg);
     line-height: var(--lh-body-lg);
     color: var(--color-on-navy-muted);
+    text-align: center !important;
   }
   .lk-hero__cta {
     display: flex;
@@ -312,6 +407,56 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
+  .lk-card__thumb {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lk-card--wide .lk-card__thumb {
+    height: 300px;
+  }
+  .lk-card__img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+  .lk-card:hover .lk-card__img {
+    transform: scale(1.04);
+  }
+  .lk-card__thumb-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-slate);
+    font-family: var(--font-heading);
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+  .lk-card__thumb-placeholder .lk-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    fill: currentColor;
+  }
   .lk-card__body {
     padding: var(--space-xl) var(--space-lg);
   }
@@ -369,11 +514,11 @@
     font-size: var(--fs-label-sm);
     color: var(--color-slate);
   }
-  .lk-card__desc {
+  .lk-card .lk-card__desc {
     font-size: var(--fs-body-sm);
     line-height: var(--lh-body-sm);
     color: var(--color-slate);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md); /* atau 16px - 20px */
   }
   .lk-routes {
     display: grid;
@@ -500,7 +645,7 @@
     font-size: var(--fs-headline-sm);
     line-height: var(--lh-headline-sm);
     font-weight: 600;
-    color: var(--color-white);
+    color: var(--color-white) !important;
   }
   .lk-why__item p {
     font-size: var(--fs-body-sm);
@@ -615,6 +760,9 @@
     .lk-card--wide {
       grid-column: auto;
     }
+    .lk-card--wide .lk-card__thumb {
+      height: 220px;
+    }
     .lk-card--wide .lk-routes,
     .lk-card--wide .lk-incl__list {
       grid-template-columns: 1fr;
@@ -658,6 +806,9 @@
     <symbol id="lk-wa" viewBox="0 0 24 24">
       <path
         d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.584 1.777.818 2.796.818 3.182 0 5.768-2.586 5.768-5.767 0-3.18-2.586-5.768-5.768-5.768zm0 10.373c-.947 0-1.748-.276-2.529-.739l-.181-.108-1.577.414.421-1.538-.119-.189c-.508-.809-.775-1.579-.775-2.583 0-2.539 2.066-4.605 4.606-4.605 2.539 0 4.606 2.066 4.606 4.605 0 2.54-2.067 4.605-4.606 4.605zm3.013-3.486c-.165-.083-.979-.483-1.13-.539-.153-.055-.264-.083-.376.083-.111.166-.432.539-.529.65-.097.111-.194.125-.359.042-.165-.083-.699-.258-1.332-.822-.493-.439-.826-.981-.923-1.147-.097-.166-.01-.256.072-.338.075-.074.166-.194.249-.291.083-.097.111-.166.166-.277.056-.111.028-.208-.014-.291-.042-.083-.376-.906-.514-1.241-.135-.327-.272-.283-.376-.288l-.321-.005c-.111 0-.291.042-.444.208-.153.166-.583.57-.583 1.39 0 .82.597 1.612.68 1.723.083.111 1.175 1.794 2.846 2.516.398.172.709.275.952.352.401.127.766.109 1.055.066.321-.048.979-.4 1.118-.786.139-.387.139-.718.097-.786-.042-.068-.153-.111-.318-.194z"
+    <symbol id="lk-img" viewBox="0 0 24 24">
+      <path
+        d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
       />
     </symbol>
   </svg>
@@ -671,7 +822,14 @@
       <h1 class="lk-hero__title">
         Paket Wisata Lombok Bersama Supir Lokal Ramah
       </h1>
-      <p class="lk-hero__desc">
+      <p
+        class="lk-hero__desc"
+        style="
+          text-align: center !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        "
+      >
         Nikmati indahnya laut dan pegunungan Lombok tanpa pusing susun rute.
         Mobil bersih, bensin, supir berpengalaman, dan antar jemput bandara siap
         menemani perjalanan Anda.
@@ -778,6 +936,19 @@
       <div class="lk-packages">
         <!-- Card 2D1N -->
         <article class="lk-card" id="paket-2d1n">
+          <div class="lk-card__thumb">
+            <!-- Ganti URL src gambar di bawah ini dengan foto paket Anda -->
+            <img
+              src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80"
+              alt="Trip Lombok 2 Hari 1 Malam"
+              class="lk-card__img"
+              loading="lazy"
+            />
+            <div class="lk-card__thumb-placeholder">
+              <svg class="lk-icon"><use href="#lk-img" /></svg>
+              <span>Foto Paket 2D1N</span>
+            </div>
+          </div>
           <div class="lk-card__body">
             <div class="lk-card__top">
               <div>
@@ -832,6 +1003,19 @@
         <!-- Card 3D2N -->
         <article class="lk-card lk-card--featured" id="paket-3d2n">
           <div class="lk-card__badge">Paling populer • Pilihan keluarga</div>
+          <div class="lk-card__thumb">
+            <!-- Ganti URL src gambar di bawah ini dengan foto paket Anda -->
+            <img
+              src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?auto=format&fit=crop&w=800&q=80"
+              alt="Trip Lombok 3 Hari 2 Malam"
+              class="lk-card__img"
+              loading="lazy"
+            />
+            <div class="lk-card__thumb-placeholder">
+              <svg class="lk-icon"><use href="#lk-img" /></svg>
+              <span>Foto Paket 3D2N</span>
+            </div>
+          </div>
           <div class="lk-card__body">
             <div class="lk-card__top">
               <div>
@@ -889,6 +1073,19 @@
 
         <!-- Card 4D3N -->
         <article class="lk-card" id="paket-4d3n">
+          <div class="lk-card__thumb">
+            <!-- Ganti URL src gambar di bawah ini dengan foto paket Anda -->
+            <img
+              src="https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80"
+              alt="Trip Lombok 4 Hari 3 Malam"
+              class="lk-card__img"
+              loading="lazy"
+            />
+            <div class="lk-card__thumb-placeholder">
+              <svg class="lk-icon"><use href="#lk-img" /></svg>
+              <span>Foto Paket 4D3N</span>
+            </div>
+          </div>
           <div class="lk-card__body">
             <div class="lk-card__top">
               <div>
@@ -940,6 +1137,19 @@
 
         <!-- Card 5D4N -->
         <article class="lk-card" id="paket-5d4n">
+          <div class="lk-card__thumb">
+            <!-- Ganti URL src gambar di bawah ini dengan foto paket Anda -->
+            <img
+              src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80"
+              alt="Paket Wisata Lombok 5 Hari 4 Malam"
+              class="lk-card__img"
+              loading="lazy"
+            />
+            <div class="lk-card__thumb-placeholder">
+              <svg class="lk-icon"><use href="#lk-img" /></svg>
+              <span>Foto Paket 5D4N</span>
+            </div>
+          </div>
           <div class="lk-card__body">
             <div class="lk-card__top">
               <div>
@@ -998,6 +1208,19 @@
         >
           <div class="lk-card__badge">
             Petualangan laut spesial • Trending trip
+          </div>
+          <div class="lk-card__thumb lk-card__thumb--wide">
+            <!-- Ganti URL src gambar di bawah ini dengan foto paket Anda -->
+            <img
+              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
+              alt="Trip Whaleshark Teluk Saleh Sumbawa"
+              class="lk-card__img"
+              loading="lazy"
+            />
+            <div class="lk-card__thumb-placeholder">
+              <svg class="lk-icon"><use href="#lk-img" /></svg>
+              <span>Foto Trip Whaleshark Sumbawa</span>
+            </div>
           </div>
           <div class="lk-card__body">
             <div class="lk-card__top">
@@ -1115,6 +1338,8 @@
         </div>
       </div>
     </div>
+  </section>
+
   <!-- //section 5 - FAQ -->
   <section class="lk-section lk-section--canvas">
     <div class="lk-container">
