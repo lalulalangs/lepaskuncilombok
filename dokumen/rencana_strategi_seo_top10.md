@@ -89,11 +89,11 @@ flowchart TD
 * **Perbaikan**:
   * *Title Baru (Maks 60 Karakter)*:
     ```html
-    <title>Sewa Mobil Lombok Lepas Kunci Mulai 250rb | CV. Lepas Kunci Lombok</title>
+    <title>Sewa Mobil Lombok Lepas Kunci Mulai 300rb | CV. Lepas Kunci Lombok</title>
     ```
   * *Meta Description Baru (Maks 155 Karakter)*:
     ```html
-    <meta name="description" content="Sewa mobil Lombok lepas kunci &amp; plus driver mulai 250rb/24 jam. Bebas antar-jemput Bandara Lombok (BIL) &amp; Mataram. Unit bersih, terawat, proses syarat mudah." />
+    <meta name="description" content="Sewa mobil Lombok lepas kunci &amp; plus driver mulai 300rb/24 jam. Bebas antar-jemput Bandara Lombok (BIL) &amp; Mataram. Unit bersih, terawat, proses syarat mudah." />
     ```
   * *Heading Structure*:
     * **H1**: `Sewa Mobil Lombok Lepas Kunci Murah & Terpercaya`
@@ -210,7 +210,7 @@ Untuk query rental mobil di Google Indonesia, **Local 3-Pack** dan faktor kedeka
     "alternateName": ["Lepas Kunci Lombok", "Rental Mobil Lombok Lepas Kunci"],
     "url": "https://lepaskuncilombok.com",
     "telephone": "+6282339022477",
-    "priceRange": "Rp 250.000 - Rp 1.500.000",
+    "priceRange": "Rp 300.000 - Rp 1.500.000",
     "currenciesAccepted": "IDR",
     "paymentAccepted": "Cash, Bank Transfer",
     "address": {
