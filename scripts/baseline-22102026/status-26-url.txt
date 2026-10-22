@@ -1,0 +1,29 @@
+Timestamp: 2026-10-22T15:34:15+08:00
+URL	HTTP_CODE	REDIRECT_URL	CONTENT_TYPE
+https://lepaskuncilombok.com/	200		text/html;
+https://lepaskuncilombok.com/sewa-toyota-avanza-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-mobil-toyota-avanza-di-lombok-termurah/	200		text/html;
+https://lepaskuncilombok.com/sewa-avanza-murah-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-innova-reborn-lombok-2/	200		text/html;
+https://lepaskuncilombok.com/sewa-innova-reborn-lombok-dengan-harga-termurah/	200		text/html;
+https://lepaskuncilombok.com/sewa-fortuner-lombok-2/	200		text/html;
+https://lepaskuncilombok.com/sewa-fortuner-lombok-lepas-kunci-murah/	200		text/html;
+https://lepaskuncilombok.com/sewa-fortuner-lombok/	301	https://lepaskuncilombok.com/wp-content/uploads/2024/02/sewa-fortuner-lombok.jpg	text/html;
+https://lepaskuncilombok.com/sewa-toyota-hiace-premio/	200		text/html;
+https://lepaskuncilombok.com/sewa-hiace-premio-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-toyota-hiace-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-hiace-lombok/	301	https://lepaskuncilombok.com/	text/html;
+https://lepaskuncilombok.com/sewa-brio-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-mobil-brio-di-lombok-murah-2026/	200		text/html;
+https://lepaskuncilombok.com/sewa-xpander-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-mobil-mitsubishi-xpander-di-lombok-2026/	200		text/html;
+https://lepaskuncilombok.com/sewa-toyota-alphard-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-alphard-di-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-alphard-lombok/	301	https://lepaskuncilombok.com/sewa-alphard-lombok-2/	text/html;
+https://lepaskuncilombok.com/sewa-pajero-sport-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-mobil-pajero-di-lombok-harga-termurah/	200		text/html;
+https://lepaskuncilombok.com/paket-wisata/	200		text/html;
+https://lepaskuncilombok.com/paket-wisata-one-day-tour/	200		text/html;
+https://lepaskuncilombok.com/armada-lepas-kunci-lombok/	200		text/html;
+https://lepaskuncilombok.com/sewa-mobil-lombok-dengan-rating-tertinggi-dan-terpercaya/	200		text/html;
+https://lepaskuncilombok.com/rental-mobil-lombok/	301	https://lepaskuncilombok.com/	text/html;
