@@ -83,32 +83,32 @@
 
 | # | Kluster Armada / Halaman | URL yang Dicek | Peran Saat Ini | Target 301 / Kanonis | Status HTTP Live | Content-Type Target | Catatan |
 |:---:|:---|:---|:---:|:---|:---:|:---:|:---|
-| 1 | Avanza | `/sewa-toyota-avanza-lombok/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 2 | Avanza | `/sewa-mobil-toyota-avanza-di-lombok-termurah/` | Duplikat | `/sewa-toyota-avanza-lombok/` |  |  | Sumber 301 |
-| 3 | Avanza | `/sewa-avanza-murah-lombok/` | Duplikat | `/sewa-toyota-avanza-lombok/` |  |  | Sumber 301 |
-| 4 | Innova Reborn | `/sewa-innova-reborn-lombok-2/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 5 | Innova Reborn | `/sewa-innova-reborn-lombok-dengan-harga-termurah/` | Duplikat | `/sewa-innova-reborn-lombok-2/` |  |  | Arah dibalik dari rencana lama |
-| 6 | Fortuner | `/sewa-fortuner-lombok-2/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 7 | Fortuner | `/sewa-fortuner-lombok-lepas-kunci-murah/` | Duplikat | `/sewa-fortuner-lombok-2/` |  |  | Sumber 301 |
-| 8 | Fortuner | `/sewa-fortuner-lombok/` | Rusak (JPEG) | `/sewa-fortuner-lombok-2/` |  |  | Dibenahi di D1-03 |
-| 9 | Hiace Premio | `/sewa-toyota-hiace-premio/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 10 | Hiace Premio | `/sewa-hiace-premio-lombok/` | Duplikat | `/sewa-toyota-hiace-premio/` |  |  | Sumber 301 |
-| 11 | Hiace Premio | `/sewa-toyota-hiace-lombok/` | Duplikat | `/sewa-toyota-hiace-premio/` |  |  | Sumber 301 |
-| 12 | Hiace Premio | `/sewa-hiace-lombok/` | Rusak (Home) | `/sewa-toyota-hiace-premio/` |  |  | Dibenahi di D1-04 |
-| 13 | Brio | `/sewa-brio-lombok/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 14 | Brio | `/sewa-mobil-brio-di-lombok-murah-2026/` | Duplikat | `/sewa-brio-lombok/` |  |  | Sumber 301 |
-| 15 | Xpander | `/sewa-xpander-lombok/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 16 | Xpander | `/sewa-mobil-mitsubishi-xpander-di-lombok-2026/` | Duplikat | `/sewa-xpander-lombok/` |  |  | Sumber 301 |
-| 17 | Alphard | `/sewa-toyota-alphard-lombok/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 18 | Alphard | `/sewa-alphard-di-lombok/` | Duplikat | `/sewa-toyota-alphard-lombok/` |  |  | Sumber 301 |
-| 19 | Alphard | `/sewa-alphard-lombok/` | Duplikat | `/sewa-toyota-alphard-lombok/` |  |  | Ganti target lama `-2` |
-| 20 | Pajero | `/sewa-pajero-sport-lombok/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 21 | Pajero | `/sewa-mobil-pajero-di-lombok-harga-termurah/` | Duplikat | `/sewa-pajero-sport-lombok/` |  |  | Sumber 301 |
-| 22 | Paket Wisata | `/paket-wisata/` | Target (KEEP) | — |  | text/html | Calon kanonis tunggal |
-| 23 | Paket Wisata | `/paket-wisata-one-day-tour/` | Duplikat | `/paket-wisata/` |  |  | Sumber 301 |
-| 24 | Landing Page | `/armada-lepas-kunci-lombok/` | Target (KEEP) | — |  | text/html | Calon kanonis katalog |
-| 25 | Landing Page | `/sewa-mobil-lombok-dengan-rating-tertinggi-dan-terpercaya/` | Thin Content | `/armada-lepas-kunci-lombok/` |  |  | Klaim rating tanpa bukti |
-| 26 | Landing Page | `/rental-mobil-lombok/` | Rusak (Home) | `/armada-lepas-kunci-lombok/` |  |  | Dibenahi di D1-04 |
+| 1 | Avanza | `/sewa-toyota-avanza-lombok/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 2 | Avanza | `/sewa-mobil-toyota-avanza-di-lombok-termurah/` | Duplikat | `/sewa-toyota-avanza-lombok/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 3 | Avanza | `/sewa-avanza-murah-lombok/` | Duplikat | `/sewa-toyota-avanza-lombok/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 4 | Innova Reborn | `/sewa-innova-reborn-lombok-2/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 5 | Innova Reborn | `/sewa-innova-reborn-lombok-dengan-harga-termurah/` | Duplikat | `/sewa-innova-reborn-lombok-2/` | 200 OK | text/html | Arah dibalik dari rencana lama (Terverifikasi 200) |
+| 6 | Fortuner | `/sewa-fortuner-lombok-2/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 7 | Fortuner | `/sewa-fortuner-lombok-lepas-kunci-murah/` | Duplikat | `/sewa-fortuner-lombok-2/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 8 | Fortuner | `/sewa-fortuner-lombok/` | Rusak (JPEG) | `/sewa-fortuner-lombok-2/` | 301 -> JPEG | image/jpeg | Dibenahi di D1-03 (Yoast redirect) |
+| 9 | Hiace Premio | `/sewa-toyota-hiace-premio/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 10 | Hiace Premio | `/sewa-hiace-premio-lombok/` | Duplikat | `/sewa-toyota-hiace-premio/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 11 | Hiace Premio | `/sewa-toyota-hiace-lombok/` | Duplikat | `/sewa-toyota-hiace-premio/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 12 | Hiace Premio | `/sewa-hiace-lombok/` | Rusak (Home) | `/sewa-toyota-hiace-premio/` | 301 -> Home | text/html | Dibenahi di D1-04 (Soft 404) |
+| 13 | Brio | `/sewa-brio-lombok/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 14 | Brio | `/sewa-mobil-brio-di-lombok-murah-2026/` | Duplikat | `/sewa-brio-lombok/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 15 | Xpander | `/sewa-xpander-lombok/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 16 | Xpander | `/sewa-mobil-mitsubishi-xpander-di-lombok-2026/` | Duplikat | `/sewa-xpander-lombok/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 17 | Alphard | `/sewa-toyota-alphard-lombok/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 18 | Alphard | `/sewa-alphard-di-lombok/` | Duplikat | `/sewa-toyota-alphard-lombok/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 19 | Alphard | `/sewa-alphard-lombok/` | Duplikat | `/sewa-toyota-alphard-lombok/` | 301 -> -2 | text/html | Ganti target lama `-2` ke kanonis |
+| 20 | Pajero | `/sewa-pajero-sport-lombok/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 21 | Pajero | `/sewa-mobil-pajero-di-lombok-harga-termurah/` | Duplikat | `/sewa-pajero-sport-lombok/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 22 | Paket Wisata | `/paket-wisata/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis tunggal |
+| 23 | Paket Wisata | `/paket-wisata-one-day-tour/` | Duplikat | `/paket-wisata/` | 200 OK | text/html | Sumber 301 (Terverifikasi 200) |
+| 24 | Landing Page | `/armada-lepas-kunci-lombok/` | Target (KEEP) | — | 200 OK | text/html | Calon kanonis katalog |
+| 25 | Landing Page | `/sewa-mobil-lombok-dengan-rating-tertinggi-dan-terpercaya/` | Thin Content | `/armada-lepas-kunci-lombok/` | 200 OK | text/html | Klaim rating tanpa bukti (Terverifikasi 200) |
+| 26 | Landing Page | `/rental-mobil-lombok/` | Rusak (Home) | `/armada-lepas-kunci-lombok/` | 301 -> Home | text/html | Dibenahi di D1-04 (Yoast redirect) |
 
 ### Blok C — 13.00–14.30 · Title Homepage
 
@@ -257,17 +257,17 @@
 
 | Parameter Metrik | Baseline Audit Lama (21 Sep 2026) | Baseline Hari 0 (22 Okt 2026) | Hasil Akhir Hari 3 (24 Okt 2026) | Target Hari ke-30 |
 |:---|:---:|:---:|:---:|:---:|
-| **Halaman Terindeks GSC** | 381 URL | … | … | 390+ (berhenti turun) |
-| **Crawled – Currently Not Indexed** | 651 URL | … | … | <500 URL |
-| **Redirect Rusak ke File Non-HTML** | 1 (Fortuner→JPEG) | … | **0** | 0 |
-| **Redirect Halaman Dalam ke Homepage** | 2 URL | … | **0** | 0 |
+| **Halaman Terindeks GSC** | 381 URL | 381 URL (per export GSC) | … | 390+ (berhenti turun) |
+| **Crawled – Currently Not Indexed** | 651 URL | 651 URL (per export GSC) | … | <500 URL |
+| **Redirect Rusak ke File Non-HTML** | 1 (Fortuner→JPEG) | 1 (Fortuner→JPEG live) | **0** | 0 |
+| **Redirect Halaman Dalam ke Homepage** | 2 URL | 2 URL (Hiace & Rental live) | **0** | 0 |
 | **Selisih Sitemap ↔ Homepage** | 12 + 7 URL | 12 + 7 URL | **0 + 0** | 0 |
-| **Klaim `aggregateRating` Palsu** | 4.9 / 200 review | … | **Dihapus** | Dihapus / Data riil |
-| **Konsistensi `priceRange` Schema** | Rp 250.000 | … | **Rp 300.000** | Rp 300.000 |
-| **Validitas `BreadcrumbList`** | 1 item (invalid) | … | **0 Error** | 0 Error |
-| **Title Tag Homepage** | Tanpa "Lepas Kunci" | … | **Dengan "Lepas Kunci"** | Terindeks di SERP |
-| **Status `AdsBot` di robots.txt** | `Disallow: /` | … | **Dihapus (Open)** | Dihapus (Open) |
-| **Status Pemrosesan Sitemap di GSC** | — | … | **Success** | Success |
+| **Klaim `aggregateRating` Palsu** | 4.9 / 200 review | 4.9 / 200 review live | **Dihapus** | Dihapus / Data riil |
+| **Konsistensi `priceRange` Schema** | Rp 250.000 | Rp 250.000 live | **Rp 300.000** | Rp 300.000 |
+| **Validitas `BreadcrumbList`** | 1 item (invalid) | 1 item (invalid live) | **0 Error** | 0 Error |
+| **Title Tag Homepage** | Tanpa "Lepas Kunci" | Tanpa "Lepas Kunci" live | **Dengan "Lepas Kunci"** | Terindeks di SERP |
+| **Status `AdsBot` di robots.txt** | `Disallow: /` | `Disallow: /` live | **Dihapus (Open)** | Dihapus (Open) |
+| **Status Pemrosesan Sitemap di GSC** | — | — | **Success** | Success |
 
 > **Catatan Pengisian:** Kolom **Hari 3** HANYA boleh diisi berdasarkan hasil verifikasi perintah terminal nyata, bukan klaim verbal.
 
