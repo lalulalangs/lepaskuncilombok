@@ -14,16 +14,16 @@
       "paymentAccepted": "Cash, Bank Transfer",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Pelembak, Jl. Koperasi No.178, Pejeruk, Kec. Ampenan",
+        "streetAddress": "Jl. Transmigrasi No.12A, Pejanggik, Kec. Mataram",
         "addressLocality": "Mataram",
         "addressRegion": "Nusa Tenggara Barat",
-        "postalCode": "83113",
+        "postalCode": "83239",
         "addressCountry": "ID"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": -8.5670919,
-        "longitude": 116.0895996
+        "latitude": -8.579779014774928,
+        "longitude": 116.12292537422022
       },
       "openingHoursSpecification": [
         {

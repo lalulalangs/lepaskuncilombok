@@ -15,7 +15,7 @@ Meskipun website diproduksi dan dikelola menggunakan CMS **WordPress**, reposito
 
 * **Nama Perusahaan**: CV Lepas Kunci Lombok
 * **Website Resmi**: [https://lepaskuncilombok.com/](https://lepaskuncilombok.com/)
-* **Lokasi Operasional**: Pelembak, Jl. Koperasi No. 178, Pejeruk, Kec. Ampenan, Kota Mataram, Nusa Tenggara Barat 83511
+* **Lokasi Operasional**: Jl. Transmigrasi No.12A, Pejanggik, Kec. Mataram, Kota Mataram, Nusa Tenggara Barat 83239
 * **Layanan Utama**:
   * **Sewa Mobil Lepas Kunci**: Sewa mobil tanpa driver (24 jam) untuk fleksibilitas perjalanan mandiri di Lombok.
   * **Sewa Mobil + Driver + BBM**: Layanan pengemudi berpengalaman (12 jam/hari) untuk perjalanan wisata, keluarga, atau dinas.
